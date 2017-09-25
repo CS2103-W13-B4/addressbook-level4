@@ -788,6 +788,23 @@ Use case ends.
 +
 Use case ends.
 
+[discrete]
+=== Use case: Redo command
+
+*MSS*
+
+1.  User requests redo the previously command
+2.  AddressBook redo previous command
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 2a. Unable to find previous command
++
+Use case ends.
+
 
 == Non Functional Requirements
 
