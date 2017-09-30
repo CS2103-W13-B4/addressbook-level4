@@ -72,8 +72,8 @@ public class UpdateCommand extends UndoableCommand {
 
         } catch (DuplicatePersonException e) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
-        } catch (PersonNotFoundException e) {
-            assert false : "The target person cannot be missing";
+        } catch (PersonNotFoundException pnfe) {
+            assert false : "The target person and edited person cannot be missing";
         }
 
         return new CommandResult(String.format(MESSAGE_UPDATE_PERSON_SUCCESS, editedPerson));
