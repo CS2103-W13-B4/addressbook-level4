@@ -10,7 +10,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.ReadOnlyPerson;
-import seedu.address.model.person.exceptions.DuplicatePersonException;
+import seedu.address.model.person.exceptions.PersonNotFoundException;
 
 /**
  * Adds a person to the address book.
@@ -52,7 +52,7 @@ public class UpdateCommand extends UndoableCommand {
         try {
             model.UpdatePerson(toUpdate);
             return new CommandResult(String.format(MESSAGE_SUCCESS, toUpdate));
-        } catch (DuplicatePersonException e) {
+        } catch (PersonNotFoundException e) {
             throw new CommandException(MESSAGE_NONEXIST_PERSON);
         }
 
