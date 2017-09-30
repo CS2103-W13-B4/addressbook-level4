@@ -7,10 +7,15 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 
+import seedu.address.commons.core.Messages;
+import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.ReadOnlyPerson;
+import seedu.address.model.person.exceptions.DuplicatePersonException;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
+
+import java.util.List;
 
 /**
  * Updatess a person to the address book.
@@ -19,8 +24,10 @@ public class UpdateCommand extends UndoableCommand {
 
     public static final String COMMAND_WORD = "update";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": updates a person's info in the address book. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Updates the person's info identified by the index " +
+            "number used in the last person listing.\n"
             + "Parameters: "
+            + "INDEX (must be a positive integer) "
             + PREFIX_NAME + "NAME "
             + PREFIX_PHONE + "PHONE "
             + PREFIX_EMAIL + "EMAIL "
@@ -35,25 +42,39 @@ public class UpdateCommand extends UndoableCommand {
             + PREFIX_TAG + "owesMoney";
 
     public static final String MESSAGE_SUCCESS = "person info updated: %1$s";
-    public static final String MESSAGE_NONEXIST_PERSON = "This person does not exists in the address book";
+    public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the address book";
 
     private final Person toUpdate;
+    private final Index targetIndex;
 
     /**
      * Creates an UpdateCommand to update the specified {@code ReadOnlyPerson}
      */
-    public UpdateCommand(ReadOnlyPerson person) {
+    public UpdateCommand(ReadOnlyPerson person, Index targetIndex) {
         toUpdate = new Person(person);
+        this.targetIndex = targetIndex;
     }
 
     @Override
     public CommandResult executeUndoableCommand() throws CommandException {
         requireNonNull(model);
         try {
-            model.updatePerson(toUpdate);
+
+            List<ReadOnlyPerson> lastShownList = model.getFilteredPersonList();
+
+            if (targetIndex.getZeroBased() >= lastShownList.size()) {
+                throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+            }
+
+            ReadOnlyPerson personToUpdate = lastShownList.get(targetIndex.getZeroBased());
+
+            model.updatePerson(personToUpdate, toUpdate);
             return new CommandResult(String.format(MESSAGE_SUCCESS, toUpdate));
+
+        } catch (DuplicatePersonException e) {
+            throw new CommandException(MESSAGE_DUPLICATE_PERSON);
         } catch (PersonNotFoundException e) {
-            throw new CommandException(MESSAGE_NONEXIST_PERSON);
+            assert false : "The target person cannot be missing";
         }
 
     }
