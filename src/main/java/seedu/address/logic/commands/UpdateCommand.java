@@ -50,7 +50,7 @@ public class UpdateCommand extends UndoableCommand {
     public CommandResult executeUndoableCommand() throws CommandException {
         requireNonNull(model);
         try {
-            model.UpdatePerson(toUpdate);
+            model.updatePerson(toUpdate);
             return new CommandResult(String.format(MESSAGE_SUCCESS, toUpdate));
         } catch (PersonNotFoundException e) {
             throw new CommandException(MESSAGE_NONEXIST_PERSON);
@@ -64,4 +64,7 @@ public class UpdateCommand extends UndoableCommand {
                 || (other instanceof UpdateCommand // instanceof handles nulls
                 && toUpdate.equals(((UpdateCommand) other).toUpdate));
     }
+
+
+
 }
