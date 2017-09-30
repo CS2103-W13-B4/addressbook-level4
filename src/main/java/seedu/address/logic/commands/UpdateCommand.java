@@ -18,7 +18,7 @@ import seedu.address.model.person.exceptions.PersonNotFoundException;
 import java.util.List;
 
 /**
- * Updatess a person to the address book.
+ * Updates a person to the address book.
  */
 public class UpdateCommand extends UndoableCommand {
 
@@ -41,7 +41,7 @@ public class UpdateCommand extends UndoableCommand {
             + PREFIX_TAG + "friends "
             + PREFIX_TAG + "owesMoney";
 
-    public static final String MESSAGE_SUCCESS = "person info updated: %1$s";
+    public static final String MESSAGE_UPDATE_PERSON_SUCCESS = "person info updated: %1$s";
     public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the address book";
 
     private final Person editedPerson;
@@ -69,13 +69,14 @@ public class UpdateCommand extends UndoableCommand {
             ReadOnlyPerson personToUpdate = lastShownList.get(targetIndex.getZeroBased());
 
             model.updatePerson(personToUpdate, editedPerson);
-            return new CommandResult(String.format(MESSAGE_SUCCESS, editedPerson));
 
         } catch (DuplicatePersonException e) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
         } catch (PersonNotFoundException e) {
             assert false : "The target person cannot be missing";
         }
+
+        return new CommandResult(String.format(MESSAGE_UPDATE_PERSON_SUCCESS, editedPerson));
 
     }
 
@@ -85,7 +86,5 @@ public class UpdateCommand extends UndoableCommand {
                 || (other instanceof UpdateCommand // instanceof handles nulls
                 && editedPerson.equals(((UpdateCommand) other).editedPerson));
     }
-
-
 
 }

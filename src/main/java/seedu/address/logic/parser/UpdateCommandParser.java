@@ -10,6 +10,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import java.util.Set;
 import java.util.stream.Stream;
 
+import seedu.address.commons.core.index.Index;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.logic.commands.UpdateCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -40,6 +41,7 @@ public class UpdateCommandParser implements Parser<UpdateCommand> {
         }
 
         try {
+            Index index = ParserUtil.parseIndex(args);
             Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME)).get();
             Phone phone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE)).get();
             Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL)).get();
@@ -48,7 +50,7 @@ public class UpdateCommandParser implements Parser<UpdateCommand> {
 
             ReadOnlyPerson person = new Person(name, phone, email, address, tagList);
 
-            return new UpdateCommand(person);
+            return new UpdateCommand(person, index);
         } catch (IllegalValueException ive) {
             throw new ParseException(ive.getMessage(), ive);
         }
