@@ -8,6 +8,8 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 import seedu.address.commons.core.index.Index;
@@ -67,5 +69,25 @@ public class UpdateCommandParser implements Parser<UpdateCommand> {
     private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {
         return Stream.of(prefixes).allMatch(prefix -> argumentMultimap.getValue(prefix).isPresent());
     }
+
+    /**
+     * get the first integer from the arg
+     */
+    private String getInndexArgs(String args) throws ParseException{
+        Matcher matcher = Pattern.compile("[^0-9]*([0-9]+).*").matcher(args);
+        if (matcher.matches()) {
+            return matcher.group(1);
+        } else {
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, UpdateCommand.MESSAGE_USAGE));
+        }
+    }
+
+    /**
+     * get the rest mapping strings after the first integer
+     */
+    private String getMappingArgs(String args) {
+
+    }
+
 
 }
