@@ -44,14 +44,14 @@ public class UpdateCommand extends UndoableCommand {
     public static final String MESSAGE_SUCCESS = "person info updated: %1$s";
     public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the address book";
 
-    private final Person toUpdate;
+    private final Person editedPerson;
     private final Index targetIndex;
 
     /**
      * Creates an UpdateCommand to update the specified {@code ReadOnlyPerson}
      */
     public UpdateCommand(ReadOnlyPerson person, Index targetIndex) {
-        toUpdate = new Person(person);
+        editedPerson = new Person(person);
         this.targetIndex = targetIndex;
     }
 
@@ -68,8 +68,8 @@ public class UpdateCommand extends UndoableCommand {
 
             ReadOnlyPerson personToUpdate = lastShownList.get(targetIndex.getZeroBased());
 
-            model.updatePerson(personToUpdate, toUpdate);
-            return new CommandResult(String.format(MESSAGE_SUCCESS, toUpdate));
+            model.updatePerson(personToUpdate, editedPerson);
+            return new CommandResult(String.format(MESSAGE_SUCCESS, editedPerson));
 
         } catch (DuplicatePersonException e) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
@@ -83,7 +83,7 @@ public class UpdateCommand extends UndoableCommand {
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof UpdateCommand // instanceof handles nulls
-                && toUpdate.equals(((UpdateCommand) other).toUpdate));
+                && editedPerson.equals(((UpdateCommand) other).editedPerson));
     }
 
 
