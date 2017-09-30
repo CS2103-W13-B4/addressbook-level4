@@ -13,7 +13,7 @@ import seedu.address.model.person.ReadOnlyPerson;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
 
 /**
- * Adds a person to the address book.
+ * Updatess a person to the address book.
  */
 public class UpdateCommand extends UndoableCommand {
 
@@ -40,7 +40,7 @@ public class UpdateCommand extends UndoableCommand {
     private final Person toUpdate;
 
     /**
-     * Creates an AddCommand to add the specified {@code ReadOnlyPerson}
+     * Creates an UpdateCommand to update the specified {@code ReadOnlyPerson}
      */
     public UpdateCommand(ReadOnlyPerson person) {
         toUpdate = new Person(person);
