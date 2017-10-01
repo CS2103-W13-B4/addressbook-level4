@@ -72,7 +72,7 @@ public class UpdateCommandParser implements Parser<UpdateCommand> {
     /**
      * get the first integer from the arg
      */
-    private String getIndexArgs(String args) throws ParseException{
+    private String getIndexArgs(String args) throws ParseException {
         Matcher matcher = Pattern.compile("[^0-9]*([0-9]+).*").matcher(args);
         if (matcher.matches()) {
             return matcher.group(1);
