@@ -7,6 +7,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 
+import java.util.List;
 import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -14,9 +15,6 @@ import seedu.address.model.person.Person;
 import seedu.address.model.person.ReadOnlyPerson;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
-
-import java.util.List;
-
 /**
  * Updates a person to the address book.
  */
@@ -24,7 +22,8 @@ public class UpdateCommand extends UndoableCommand {
 
     public static final String COMMAND_WORD = "update";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Updates the person's info identified by the index " +
+    public static final String MESSAGE_USAGE = COMMAND_WORD
+            + ": Updates the person's info identified by the index " +
             "number used in the last person listing.\n"
             + "Parameters: "
             + "INDEX (must be a positive integer) "
