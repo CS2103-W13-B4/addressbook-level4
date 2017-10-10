@@ -81,6 +81,13 @@ public class ModelManager extends ComponentManager implements Model {
         indicateAddressBookChanged();
     }
 
+    @Override
+    public boolean sortFilteredPersonListByAttribute(String targetAttribute) {
+        requireNonNull(targetAttribute);
+        return addressBook.sortByAttribute(targetAttribute);
+    }
+
+
     //=========== Filtered Person List Accessors =============================================================
 
     /**
