@@ -22,6 +22,7 @@ import seedu.address.model.person.predicates.UniquePhonePredicate;
 public class ListCommand extends Command {
 
     public static final String COMMAND_WORD = "list";
+    public static final String ALIAS_WORD = "l";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": List all persons or all attributes(if specified) and "
             + "displays them as a list with index numbers.\n"
