@@ -45,8 +45,9 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#undo-redo-mechanism">3.1. Undo/Redo mechanism</a></li>
-<li><a href="#logging">3.2. Logging</a></li>
-<li><a href="#configuration">3.3. Configuration</a></li>
+<li><a href="#sort-mechanism">3.2. Sort mechanism</a></li>
+<li><a href="#logging">3.3. Logging</a></li>
+<li><a href="#configuration">3.4. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
@@ -767,7 +768,66 @@ If the <code>redoStack</code> is empty, then there are no other commands left to
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.2. Logging</a></h3>
+<h3 id="sort-mechanism"><a class="link" href="#sort-mechanism">3.2. Sort mechanism</a></h3>
+<div class="paragraph">
+<p>The sort mechanism is facilitated by <a href="#event-bus"><code>Event Bus</code></a>. Whenever sort command is executed, in <code>SortCommand</code> it will raise a <code>SortListRequestEvent</code> via <code>EventCenter</code> which there is an listerner in <code>PersonListPanel</code> which will conduct the sorting list according to the attribute type of <code>list</code> command which was executed previously.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the previous attribute type of <code>list</code> command is address, the list will be sorted by person&#8217;s address lexicographically, such sorting will also be applied for attribute email and phone. If there is no attribute in the execution of previous <code>list</code> command, the list will be sorted by person&#8217;s name lexicographically by default.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the sort operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SortCommandSeqDiagram.png" alt="SortCommandSeqDiagram" width="900">
+</div>
+</div>
+<div class="paragraph">
+<p>The redo does the exact opposite (pops from <code>redoStack</code>, push to <code>undoStack</code>, and restores the address book to the state after the command is executed).</p>
+</div>
+<div class="paragraph">
+<p>The following <a href="#activity-diagram">activity diagram</a> summarize what happens when an user execute sort command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SortCommandActivityDiagram.png" alt="SortCommandActivityDiagram" width="900">
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.1. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of <code>SortCommand</code><br>
+<strong>Alternative 1 (current choice):</strong> Sort list by calling event to sort the current Observable&lt;ReadOnlyPerson&gt; person list on <code>PersonListPanel</code>.<br>
+<strong>Pros:</strong> The actual <code>internalList</code> wont be altered and wont affect other commands' execution.<br>
+<strong>Cons:</strong> Could be counter intuitive for new developer who is looking at the code for the first time as normally developers would relate such execution in the <code>Model</code> component of this product.<br>
+<strong>Alternative 2:</strong> Sort the actual <code>internalList</code> in <code>UniquePersonList</code><br>
+<strong>Pros:</strong> Easier for new developer to understand the operation of SortCommand execution as it is more intuitive.<br>
+<strong>Cons:</strong> Alter the <code>internalList</code> which might affect operation of other Commands.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>Aspect:</strong> How sort executes<br>
+<strong>Alternative 1 (current choice):</strong> Sort exiting list base on the attribute type of previous <code>List</code> command called.<br>
+<strong>Pros:</strong> Make more sense as if address attribute was provided as parameter for previous <code>List</code> command, the existing list before sort been execute will only shown a list addresses.<br>
+<strong>Cons:</strong> Need to find out with attribute type was given as parameter for previous <code>List</code> command and sort accordingly which amount to more work.<br>
+<strong>Alternative 2:</strong> Despite the previous <code>List</code> attribute type and return a list with all the details from all attributes and sorted by name.<br>
+<strong>Pros:</strong> Less work.<br>
+<strong>Cons:</strong> <code>Sort</code> command will not go hand in hand with <code>List</code> command.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
@@ -805,7 +865,7 @@ If the <code>redoStack</code> is empty, then there are no other commands left to
 </div>
 </div>
 <div class="sect2">
-<h3 id="configuration"><a class="link" href="#configuration">3.3. Configuration</a></h3>
+<h3 id="configuration"><a class="link" href="#configuration">3.4. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2475,6 +2535,14 @@ for <code>RemarkCommandParser</code>.</p>
 <pre>A sequence diagram is an interaction diagram that shows how objects operate with one another and in what order.</pre>
 </div>
 </div>
+<div id="event-bus" class="paragraph">
+<p>Event Bus</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>EventBus allows publish-subscribe-style communication between components without requiring the components to explicitly register with one another (and thus be aware of each other). It is designed exclusively to replace traditional Java in-process event distribution using explicit registration. It is not a general-purpose publish-subscribe system, nor is it intended for interprocess communication.</pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -2517,7 +2585,7 @@ for <code>RemarkCommandParser</code>.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-16 04:24:30 +00:00
+Last updated 2017-10-16 14:49:19 +00:00
 </div>
 </div>
 </body>
