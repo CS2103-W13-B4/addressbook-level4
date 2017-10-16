@@ -304,7 +304,7 @@ Edits all the persons with the third address shown in the address list to be <co
 <div class="sect2">
 <h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">2.6. Locating persons by name: <code>find</code></a></h3>
 <div class="paragraph">
-<p>Finds persons whose names contain any of the given keywords.<br>
+<p>Finds persons whose names, address, email, phone number contain any of the given keywords.<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
@@ -318,10 +318,18 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
 </li>
 <li>
-<p>Only the name is searched.</p>
+<p>All attributes names, address, email and phone number are searched.</p>
 </li>
 <li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+<p>Attributes name and address only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+</li>
+<li>
+<p>Attributes phone number and email given part of the full word will be matched e.g. <code>999</code> will match <code>91059999</code></p>
+</li>
+<li>
+<p>If list command with a specific attribute was called prior, only the word or sentences of that specific attribute will
+be consider for the find, or else it will take the words or sentences of all attributes for find,
+Please refer below for example.</p>
 </li>
 <li>
 <p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
@@ -336,36 +344,41 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
+<p><code>list</code><br>
+<code>find 999</code><br>
+Return any name or address that contain the full word <code>999</code> and return any phone number or email that contain <code>999</code> word
+in their email and phone number</p>
 </li>
 <li>
-<p><code>find Betsy Tim John</code><br>
-Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+<p><code>list email</code><br>
+<code>find tianlan</code><br>
+Returns any email contain <code>tianlan</code> word in the emails</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="locating-persons-by-name-code-sort-code"><a class="link" href="#locating-persons-by-name-code-sort-code">2.7. Locating persons by name: <code>sort</code></a></h3>
-<div class="literalblock">
+<div class="paragraph">
+<p>Sort the existing list.<br>
+Format: <code>sort KEYWORD</code></p>
+</div>
+<div class="sidebarblock">
 <div class="content">
-<pre>Sort the existing list. +
-Format: `sort KEYWORD`</pre>
+<div class="ulist">
+<ul>
+<li>
+<p>The sort command will sort the list according to its current listed attribute</p>
+</li>
+<li>
+<p>If the list was not listed in any attribute, it will be sorted by name of the person by default</p>
+</li>
+</ul>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>****
-* The sort command will sort the list according to its current listed attribute
-* If the list was not listed in any attribute, it will be sorted by name of the person by default
-****</pre>
 </div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>Examples:</pre>
-</div>
+<div class="paragraph">
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -711,7 +724,7 @@ e.g. <code>customise fs/xsmall</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-16 03:35:13 +00:00
+Last updated 2017-10-16 03:40:06 +00:00
 </div>
 </div>
 </body>
