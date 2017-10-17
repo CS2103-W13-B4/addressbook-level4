@@ -47,8 +47,9 @@
 <li><a href="#undo-redo-mechanism">3.1. Undo/Redo mechanism</a></li>
 <li><a href="#sort-mechanism">3.2. Sort mechanism</a></li>
 <li><a href="#color-keyword-mechanism">3.3. Color Keyword mechanism</a></li>
-<li><a href="#logging">3.4. Logging</a></li>
-<li><a href="#configuration">3.5. Configuration</a></li>
+<li><a href="#list-mechanism">3.4. List mechanism</a></li>
+<li><a href="#logging">3.5. Logging</a></li>
+<li><a href="#configuration">3.6. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
@@ -874,7 +875,46 @@ The default setting for this feature is set as disable.
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
+<h3 id="list-mechanism"><a class="link" href="#list-mechanism">3.4. List mechanism</a></h3>
+<div class="paragraph">
+<p>The list mechanism is facilitated by an enumeration class <code>ListingUnit</code>. Each time user list by different attributes, the static variable <code>currentListingUnit</code> in the Enumeration class is reset.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The default listing (without parameter) is to list all persons.
+When list by attribute, for example, <code>list address</code>, the <code>currentListingUnit</code> will be set to <code>ADDRESS</code> and show a list of all addresses.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the list command operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ListCommandSeqDiagram.png" alt="ListCommandSeqDiagram" width="900">
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.4.1. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of <code>ListCommand</code><br>
+<strong>Alternative 1 (current choice):</strong>  Update static variable <code>currentListingUnit</code> to the corresponding listingUnit and use event bus to inform UI the change of listingUnit.
+<strong>Pros:</strong> One global variable that records current listingUnit
+<strong>Cons:</strong> Hard for new developers to understand the event center mechanism.<br>
+<strong>Alternative 2 (previous choice):</strong> Use a variable in model manager to keep record of currentListingUnit<br>
+<strong>Pros:</strong> No need for extra enumeration class.
+<strong>Cons:</strong> In order to get it in other components, the variable must be declared static. But we cannot define static abstract method in interface.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">3.5. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
@@ -912,7 +952,7 @@ The default setting for this feature is set as disable.
 </div>
 </div>
 <div class="sect2">
-<h3 id="configuration"><a class="link" href="#configuration">3.5. Configuration</a></h3>
+<h3 id="configuration"><a class="link" href="#configuration">3.6. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2632,7 +2672,7 @@ for <code>RemarkCommandParser</code>.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-17 09:12:08 +00:00
+Last updated 2017-10-17 09:12:32 +00:00
 </div>
 </div>
 </body>
