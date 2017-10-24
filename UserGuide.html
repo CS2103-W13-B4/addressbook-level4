@@ -5,54 +5,78 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.3">
-<title>AddressBook Level 4 - User Guide</title>
+<title>ModU - User Guide</title>
 <link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css">
 </head>
 <body class="article">
 <div id="header">
-<h1>AddressBook Level 4 - User Guide</h1>
+<h1>ModU - User Guide</h1>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>CS2103AUG2017-W13-B4</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#quick-start">1. Quick Start</a></li>
-<li><a href="#features">2. Features</a>
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#quick-start">2. Quick Start</a></li>
+<li><a href="#features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">2.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-add-code">2.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">2.3. Listing all persons : <code>list</code></a></li>
-<li><a href="#collect-a-person-into-favourite-list-code-collect-code">2.4. Collect a person into favourite list : <code>collect</code></a></li>
-<li><a href="#view-all-persons-with-the-specified-attribute-code-view-code">2.5. View all persons with the specified attribute: <code>view</code></a></li>
-<li><a href="#locating-persons-by-attributes-code-find-code">2.6. Locating persons by attributes: <code>find</code></a></li>
-<li><a href="#sorting-persons-by-attributes-code-sort-code">2.7. Sorting persons by attributes: <code>sort</code></a></li>
-<li><a href="#highlighting-keywords-code-color-code">2.8. Highlighting keywords: <code>color</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">2.9. Deleting a person : <code>delete</code></a></li>
-<li><a href="#selecting-a-person-code-select-code">2.10. Selecting a person : <code>select</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">2.11. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">2.12. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">2.13. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">2.14. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">2.15. Exiting the program : <code>exit</code></a></li>
-<li><a href="#customising-the-font-size-code-customise-fs-font-size-code">2.16. Customising the font size : <code>customise fs/FONT-SIZE</code></a></li>
-<li><a href="#saving-the-data">2.17. Saving the data</a></li>
+<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
+<li><a href="#adding-a-lesson-code-add-code">3.2. Adding a lesson: <code>add</code></a></li>
+<li><a href="#marking-a-lesson-code-mark-code">3.3. Marking a lesson: <code>mark</code></a></li>
+<li><a href="#marking-a-lesson-code-unmark-code">3.4. Marking a lesson: <code>unmark</code></a></li>
+<li><a href="#listing-all-lesson-code-list-code">3.5. Listing all lesson : <code>list</code></a></li>
+<li><a href="#viewing-specific-lesson-from-the-list-code-view-code">3.6. Viewing specific lesson from the list: <code>view</code></a></li>
+<li><a href="#editing-a-lesson-code-edit-code">3.7. Editing a lesson : <code>edit</code></a></li>
+<li><a href="#locating-lessons-by-module-code-code-find-code">3.8. Locating lessons by module code: <code>find</code></a></li>
+<li><a href="#sorting-lesson-by-module-code-code-sort-code">3.9. Sorting lesson by module code: <code>sort</code></a></li>
+<li><a href="#deleting-a-lesson-code-delete-code">3.10. Deleting a lesson : <code>delete</code></a></li>
+<li><a href="#selecting-a-lesson-code-select-code">3.11. Selecting a lesson : <code>select</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">3.12. Listing entered commands : <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.13. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.14. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.15. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.16. Exiting the program : <code>exit</code></a></li>
+<li><a href="#customising-the-font-size-code-customise-fs-font-size-code">3.17. Customising the font size : <code>customise fs/FONT-SIZE</code></a></li>
+<li><a href="#highlighting-keywords-code-color-code">3.18. Highlighting keywords : <code>color</code></a></li>
+<li><a href="#saving-the-data">3.19. Saving the data</a></li>
 </ul>
 </li>
-<li><a href="#faq">3. FAQ</a></li>
-<li><a href="#command-summary">4. Command Summary</a></li>
+<li><a href="#tutorial">4. Tutorial</a></li>
+<li><a href="#faq">5. FAQ</a></li>
+<li><a href="#command-summary">6. Command Summary</a></li>
 </ul>
 </div>
 </div>
 <div class="sect1">
-<h2 id="quick-start"><a class="link" href="#quick-start">1. Quick Start</a></h2>
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Many universities have timetable committee to deal with all matters concerning timetabling scheduling.
+One prevalent concern of such matters would be timetable clashes while scheduling.<br></p>
+</div>
+<div class="paragraph">
+<p>Welcome to ModU, a timetable scheduling software for professors and administrators in tertiary institutions.<br></p>
+</div>
+<div class="paragraph">
+<p>With ModU, you are able to easily identify timetable slots that are available for the module you are scheduling.
+Made a mistake while scheduling the timetable? Fret not, you can easily make any changes to the timetable.<br></p>
+</div>
+<div class="paragraph">
+<p>ModU uses the command line interface (CLI) as the main input. The natural language input field will allow you to
+quickly search, add, delete and edit your timetable. Just type what you want and ModU will do the rest for you!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -76,13 +100,13 @@ This app will not work with earlier versions of Java 8.
 <p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/se-edu/addressbook-level4/releases">here</a>.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
+<p>Copy the file to the folder you want to use as the home folder for your ModU.</p>
 </li>
 <li>
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/Ui.png" alt="Ui" width="790">
+<img src="images/mainUi.png" alt="mainUi" width="790">
 </div>
 </div>
 </li>
@@ -95,13 +119,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> : lists all contacts</p>
+<p><strong><code>list</code></strong> <strong><code>module</code></strong> : lists all module</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+<p><strong><code>add</code></strong> <strong><code>m/MA1101R ct/LEC v/LT27 gp/1 ts/FRI[1400-1600] l/ Ma Siu Lun</code></strong> : adds a lesson with module code <code>MA1101R</code> to the ModU list.</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
+<p><strong><code>sort</code></strong> : sort lesson shown in the current list</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -117,7 +141,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect1">
-<h2 id="features"><a class="link" href="#features">2. Features</a></h2>
+<h2 id="features"><a class="link" href="#features">3. Features</a></h2>
 <div class="sectionbody">
 <div class="exampleblock">
 <div class="content">
@@ -127,37 +151,32 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add m/CODE</code>, <code>CODE</code> is a parameter which can be used as <code>add m/MA1101R</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
+<p>Items in square brackets are optional e.g <code>m/NAME l/LECTURER [l/LECTURER]</code> can be used as <code>m/MA1101R l/Ma Siu Lun l/Victor Tan</code> or as <code>m/MA1101R l/Ma Siu Lun</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
+<p>Items with <code>…</code>​ after them can be used multiple times, at least one time e.g. <code>l/LECTURER [l/LECTURER]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 1 times), <code>l/Ma Siu Lun</code>, <code>l/Ma Siu Lun l/Victor Tan</code> etc.</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>gp/GROUP ts/TIME_SLOT ct/CLASS_TYPE</code>, <code>v/VENUE m/CODE</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">2.1. Viewing help : <code>help</code></a></h3>
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/help.png" alt="help" width="900">
-</div>
-</div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">2.2. Adding a person: <code>add</code></a></h3>
+<h3 id="adding-a-lesson-code-add-code"><a class="link" href="#adding-a-lesson-code-add-code">3.2. Adding a lesson: <code>add</code></a></h3>
 <div class="paragraph">
-<p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
+<p>Adds a lesson to the ModU list<br>
+Format: <code>add m/MODULE_CODE ct/CLASS_TYPE v/VENUE gp/GROUP ts/TIME_SLOT l/LECTURER&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -166,7 +185,7 @@ Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;<
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-A person can have any number of tags (including 0)
+A lesson must have at least one lecturer and a lesson must not have a same time slot and location as existing lesson in ModU
 </td>
 </tr>
 </table>
@@ -177,78 +196,34 @@ A person can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code></p>
+<p><code>add m/MA1101R ct/LEC v/LT27 gp/1 ts/FRI[1400-1600] l/Ma Siu Lun</code></p>
 </li>
 <li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal</code></p>
+<p>`add m/CS2100 ct/LEC v/LT19 gp/1 ts/MON[1400-1600] l/Wong WEng Fa l/Suppiah `</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/add.png" alt="add" width="900">
+<img src="images/video/add.gif" alt="add" width="790">
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">2.3. Listing all persons : <code>list</code></a></h3>
+<h3 id="marking-a-lesson-code-mark-code"><a class="link" href="#marking-a-lesson-code-mark-code">3.3. Marking a lesson: <code>mark</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all persons in the address book.<br>
-Format: <code>list</code></p>
-</div>
-<div class="paragraph">
-<p>image::list all.png[width="900"]</p>
-</div>
-<div class="paragraph">
-<p>Shows a list of all distinct addresses of all persons in the address book.<br>
-Format: <code>List address</code></p>
-</div>
-<div class="paragraph">
-<p>image::list address.png[width="900"]</p>
-</div>
-<div class="paragraph">
-<p>Shows a list of all distinct emails of all persons in the address book.<br>
-Format: <code>List email</code></p>
-</div>
-<div class="paragraph">
-<p>image::list email.png[width="900"]</p>
-</div>
-<div class="paragraph">
-<p>Shows a list of all distinct phones of all persons in the address book.<br>
-Format: <code>List phone</code></p>
-</div>
-<div class="paragraph">
-<p>image::list phone.png[width="900"]</p>
-</div>
-<div class="paragraph">
-<p>Shows a list all persons in the favourite list.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>List collection</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="collect-a-person-into-favourite-list-code-collect-code"><a class="link" href="#collect-a-person-into-favourite-list-code-collect-code">2.4. Collect a person into favourite list : <code>collect</code></a></h3>
-<div class="paragraph">
-<p>Adds an existing person into the favourite list.<br>
-Format: <code>collect 1</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="view-all-persons-with-the-specified-attribute-code-view-code"><a class="link" href="#view-all-persons-with-the-specified-attribute-code-view-code">2.5. View all persons with the specified attribute: <code>view</code></a></h3>
-<div class="paragraph">
-<p>Finds all persons with the specified attribute value.<br>
-Format: <code>view INDEX</code></p>
+<p>Marks a lesson to the marked list<br>
+Format: <code>mark INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>You must list</p>
+<p>Mark the lesson at the specified <code>INDEX</code>. The index refers to the index number shown in the last lesson listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
-<p>If you call view after command <code>list</code>, it will only show the specified person.</p>
+<p>The specified lesson must be initially not in the marked list.</p>
 </li>
 </ul>
 </div>
@@ -260,29 +235,118 @@ Format: <code>view INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list address</code><br>
-<code>view 2</code><br>
-find all persons with the second address shown in the address list.</p>
+<p><code>view 1</code><br>
+<code>mark 1</code><br>
+Mark the person into the marked list.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>image::view 1.png[width="900"]</p>
 </div>
+<div class="sect2">
+<h3 id="marking-a-lesson-code-unmark-code"><a class="link" href="#marking-a-lesson-code-unmark-code">3.4. Marking a lesson: <code>unmark</code></a></h3>
 <div class="paragraph">
-<p>image::view 2.png[width="900"]
-=== Editing a person : <code>edit</code></p>
-</div>
-<div class="paragraph">
-<p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+<p>remove a lesson from the marked list<br>
+Format: <code>unmark INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the person at the specified <code>INDEX</code>. The index refers to the index number shown in the last person listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Unmark the lesson at the specified <code>INDEX</code>. The index refers to the index number shown in the last lesson listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>The specified lesson must already exist in the marked list.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view 1</code><br>
+<code>unmark 1</code><br>
+Remove the lesson from the marked list.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-lesson-code-list-code"><a class="link" href="#listing-all-lesson-code-list-code">3.5. Listing all lesson : <code>list</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all modules in the ModU.<br>
+Format: <code>list module</code></p>
+</div>
+<div class="paragraph">
+<p>Shows a list of all location in the ModU.<br>
+Format: <code>List location</code></p>
+</div>
+<div class="paragraph">
+<p>Shows a list of all marked lessons in the ModU.<br>
+Format: <code>List marked</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/list.gif" alt="list" width="790">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-specific-lesson-from-the-list-code-view-code"><a class="link" href="#viewing-specific-lesson-from-the-list-code-view-code">3.6. Viewing specific lesson from the list: <code>view</code></a></h3>
+<div class="paragraph">
+<p>Views the detail information about a lesson.<br>
+Format: <code>view INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You can either view a lesson from a module or a location.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list module</code><br>
+<code>view 2</code><br>
+View the detail information with the second index shown in the module list.</p>
+</li>
+<li>
+<p><code>list location</code><br>
+<code>view 2</code><br>
+View the detail information with the second index shown in the location list.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/view.gif" alt="view" width="790">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-lesson-code-edit-code"><a class="link" href="#editing-a-lesson-code-edit-code">3.7. Editing a lesson : <code>edit</code></a></h3>
+<div class="paragraph">
+<p>Edits an existing lesson in the ModU list.<br>
+Format: <code>edit INDEX [m/MODULE_CODE] [ct/CLASS_TYPE] [v/VENUE] [gp/GROUP] [ts/TIME_SLOT] [l/Lecturer&#8230;&#8203;]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the lesson at the specified <code>INDEX</code>. The index refers to the index number shown in the last lesson listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
 <p>At least one of the optional fields must be provided.</p>
@@ -291,18 +355,20 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;
 <p>Existing values will be updated to the input values.</p>
 </li>
 <li>
-<p>When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.</p>
-</li>
-<li>
-<p>You can remove all the person&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+<p>When editing lecturers, the existing lecturers of the lesson will be removed i.e adding of lecturers is not cumulative.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/edit.gif" alt="edit" width="790">
+</div>
+</div>
 <div class="paragraph">
-<p>Edits an existing attribute(address/email/phone) in the address book.<br>
-Format: <code>edit INDEX [ADDRESS/EMAIL/PHONE]&#8230;&#8203;</code></p>
+<p>Edits an existing attribute(module/location) in the ModU list.<br>
+Format: <code>edit INDEX [CODE/LOCATION]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -312,10 +378,10 @@ Format: <code>edit INDEX [ADDRESS/EMAIL/PHONE]&#8230;&#8203;</code></p>
 <p>Edits the attribute at the specified <code>INDEX</code>. The index refers to the index number shown in the last attribute listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
-<p>Requires to list by that specified attribute(address/email/phone) first.</p>
+<p>Requires to list by that specified attribute(module/location) first.</p>
 </li>
 <li>
-<p>All persons with the specifed attribute value will be updated to with the attribute of input values.</p>
+<p>All lessons with the specifed attribute value will be updated to with the attribute of input values.</p>
 </li>
 </ul>
 </div>
@@ -327,30 +393,42 @@ Format: <code>edit INDEX [ADDRESS/EMAIL/PHONE]&#8230;&#8203;</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+<p><code>list module</code><br>
+Returns a list of location<br></p>
 </li>
 <li>
-<p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
-</li>
-<li>
-<p><code>edit 3 Clementi Ave 3</code><br>
-Edits all the persons with the third address shown in the address list to be <code>Clementi Ave 3</code> (Assume user types <code>list address</code> first).</p>
+<p><code>edit 1 m/CS2101</code><br>
+Edits the module code of the 1st lesson to be <code>CS2101</code>.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>image::edit 1.png[width="900"]</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/editModule.gif" alt="editModule" width="790">
 </div>
-<div class="paragraph">
-<p>image::edit 2.png[width="900"]</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list location</code><br>
+Returns a list of location<br></p>
+</li>
+<li>
+<p><code>edit 3 LT27</code> +Assume
+Edits all the lessons with the third location shown in the location list to be <code>LT27</code>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/editLocation.gif" alt="editLocation" width="790">
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-persons-by-attributes-code-find-code"><a class="link" href="#locating-persons-by-attributes-code-find-code">2.6. Locating persons by attributes: <code>find</code></a></h3>
+<h3 id="locating-lessons-by-module-code-code-find-code"><a class="link" href="#locating-lessons-by-module-code-code-find-code">3.8. Locating lessons by module code: <code>find</code></a></h3>
 <div class="paragraph">
-<p>Finds persons whose names, address, email, phone number contain any of the given keywords.<br>
+<p>Finds lessons whose code match the given keywords.<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
@@ -358,27 +436,25 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+<p>The search is case insensitive. e.g <code>MA1101R</code> will match <code>Ma1101r</code></p>
 </li>
 <li>
-<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+<p>The order of the keywords does not matter. e.g. <code>MA1101R CS2101</code> will match <code>CS2101</code> and 'MA1101R'</p>
 </li>
 <li>
-<p>All attributes names, address, email and phone number are searched.</p>
+<p>The location will be search if the list is listed by location</p>
 </li>
 <li>
-<p>Attributes name and address only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+<p>The module code will be search if the list is listed by module</p>
 </li>
 <li>
-<p>Attributes phone number and email given part of the full word will be matched e.g. <code>999</code> will match <code>91059999</code></p>
+<p>Any detail of a lesson will be search if view is called previously</p>
 </li>
 <li>
-<p>If list command with a specific attribute was called prior, only the word or sentences of that specific attribute will
-be consider for the find, or else it will take the words or sentences of all attributes for find,
-Please refer below for example.</p>
+<p>Partial of the code will be matched e.g. <code>MA1101</code> will match <code>MA1101R</code></p>
 </li>
 <li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+<p>Lessons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>MA1101R CS2101</code> will return <code>MA1101R</code> or <code>CS2101</code></p>
 </li>
 </ul>
 </div>
@@ -390,120 +466,88 @@ Please refer below for example.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>find 999</code><br>
-Return any name or address that contain the full word <code>999</code> and return any phone number or email that contain <code>999</code> word
-in their email and phone number</p>
+<p><code>list module</code><br>
+<code>find MA1101R</code><br>
+Returns modules with code name <code>MA1101R</code></p>
 </li>
 <li>
-<p><code>list email</code><br>
-<code>find tianlan</code><br>
-Returns any email contain <code>tianlan</code> word in the emails</p>
+<p><code>find MA1101R CS2101 CS2103</code><br>
+Returns module having code <code>MA1101R</code>, <code>CS2101</code>, or <code>CS2103T</code></p>
+</li>
+<li>
+<p><code>list location</code><br>
+<code>find lt25</code><br>
+Returns location with name <code>LT25</code></p>
+</li>
+<li>
+<p><code>view 1</code><br>
+<code>find TUE</code>
+Return lesson with any details that contains <code>TUE</code> case insensitive</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>image::find address 1.png[width="900"]</p>
-</div>
-<div class="paragraph">
-<p>image::find address 2.png[width="900"]</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sorting-persons-by-attributes-code-sort-code"><a class="link" href="#sorting-persons-by-attributes-code-sort-code">2.7. Sorting persons by attributes: <code>sort</code></a></h3>
-<div class="paragraph">
-<p>Sort the existing list.<br>
-Format: <code>sort KEYWORD</code></p>
-</div>
-<div class="sidebarblock">
+<div class="imageblock">
 <div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The sort command will sort the list according to its current listed attribute</p>
-</li>
-<li>
-<p>If the list was not listed in any attribute, it will be sorted by name of the person by default</p>
-</li>
-</ul>
+<img src="images/video/find.gif" alt="find" width="790">
 </div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list address</code><br>
-Returns a list of addresses<br>
-<code>sort</code><br>
-Return a list of addresses sorted lexicographically</p>
-</li>
-<li>
-<p><code>list</code><br>
-Returns whole list<br>
-<code>sort</code><br>
-Return a list sorted by name lexicographically</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>image::sort 1.png[width="900"]</p>
-</div>
-<div class="paragraph">
-<p>image::sort 2.png[width="900"]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="highlighting-keywords-code-color-code"><a class="link" href="#highlighting-keywords-code-color-code">2.8. Highlighting keywords: <code>color</code></a></h3>
-<div class="paragraph">
-<p>Highlight the command keywords.<br>
-Format: <code>color enable/disable</code></p>
-</div>
-<div class="sidebarblock">
+<h3 id="sorting-lesson-by-module-code-code-sort-code"><a class="link" href="#sorting-lesson-by-module-code-code-sort-code">3.9. Sorting lesson by module code: <code>sort</code></a></h3>
+<div class="literalblock">
 <div class="content">
+<pre>Sort the existing list. +
+Format: `sort KEYWORD`</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>****
+* The sort command will sort the list according to its current listed attribute
+* If the list was not listed in any attribute, it will be sorted by code of the lesson
+****</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Examples:</pre>
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>The color command will either enable or disable the coloring of command keywords in the command box.</p>
+<p><code>list location</code><br>
+Returns a list of location<br>
+<code>sort</code><br>
+Return a list of location sorted lexicographically</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/sortLocation.gif" alt="sortLocation" width="790">
 </div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>color enable</code><br>
-All command keywords will be highlighted<br></p>
-</li>
-<li>
-<p><code>color disable</code><br>
-All command keywords will not be highlighted<br></p>
+<p><code>list lesson</code><br>
+Returns whole module<br>
+<code>sort</code><br>
+Return a list sorted by code lexicographically</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>image::color enable 1.png[width="900"]</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/sortModule.gif" alt="sortModule" width="790">
 </div>
-<div class="paragraph">
-<p>image::color enable 2.png[width="900"]</p>
-</div>
-<div class="paragraph">
-<p>image::disable 1.png[width="900"]</p>
-</div>
-<div class="paragraph">
-<p>image::disable 2.png[width="900"]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">2.9. Deleting a person : <code>delete</code></a></h3>
+<h3 id="deleting-a-lesson-code-delete-code"><a class="link" href="#deleting-a-lesson-code-delete-code">3.10. Deleting a lesson : <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes the specified person from the address book.<br>
+<p>Deletes all the lessons with specified attribute value in the attribute list from the ModU list.<br>
 Format: <code>delete INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -511,7 +555,7 @@ Format: <code>delete INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the person at the specified <code>INDEX</code>.</p>
+<p>Deletes the lesson at the specified <code>INDEX</code>.</p>
 </li>
 <li>
 <p>The index refers to the index number shown in the most recent listing.</p>
@@ -524,59 +568,37 @@ Format: <code>delete INDEX</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>Deletes all the persons with specified attribute value in the attribute list from the address book.<br>
-Format: <code>delete INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes all the persons with specified attribute value at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the most recent attribute listing.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
 <p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
+<p><code>list location</code><br>
 <code>delete 2</code><br>
-Deletes the 2nd person in the address book.</p>
+Deletes the 2nd lesson in the ModU location list.</p>
 </li>
 <li>
-<p><code>find Betsy</code><br>
+<p><code>find MA1101R</code><br>
 <code>delete 1</code><br>
-Deletes the 1st person in the results of the <code>find</code> command.</p>
+Deletes the 1st lesson in the results of the <code>find</code> command.</p>
 </li>
 <li>
-<p><code>list address</code><br>
+<p><code>list module</code><br>
 <code>delete 2</code><br>
-Deletes all the persons who with the second address value shown in the address list.</p>
+Deletes the 2nd lesson in the ModU location list.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>image::delete 1.png[width="900"]</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/delete.gif" alt="delete" width="790">
 </div>
-<div class="paragraph">
-<p>image::delete 2.png[width="900"]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">2.10. Selecting a person : <code>select</code></a></h3>
+<h3 id="selecting-a-lesson-code-select-code"><a class="link" href="#selecting-a-lesson-code-select-code">3.11. Selecting a lesson : <code>select</code></a></h3>
 <div class="paragraph">
-<p>Selects the person identified by the index number used in the last person listing.<br>
+<p>Selects the lesson identified by the index number used in the last lesson listing.<br>
 Format: <code>select INDEX</code></p>
 </div>
 <div class="sidebarblock">
@@ -584,7 +606,7 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Selects the person and loads the Google search page the person at the specified <code>INDEX</code>.</p>
+<p>Selects the lesson and loads the Google search page the lesson at the specified <code>INDEX</code>.</p>
 </li>
 <li>
 <p>The index refers to the index number shown in the most recent listing.</p>
@@ -604,24 +626,23 @@ Format: <code>select INDEX</code></p>
 <li>
 <p><code>list</code><br>
 <code>select 2</code><br>
-Selects the 2nd person in the address book.</p>
+Selects the 2nd lesson in the ModU list.</p>
 </li>
 <li>
-<p><code>find Betsy</code><br>
+<p><code>find MA1101R</code><br>
 <code>select 1</code><br>
-Selects the 1st person in the results of the <code>find</code> command.</p>
+Selects the 1st lesson in the results of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>image::select 1.png[width="900"]</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/select.gif" alt="select" width="790">
 </div>
-<div class="paragraph">
-<p>image::select 2.png[width="900"]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">2.11. Listing entered commands : <code>history</code></a></h3>
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.12. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
 Format: <code>history</code></p>
@@ -640,18 +661,31 @@ Format: <code>history</code></p>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>image::history 1.png[width="900"]</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/history.gif" alt="history" width="790">
 </div>
-<div class="paragraph">
-<p>image::history 2.png[width="900"]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">2.12. Undoing previous command : <code>undo</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.13. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
-<p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
+<p>Restores the list to the state before the previous <em>undoable</em> command was executed.<br>
 Format: <code>undo</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You can only use <code>undo</code> with current listing element(Module/Location/Lesson).</p>
+</li>
+<li>
+<p>Undo previous command is no longger allowed once user switched listing element.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -661,7 +695,7 @@ Format: <code>undo</code></p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Undoable commands: those commands that modify the address book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
+<p>Undoable commands: those commands that modify the list&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
 </div>
 </td>
 </tr>
@@ -674,12 +708,12 @@ Format: <code>undo</code></p>
 <ul>
 <li>
 <p><code>delete 1</code><br>
-<code>list</code><br>
+<code>list module</code><br>
 <code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
 </li>
 <li>
 <p><code>select 1</code><br>
-<code>list</code><br>
+<code>list module</code><br>
 <code>undo</code><br>
 The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
 </li>
@@ -691,18 +725,25 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>image::undo 1.png[width="900"]</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/undo.gif" alt="undo" width="790">
 </div>
-<div class="paragraph">
-<p>image::undo 2.png[width="900"]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">2.13. Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.14. Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
 Format: <code>redo</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>If the most recent <code>undo</code> command is execueted with the panel listing elements different from those
+elements when the actual command is executed. The command will not be allowed to redo.</p>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -729,37 +770,40 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>image::find address 1.png[width="900"]</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/redo.gif" alt="redo" width="790">
 </div>
-<div class="paragraph">
-<p>image::find address 2.png[width="900"]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">2.14. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.15. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
+<p>Clears all entries from the ModU list.<br>
 Format: <code>clear</code></p>
 </div>
-<div class="paragraph">
-<p>image::clear 1.png[width="900"]</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/clear.gif" alt="clear" width="790">
 </div>
-<div class="paragraph">
-<p>image::clear 2.png[width="900"]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">2.15. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.16. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/edit.gif" alt="edit" width="790">
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="customising-the-font-size-code-customise-fs-font-size-code"><a class="link" href="#customising-the-font-size-code-customise-fs-font-size-code">2.16. Customising the font size : <code>customise fs/FONT-SIZE</code></a></h3>
+<h3 id="customising-the-font-size-code-customise-fs-font-size-code"><a class="link" href="#customising-the-font-size-code-customise-fs-font-size-code">3.17. Customising the font size : <code>customise fs/FONT-SIZE</code></a></h3>
 <div class="paragraph">
-<p>Customise the font size of Address Book<br>
+<p>Customise the font size of ModU list<br>
 Format: <code>customise fs\FONT-SIZE</code></p>
 </div>
 <div class="admonitionblock tip">
@@ -769,7 +813,7 @@ Format: <code>customise fs\FONT-SIZE</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-A person can have any number of tags (including 0)
+A lesson can have any number of tags (including 0)
 </td>
 </tr>
 </table>
@@ -790,77 +834,411 @@ A person can have any number of tags (including 0)
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>image::customise 1.png[width="900"]</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/customise.gif" alt="customise" width="790">
 </div>
-<div class="paragraph">
-<p>image::customise 2.png[width="900"]</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">2.17. Saving the data</a></h3>
+<h3 id="highlighting-keywords-code-color-code"><a class="link" href="#highlighting-keywords-code-color-code">3.18. Highlighting keywords : <code>color</code></a></h3>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
+<p>Highlight the command keywords.<br>
+Format: <code>color enable/disable</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>color enable</code></p>
+</li>
+<li>
+<p><code>color disable</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/video/color.gif" alt="color" width="790">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.19. Saving the data</a></h3>
+<div class="paragraph">
+<p>ModU data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">3. FAQ</a></h2>
+<h2 id="tutorial"><a class="link" href="#tutorial">4. Tutorial</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+<p>Assume you are a a professor from the National University of Singapore (NUS) and you want to start planning your
+timetable for the upcoming semester. The university then introduced you to ModU,
+an effective timetable scheduling software developed by the School of Computing (SoC) students.</p>
+</div>
+<div class="paragraph">
+<p>This is the screen when you first launch ModU.<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Command Box</code>: receive user command inputs</p>
+</li>
+<li>
+<p><code>Resust Display Box</code>: display result of the commands</p>
+</li>
+<li>
+<p><code>Module/Lesson Display Panel</code>: display list of modules or lessons</p>
+</li>
+<li>
+<p><code>Timetable/Browser</code>: display timetable of a particular module or a browser when a location is selected</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/NewUi.png" alt="NewUi" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Since this is the first time you are using this software,
+you are unsure of what are the available commands.</p>
+</div>
+<div class="paragraph">
+<p>Type <code>help</code> in the command box. ModU will automatically open up the user guide that will list all available commands.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/Help.png" alt="Help" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>After you have read through the commands, you realised that it is hard to remember all the commands.
+You want to be able to identify key words, prefix and check the validity of command.</p>
+</div>
+<div class="paragraph">
+<p>Type <code>color enable</code> in the command box. ModU will highlight the various commands and prefix.
+It will display a tick when the command is valid or a cross when the command is invalid.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/colorEnable.png" alt="colorEnable" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>After you have received the course information from CS2101 and MA1101R,
+you would want to enter these information into ModU.</p>
+</div>
+<div class="paragraph">
+<p>Type <code>add m/MA1101R ct/LEC v/LT27 gp/1 ts/FRI[1400-1600] l/ Ma Siu Lun</code> in the command box.
+ModU will create a module MA1101R for you and automatically insert the lesson particulars into this module</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/addModule.png" alt="addModule" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Now you want to add a new lesson for CS2101. However, you did not notice that the lesson
+has the same time slot and location as the MA1101R lesson that you have just added.</p>
+</div>
+<div class="paragraph">
+<p>When you type <code>add CS2101 ct/LEC v/LT27 gp/1 ts/FRI[1400-1600] l/ Ma Siu Lun</code> in the command box,
+ModU will inform you that the time slot is already booked.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/addDup.png" alt="addDup" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>After you have added all the lessons for MA1101R , you might want to know how the current time table for MA1101R
+looks like.</p>
+</div>
+<div class="paragraph">
+<p>Type <code>view 1</code> in the command box.
+ModU will show you all available lesson information about MA1101R.
+ModU will also also display the timetable for this module.
+In addition, you can continue adding MA1101R lessons in the command box and it will reflect on the timetable
+instantaneously.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/viewMod.png" alt="viewMod" width="790">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/viewAdd.png" alt="viewAdd" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Now, you received a notice that MA1101R has been renamed to MA1010 and you wish to edit the timetable.</p>
+</div>
+<div class="paragraph">
+<p>Type <code>edit 1 MA1010</code> in the command box.
+In the module view, ModU allows you to change the name of the module.
+All the lessons with the code MA1101R will be changed to MA1010.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/editMod.png" alt="editMod" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>One of the lecturers from CS2101 lost her timetable and she wants
+you to send her a new one. You need to firstly find CS2101 from a list of modules.</p>
+</div>
+<div class="paragraph">
+<p>Type <code>find CS2101</code> followed by <code>view 1</code> in the command box.
+ModU will show you the timetable for CS2101.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/findMod.png" alt="findMod" width="790">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/findTimetable.png" alt="findTimetable" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Maybe you have to take more classes during this semester.
+After you have added these lessons into ModU, you would want to have an organized view by arranging them in an
+alphabetical order</p>
+</div>
+<div class="paragraph">
+<p>Type <code>sort</code> in the command box.
+ModU sorts the current list based on alphabetical order.
+Take note that you can do the same for lesson list.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/sort.png" alt="sort" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>You were informed that LT19 needs reconstruction and is not open for the upcoming semester.
+Now, you need to delete LT19 from ModU.</p>
+</div>
+<div class="paragraph">
+<p>Type <code>list location</code> followed by <code>delete 2</code> in the command box.
+ModU will delete all lessons that are scheduled in LT19.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/delete.png" alt="delete" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Almost immediately after you have deleted LT19, you received a call saying that the reconstruction will only happen
+during the following semester. Don&#8217;t worry, all you need to do is simply undo the previous command.</p>
+</div>
+<div class="paragraph">
+<p>Type <code>undo</code> in the command box.
+ModU will undo the deletion and restore LT19.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/undo.png" alt="undo" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>A moment later, you were informed to ignore the previous call and that LT19 will indeed go through reconstruction
+this upcoming semester (oh, don&#8217;t we all hate workplace miscommunications). ModU got you covered this time round as
+well.</p>
+</div>
+<div class="paragraph">
+<p>Type <code>redo</code> in the command box.
+ModU will undo the previous <code>undo</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/redo.png" alt="redo" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>After the semester ends, you would want to clear the timetable and prepare for the next semester.</p>
+</div>
+<div class="paragraph">
+<p>Type <code>clear</code> in the command box.
+ModU will clear all modules in the timetable.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/clear.png" alt="clear" width="790">
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">4. Command Summary</a></h2>
+<h2 id="faq"><a class="link" href="#faq">5. FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous ModU folder.</p>
+</div>
+<div class="paragraph">
+<p><strong>Q</strong>: How do I enable the highlighting of keyword feature?<br>
+<strong>A</strong>: Type <code>color enable</code> in the command box.</p>
+</div>
+<div class="paragraph">
+<p><strong>Q</strong>: How do I get support?<br>
+<strong>A</strong>: if you have any questions, you can contact us by <a href="mailto:liangcao@yahoo.com">email</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">6. Command Summary</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
+<p><strong>Add</strong> <code>add m/MODULE_CODE ct/ CLASS_TYPE v/VENUE gp/GROUP ts/TIME_SLOT l/Lecturer [lLECTURER]&#8230;&#8203;</code><br>
+e.g. <code>add m/MA1101R ct/LEC v/LT27 gp/1 ts/FRI[1400-1600] l/ Ma Siu Lun</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/01add.png" alt="01add" width="790">
+</div>
+</div>
 </li>
 <li>
 <p><strong>Clear</strong> : <code>clear</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/10clear.png" alt="10clear" width="790">
+</div>
+</div>
 </li>
 <li>
 <p><strong>Delete</strong> : <code>delete INDEX</code><br>
 e.g. <code>delete 3</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/02delete.png" alt="02delete" width="790">
+</div>
+</div>
 </li>
 <li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
+<p><strong>Edit</strong> : <code>edit INDEX [m/MODULE_CODE] [ct/CLASS_TYPE] [v/VENUE] [gp/GROUP] [ts/TIME_SLOT] [l/Lecturer&#8230;&#8203;]</code>
+`<br>
+e.g. <code>edit 2 gp/2 m/CS2101</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/03editD.png" alt="03editD" width="790">
+</div>
+</div>
 </li>
 <li>
 <p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
+e.g. <code>find MA1101R CS2101</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/05find.png" alt="05find" width="790">
+</div>
+</div>
 </li>
 <li>
-<p><strong>List</strong> : <code>list</code></p>
+<p><strong>Sort</strong> : <code>sort</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/09sort.png" alt="09sort" width="790">
+</div>
+</div>
+</li>
+<li>
+<p><strong>List</strong> : <code>list</code><br>
+e.g. <code>list module</code>
+e.g. <code>list location</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/07listC.png" alt="07listC" width="790">
+</div>
+</div>
+</li>
+<li>
+<p><strong>View</strong> : <code>view INDEX</code>
+e.g. <code>view 1</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/15view.png" alt="15view" width="790">
+</div>
+</div>
 </li>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/06help.png" alt="06help" width="790">
+</div>
+</div>
+</li>
+<li>
+<p><strong>Exit</strong> : <code>exit</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/04exit.png" alt="04exit" width="790">
+</div>
+</div>
 </li>
 <li>
 <p><strong>Select</strong> : <code>select INDEX</code><br>
 e.g.<code>select 2</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/08select.png" alt="08select" width="790">
+</div>
+</div>
 </li>
 <li>
 <p><strong>History</strong> : <code>history</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/14history.png" alt="14history" width="790">
+</div>
+</div>
 </li>
 <li>
 <p><strong>Undo</strong> : <code>undo</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/11undo.png" alt="11undo" width="790">
+</div>
+</div>
 </li>
 <li>
 <p><strong>Redo</strong> : <code>redo</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/12redo.png" alt="12redo" width="790">
+</div>
+</div>
 </li>
 <li>
 <p><strong>Customise</strong> <code>customise fs/FONT-SIZE</code><br>
 e.g. <code>customise fs/xsmall</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/13customiseF.png" alt="13customiseF" width="790">
+</div>
+</div>
+</li>
+<li>
+<p><strong>Color</strong> <code>color</code><br>
+e.g. <code>customise enable</code><br>
+e.g. <code>customise disable</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSummary/16colorC.png" alt="16colorC" width="790">
+</div>
+</div>
 </li>
 </ul>
 </div>
@@ -869,7 +1247,7 @@ e.g. <code>customise fs/xsmall</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-21 03:31:07 +00:00
+Last updated 2017-10-24 16:54:17 +00:00
 </div>
 </div>
 </body>
