@@ -25,7 +25,7 @@ image::liang_profile_pic.jpeg[width="150", align="left"]
 {empty}[https://github.com/caoliangnus[github]] [<<Cao Liang#, portfolio>>]
 
 Role: Developer +
-Responsibilities: Data
+Responsibilities: Model
 
 '''
 
