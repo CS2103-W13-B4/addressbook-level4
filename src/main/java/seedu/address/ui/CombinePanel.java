@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 import java.util.logging.Logger;
 
 import com.google.common.eventbus.Subscribe;
@@ -42,6 +43,7 @@ public class CombinePanel extends UiPart<Region> {
 
     private static final String FXML = "CombinePanel.fxml";
     private static final String LESSON_NODE_ID = "lessonNode";
+    private static final String STICKY_NOTE = "stickyNote";
     private static final int ROW = 6;
     private static final int COL = 13;
 
@@ -59,6 +61,10 @@ public class CombinePanel extends UiPart<Region> {
     private GridPane timetableGrid;
     @FXML
     private HBox timeHeader;
+    @FXML
+    private HBox noteBox;
+    @FXML
+    private GridPane noteGrid;
 
     public CombinePanel(Logic logic) {
         super(FXML);
@@ -73,6 +79,9 @@ public class CombinePanel extends UiPart<Region> {
         browser.setVisible(false);
         registerAsAnEventHandler(this);
 
+        noteBox.setVisible(true);
+        stickyNotesInit();
+
     }
 
 
@@ -83,12 +92,15 @@ public class CombinePanel extends UiPart<Region> {
         if (ListingUnit.getCurrentListingUnit().equals(ListingUnit.LESSON)) {
             timeBox.setVisible(true);
             browser.setVisible(false);
+            noteBox.setVisible(false);
         } else if (ListingUnit.getCurrentListingUnit().equals(ListingUnit.LOCATION)) {
             timeBox.setVisible(false);
             browser.setVisible(true);
+            noteBox.setVisible(false);
         } else {
             timeBox.setVisible(false);
             browser.setVisible(false);
+            noteBox.setVisible(true);
         }
     }
 
@@ -204,8 +216,6 @@ public class CombinePanel extends UiPart<Region> {
     }
 
 
-
-
     private int getWeekDay(String text) {
         text = text.toUpperCase();
         switch (text) {
@@ -281,9 +291,65 @@ public class CombinePanel extends UiPart<Region> {
         if (ListingUnit.getCurrentListingUnit().equals(ListingUnit.LOCATION)) {
             timeBox.setVisible(false);
             browser.setVisible(true);
+            noteBox.setVisible(false);
         }
     }
 
+
+    /***************** Sticky Note *****************/
+
+    private String[][]noteData;
+
+    public void noteDataInit(){
+        String letters = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        noteData = new String[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                Random rdm = new Random();
+                int length = 0 + (int)(Math.random() * 50);
+                noteData[i][j] = generateString(rdm, letters, length);
+            }
+        }
+    }
+
+    public static String generateString(Random rng, String characters, int length)
+    {
+        char[] text = new char[length];
+        for (int i = 0; i < length; i++)
+        {
+            text[i] = characters.charAt(rng.nextInt(characters.length()));
+        }
+        return new String(text);
+    }
+
+
+    public void stickyNotesInit(){
+        noteDataInit();
+        //noteGrid.setGridLinesVisible(true);
+        noteGrid.setHgap(20); //horizontal gap in pixels => that's what you are asking for
+        noteGrid.setVgap(20); //vertical gap in pixels
+
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                String text = noteData[i][j];
+
+                int x = 120 + (int)(Math.random() * 255);
+                int y = 120 + (int)(Math.random() * 255);
+                int z = 120 + (int)(Math.random() * 255);
+
+                StackPane stackPane = new StackPane();
+                stackPane.setStyle("-fx-background-color: rgba(" + x + "," + y + ", " + z +", 0.5);" +
+                        "-fx-effect: dropshadow(gaussian, red, " + 20 + ", 0, 0, 0);" +
+                        "-fx-background-insets: " + 10 + ";");
+                TextArea ta = new TextArea(text);
+                ta.setWrapText(true);
+                ta.setEditable(false);
+                ta.setId(STICKY_NOTE);
+                stackPane.getChildren().add(ta);
+                noteGrid.add(stackPane,j,i);
+            }
+        }
+    }
 }
 
 /**
