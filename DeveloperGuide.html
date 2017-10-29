@@ -50,11 +50,12 @@
 <li><a href="#list-view-mechanism">4.3. List/View mechanism</a></li>
 <li><a href="#mark-unmark-mechanism">4.4. Mark/Unmark mechanism</a></li>
 <li><a href="#find-mechanism">4.5. Find mechanism</a></li>
-<li><a href="#sort-mechanism">4.6. Sort mechanism</a></li>
-<li><a href="#color-keyword-mechanism">4.7. Color Keyword mechanism</a></li>
-<li><a href="#customise-mechanism">4.8. Customise mechanism</a></li>
-<li><a href="#logging">4.9. Logging</a></li>
-<li><a href="#configuration">4.10. Configuration</a></li>
+<li><a href="#remark-mechanism">4.6. Remark mechanism</a></li>
+<li><a href="#sort-mechanism">4.7. Sort mechanism</a></li>
+<li><a href="#color-keyword-mechanism">4.8. Color Keyword mechanism</a></li>
+<li><a href="#customise-mechanism">4.9. Customise mechanism</a></li>
+<li><a href="#logging">4.10. Logging</a></li>
+<li><a href="#configuration">4.11. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a>
@@ -822,7 +823,7 @@ As a result, when implement the redo mechanism, we can obtain the <code>currentP
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>ListingUnit</code><br>
-<strong>Alternative 1 (current choice):</strong>  Construct a enumeration class <code>ListingUnit</code> and record current listing type and predicates.
+<strong>Alternative 1 (current choice):</strong>  Construct a enumeration class <code>ListingUnit</code> and record current listing type and predicates.<br>
 <strong>Pros:</strong> It makes the implementation of many other features easier.<br>
 <strong>Cons:</strong> In testing, <code>ListingUnit</code> class carry data from one test to another even when we want each test to be independent of the others.<br>
 <strong>Alternative 2 (previous choice):</strong> Use a variable in model manager to keep record of currentListingUnit<br>
@@ -869,7 +870,7 @@ According to current listing type, which we can obtain from <code>ListingUnit</c
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>List</code> and <code>View</code><br>
-<strong>Alternative 1 (current choice):</strong>  set different predicates to the <code>filteredList</code> and hide irrelevant information in the panel.
+<strong>Alternative 1 (current choice):</strong>  set different predicates to the <code>filteredList</code> and hide irrelevant information in the panel.<br>
 <strong>Pros:</strong> Easy to understand and do not use extra space to store different kinds of lists(For example, location list).<br>
 <strong>Cons:</strong> Overhead of setting predicates repeatedly.<br>
 <strong>Alternative 2 (previous choice):</strong> Store lesson list, unique module list and unique location list separately. and switch to different panel list and view command is called.<br>
@@ -981,7 +982,53 @@ It will not make sense for the user to find something that is not currently in <
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-mechanism"><a class="link" href="#sort-mechanism">4.6. Sort mechanism</a></h3>
+<h3 id="remark-mechanism"><a class="link" href="#remark-mechanism">4.6. Remark mechanism</a></h3>
+<div class="paragraph">
+<p>The remark mechanism is facilitated by <code>UniqueRemarkList</code>. Each time we add or delete a remark, the UniqueRemarkList is updated and changes are saved into storage.
+A filtered list is used to show remarks related to a specified module when a module is selected.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only module can be remarked, therefore user can use remark if and only if current listing element is module.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Although delete remark is a separate command, it shares the same parser as Remark Command, according to different syntax, RemarkCommand Parser will either return a <code>RemarkCommand</code> or a <code>DeleteRemarkCommand</code>.
+Adding a remark has the syntax <code>remark INDEX CONTENT</code> while deleting a remark has the syntax <code>remark -d INDEX</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Both adding a remark and deleting a remark used an index while the meaning of the index is different.
+The index in <code>remark INDEX CONTENT</code> is the index of the module in the module list we want to add remark to.
+While the index in <code>remark -d INDEX</code> is the index of the remark we want to delete.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.6.1. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of DeleteRemarkCommand<br>
+<strong>Alternative 1 (current choice):</strong> Use the same parser for RemarkCommand and DeleteRemarkCommand.<br>
+<strong>Pros:</strong> The prefix of the command input for both of the commands is remark, it is more user-friendly since we summarise the two commands related to remark under the same prefix.
+<strong>Cons:</strong> The parser has to choose to parse the input into one of the two commands according to the syntax.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort-mechanism"><a class="link" href="#sort-mechanism">4.7. Sort mechanism</a></h3>
 <div class="paragraph">
 <p>The sort mechanism is facilitated by <a href="#event-bus"><code>Event Bus</code></a>. Whenever sort command is executed, in <code>SortCommand</code> it will raise a <code>SortListRequestEvent</code> via <code>EventCenter</code> which there is an listerner in <code>PersonListPanel</code> which will conduct the sorting list according to the attribute type of <code>list</code> command which was executed previously.</p>
 </div>
@@ -992,7 +1039,7 @@ It will not make sense for the user to find something that is not currently in <
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the previous attribute type of <code>list</code> command is address, the list will be sorted by person&#8217;s address lexicographically, such sorting will also be applied for attribute email and phone. If there is no attribute in the execution of previous <code>list</code> command, the list will be sorted by person&#8217;s name lexicographically by default.
+If the previous attribute type of <code>list</code> command is location, the list will be sorted by person&#8217;s address lexicographically, such sorting will also be applied for attribute email and phone. If there is no attribute in the execution of previous <code>list</code> command, the list will be sorted by person&#8217;s name lexicographically by default.
 </td>
 </tr>
 </table>
@@ -1017,7 +1064,7 @@ If the previous attribute type of <code>list</code> command is address, the list
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.6.1. Design Considerations</a></h4>
+<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">4.7.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>SortCommand</code><br>
 <strong>Alternative 1 (current choice):</strong> Sort the actual <code>internalList</code> in <code>UniqueLessonList</code>.<br>
@@ -1040,7 +1087,7 @@ If the previous attribute type of <code>list</code> command is address, the list
 </div>
 </div>
 <div class="sect2">
-<h3 id="color-keyword-mechanism"><a class="link" href="#color-keyword-mechanism">4.7. Color Keyword mechanism</a></h3>
+<h3 id="color-keyword-mechanism"><a class="link" href="#color-keyword-mechanism">4.8. Color Keyword mechanism</a></h3>
 <div class="paragraph">
 <p>The color keyword mechanism is facilitated by <a href="#event-bus"><code>Event Bus</code></a>. Whenever color keyword command is executed, in <code>ColorKeywordCommand</code> it will raise a <code>ColorKeywordEvent</code> via <code>EventCenter</code> which there is an listener in <code>CommandBox</code> which will enable/disable the highlighting of command keyword feature according to the parameter which was passed in by the user.</p>
 </div>
@@ -1081,7 +1128,7 @@ The default setting for this feature is set as disable.
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">4.7.1. Design Considerations</a></h4>
+<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">4.8.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>ColorKeywordCommand</code><br>
 <strong>Alternative 1 (current choice):</strong>  Update boolean variable "isEnable" in the command box by calling event to set the status of this variable.<br>
@@ -1094,7 +1141,7 @@ The default setting for this feature is set as disable.
 </div>
 </div>
 <div class="sect2">
-<h3 id="customise-mechanism"><a class="link" href="#customise-mechanism">4.8. Customise mechanism</a></h3>
+<h3 id="customise-mechanism"><a class="link" href="#customise-mechanism">4.9. Customise mechanism</a></h3>
 <div class="paragraph">
 <p>The customise mechanism is facilitated by both the <a href="#event-bus"><code>Event Bus</code></a> and an enumeration class <code>FontSizeUnit</code>. Currently, <code>CustomiseCommand</code> only supports changing the font size of the application. Each time <code>CustomiseCommand</code> is executed, it will raise a <code>ChangedFontSizeEvent</code> via <code>EventCenter</code> according to the user specified parameter as well as update the <code>currentFontSizeUnit</code>.</p>
 </div>
@@ -1127,7 +1174,7 @@ The <code>FontSizeUnit</code> enumeration is to set a global static variable <co
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">4.8.1. Design Considerations</a></h4>
+<h4 id="design-considerations-9"><a class="link" href="#design-considerations-9">4.9.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>CustomiseCommand</code><br>
 <strong>Alternative 1 (current choice):</strong> Update static variable <code>currentFontSizeUnit</code> to the corresponding <code>fontSizeUnit</code> and use <code>EventBus</code> to inform <code>UI</code> the change of <code>fontSizeUnit</code>.
@@ -1140,7 +1187,7 @@ The <code>FontSizeUnit</code> enumeration is to set a global static variable <co
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.9. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.10. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
@@ -1178,7 +1225,7 @@ The <code>FontSizeUnit</code> enumeration is to set a global static variable <co
 </div>
 </div>
 <div class="sect2">
-<h3 id="configuration"><a class="link" href="#configuration">4.10. Configuration</a></h3>
+<h3 id="configuration"><a class="link" href="#configuration">4.11. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2256,7 +2303,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-29 13:35:31 +00:00
+Last updated 2017-10-29 14:17:03 +00:00
 </div>
 </div>
 </body>
