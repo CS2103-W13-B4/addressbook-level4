@@ -988,7 +988,7 @@ finally <code>LessonContainsKeywordPredicate</code> which find lessons with any 
 <strong>Alternative 1 (current choice):</strong> Find module/lesson/location base on the current <code>ListingUnit</code>.<br>
 <strong>Pros:</strong> Make more sense to implement this way as in ModU as user do not always view all lessons in <code>LessonListPanel</code>.
 It will not make sense for the user to find something that is not currently in <code>LessonListPanel</code>.<br>
-<strong>Cons:</strong> More work need to be done as implementing <code>FindCommand</code> this way would need to create multiple <code>Predicates</code> for different type of <code>ListCommand</code> attributes.
+<strong>Cons:</strong> More work need to be done as implementing <code>FindCommand</code> this way would need to create multiple <code>Predicates</code> for different type of <code>ListCommand</code> attributes.<br>
 <strong>Alternative 2:</strong> Find lesson based on the full list regardless which previous <code>ListCommand</code> attribute.<br>
 <strong>Pros:</strong> Less work.<br>
 <strong>Cons:</strong> Make no sense for user as the <code>FindCommand</code> will return something that is irrelevant for the user.
@@ -1078,9 +1078,9 @@ If the previous attribute type of <code>list</code> command is location, the lis
 <p><strong>Aspect:</strong> Implementation of <code>SortCommand</code><br>
 <strong>Alternative 1 (current choice):</strong> Sort the actual <code>internalList</code> in <code>UniqueLessonList</code>.<br>
 <strong>Pros:</strong> Easier for new developer to understand the operation of SortCommand execution as it is more intuitive. Prevent conflicting with other command execution which use the <code>internalList</code>.<br>
-<strong>Cons:</strong> More work as need to create different level of abstraction in model for a single method.
+<strong>Cons:</strong> More work as need to create different level of abstraction in model for a single method.<br>
 <strong>Alternative 2:</strong> Sort list by calling event to sort the current Observable&lt;ReadOnlyLesson&gt; lesson list on <code>LessonListPanel</code>.<br>
-<strong>Pros:</strong> The actual <code>internalList</code> wont be altered and wont affect other commands' execution.<br>
+<strong>Pros:</strong> This implementation requires lesser work compare to alternative 1.<br>
 <strong>Cons:</strong> Could be counter intuitive for new developer who is looking at the code for the first time as normally developers would relate such execution in the <code>Model</code> component of this product. In additional, this will make the <code>internalList</code> to be different with the <code>list</code> users see on the <code>LessonListPanel</code> which sill make other command operate to not operate properly.<br></p>
 </div>
 <hr>
@@ -2358,7 +2358,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-31 10:11:50 +00:00
+Last updated 2017-10-31 10:15:09 +00:00
 </div>
 </div>
 </body>
