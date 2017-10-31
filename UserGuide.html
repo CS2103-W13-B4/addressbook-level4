@@ -47,8 +47,9 @@
 <li><a href="#clearing-all-entries-code-clear-code">3.17. Clearing all entries : <code>clear</code></a></li>
 <li><a href="#exiting-the-program-code-exit-code">3.18. Exiting the program : <code>exit</code></a></li>
 <li><a href="#customising-the-font-size-code-customise-fs-font-size-code">3.19. Customising the font size : <code>customise fs/FONT-SIZE</code></a></li>
-<li><a href="#highlighting-keywords-code-color-code">3.20. Highlighting keywords : <code>color</code></a></li>
-<li><a href="#saving-the-data">3.21. Saving the data</a></li>
+<li><a href="#switch-theme-code-swt-code">3.20. Switch theme : <code>swt</code></a></li>
+<li><a href="#highlighting-keywords-code-color-code">3.21. Highlighting keywords : <code>color</code></a></li>
+<li><a href="#saving-the-data">3.22. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#tutorial">4. Tutorial</a></li>
@@ -871,7 +872,7 @@ Format: <code>exit</code></p>
 <h3 id="customising-the-font-size-code-customise-fs-font-size-code"><a class="link" href="#customising-the-font-size-code-customise-fs-font-size-code">3.19. Customising the font size : <code>customise fs/FONT-SIZE</code></a></h3>
 <div class="paragraph">
 <p>Customise the font size of ModU list<br>
-Format: <code>customise fs\FONT-SIZE</code></p>
+Format: <code>customise</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -901,14 +902,38 @@ A lesson can have any number of tags (including 0)
 </li>
 </ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/customise.gif" alt="customise" width="790">
 </div>
+<div class="sect2">
+<h3 id="switch-theme-code-swt-code"><a class="link" href="#switch-theme-code-swt-code">3.20. Switch theme : <code>swt</code></a></h3>
+<div class="paragraph">
+<p>Switch between light (default) and dark theme<br>
+Format: <code>swt</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Toggle between light and dark theme. If the current theme is light, executing <code>swt</code> will change the theme to be dark theme.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>swt</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="highlighting-keywords-code-color-code"><a class="link" href="#highlighting-keywords-code-color-code">3.20. Highlighting keywords : <code>color</code></a></h3>
+<h3 id="highlighting-keywords-code-color-code"><a class="link" href="#highlighting-keywords-code-color-code">3.21. Highlighting keywords : <code>color</code></a></h3>
 <div class="paragraph">
 <p>Highlight the command keywords.<br>
 Format: <code>color enable/disable</code></p>
@@ -933,7 +958,7 @@ Format: <code>color enable/disable</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.21. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.22. Saving the data</a></h3>
 <div class="paragraph">
 <p>ModU data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -1298,6 +1323,10 @@ e.g. <code>customise fs/xsmall</code></p>
 </div>
 </li>
 <li>
+<p><strong>Switch Theme</strong> <code>swt</code><br>
+e.g. <code>swt</code></p>
+</li>
+<li>
 <p><strong>Color</strong> <code>color</code><br>
 e.g. <code>customise enable</code><br>
 e.g. <code>customise disable</code></p>
@@ -1314,7 +1343,7 @@ e.g. <code>customise disable</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-31 05:14:52 +00:00
+Last updated 2017-10-31 09:27:45 +00:00
 </div>
 </div>
 </body>
