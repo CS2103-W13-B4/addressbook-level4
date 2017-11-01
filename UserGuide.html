@@ -33,23 +33,22 @@
 <li><a href="#marking-a-lesson-code-mark-code">3.3. Marking a lesson: <code>mark</code></a></li>
 <li><a href="#unmarking-a-lesson-code-unmark-code">3.4. Unmarking a lesson: <code>unmark</code></a></li>
 <li><a href="#remarking-a-module-code-remark-code">3.5. Remarking a module: <code>remark</code></a></li>
-<li><a href="#deleting-a-remark-code-delete-r-code">3.6. Deleting a remark: <code>delete -r</code></a></li>
-<li><a href="#listing-all-lesson-code-list-code">3.7. Listing all lesson : <code>list</code></a></li>
-<li><a href="#viewing-specific-lesson-from-the-list-code-view-code">3.8. Viewing specific lesson from the list: <code>view</code></a></li>
-<li><a href="#editing-a-lesson-code-edit-code">3.9. Editing a lesson : <code>edit</code></a></li>
-<li><a href="#locating-lessons-by-module-code-code-find-code">3.10. Locating lessons by module code: <code>find</code></a></li>
-<li><a href="#sorting-lesson-by-module-code-code-sort-code">3.11. Sorting lesson by module code: <code>sort</code></a></li>
-<li><a href="#deleting-a-lesson-code-delete-code">3.12. Deleting a lesson : <code>delete</code></a></li>
-<li><a href="#selecting-a-lesson-code-select-code">3.13. Selecting a lesson : <code>select</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">3.14. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.15. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.16. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.17. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.18. Exiting the program : <code>exit</code></a></li>
-<li><a href="#customising-the-font-size-code-customise-fs-font-size-code">3.19. Customising the font size : <code>customise fs/FONT-SIZE</code></a></li>
-<li><a href="#switch-theme-code-swt-code">3.20. Switch theme : <code>swt</code></a></li>
-<li><a href="#highlighting-keywords-code-color-code">3.21. Highlighting keywords : <code>color</code></a></li>
-<li><a href="#saving-the-data">3.22. Saving the data</a></li>
+<li><a href="#listing-all-lesson-code-list-code">3.6. Listing all lesson : <code>list</code></a></li>
+<li><a href="#viewing-specific-lesson-from-the-list-code-view-code">3.7. Viewing specific lesson from the list: <code>view</code></a></li>
+<li><a href="#editing-a-lesson-code-edit-code">3.8. Editing a lesson : <code>edit</code></a></li>
+<li><a href="#locating-lessons-by-module-code-code-find-code">3.9. Locating lessons by module code: <code>find</code></a></li>
+<li><a href="#sorting-lesson-by-module-code-code-sort-code">3.10. Sorting lesson by module code: <code>sort</code></a></li>
+<li><a href="#deleting-a-lesson-code-delete-code">3.11. Deleting a lesson : <code>delete</code></a></li>
+<li><a href="#selecting-a-lesson-code-select-code">3.12. Selecting a lesson : <code>select</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">3.13. Listing entered commands : <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.14. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.15. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.16. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.17. Exiting the program : <code>exit</code></a></li>
+<li><a href="#customising-the-font-size-code-customise-fs-font-size-code">3.18. Customising the font size : <code>customise fs/FONT-SIZE</code></a></li>
+<li><a href="#switch-theme-code-swt-code">3.19. Switch theme : <code>swt</code></a></li>
+<li><a href="#highlighting-keywords-code-color-code">3.20. Highlighting keywords : <code>color</code></a></li>
+<li><a href="#saving-the-data">3.21. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#tutorial">4. Tutorial</a></li>
@@ -281,7 +280,7 @@ Remove the lesson from the marked list.</p>
 <div class="sect2">
 <h3 id="remarking-a-module-code-remark-code"><a class="link" href="#remarking-a-module-code-remark-code">3.5. Remarking a module: <code>remark</code></a></h3>
 <div class="paragraph">
-<p>remark a module with given content.<br>
+<p><code>remark a module with given content.</code><br>
 Format: <code>remark INDEX CONTENT</code></p>
 </div>
 <div class="sidebarblock">
@@ -305,24 +304,20 @@ Format: <code>remark INDEX CONTENT</code></p>
 <ul>
 <li>
 <p><code>list module</code><br>
-<code>Remark 1 This is a very interesting Module</code><br>
-Remark the module of index 1 with comment "This is a very interesting module".</p>
+<code>Remark 1 This is a very interesting Module</code> +Remark the module of index 1 with comment "This is a very interesting module".</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-remark-code-delete-r-code"><a class="link" href="#deleting-a-remark-code-delete-r-code">3.6. Deleting a remark: <code>delete -r</code></a></h3>
 <div class="paragraph">
-<p>delete a remark with given index.<br>
-Format: <code>delete -r INDEX</code></p>
+<p><code>delete a remark with given index.</code><br>
+Format: <code>remark -d INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>The index here is the index of the remark we want to delete while the index in `remark INDEX CONTENT ` refers to the index of the module we want to add our remark to.</p>
+<p>The index here is the index of the remark we want to delete while the index in <code>remark INDEX CONTENT</code> refers to the index of the module we want to add our remark to.</p>
 </li>
 </ul>
 </div>
@@ -334,14 +329,14 @@ Format: <code>delete -r INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete -r 1</code><br>
+<p><code>remark -d 1</code><br>
 Delete the remark in current remark panel with index 1.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-lesson-code-list-code"><a class="link" href="#listing-all-lesson-code-list-code">3.7. Listing all lesson : <code>list</code></a></h3>
+<h3 id="listing-all-lesson-code-list-code"><a class="link" href="#listing-all-lesson-code-list-code">3.6. Listing all lesson : <code>list</code></a></h3>
 <div class="paragraph">
 <p>Shows a list of all modules in the ModU.<br>
 Format: <code>list module</code></p>
@@ -361,7 +356,7 @@ Format: <code>List marked</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-specific-lesson-from-the-list-code-view-code"><a class="link" href="#viewing-specific-lesson-from-the-list-code-view-code">3.8. Viewing specific lesson from the list: <code>view</code></a></h3>
+<h3 id="viewing-specific-lesson-from-the-list-code-view-code"><a class="link" href="#viewing-specific-lesson-from-the-list-code-view-code">3.7. Viewing specific lesson from the list: <code>view</code></a></h3>
 <div class="paragraph">
 <p>Views the detail information about a lesson.<br>
 Format: <code>view INDEX</code></p>
@@ -401,7 +396,7 @@ View the detail information with the second index shown in the location list.</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-lesson-code-edit-code"><a class="link" href="#editing-a-lesson-code-edit-code">3.9. Editing a lesson : <code>edit</code></a></h3>
+<h3 id="editing-a-lesson-code-edit-code"><a class="link" href="#editing-a-lesson-code-edit-code">3.8. Editing a lesson : <code>edit</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing lesson in the ModU list.<br>
 Format: <code>edit INDEX [m/MODULE_CODE] [ct/CLASS_TYPE] [v/VENUE] [gp/GROUP] [ts/TIME_SLOT] [l/Lecturer&#8230;&#8203;]</code></p>
@@ -491,7 +486,7 @@ Edits all the lessons with the third location shown in the location list to be <
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-lessons-by-module-code-code-find-code"><a class="link" href="#locating-lessons-by-module-code-code-find-code">3.10. Locating lessons by module code: <code>find</code></a></h3>
+<h3 id="locating-lessons-by-module-code-code-find-code"><a class="link" href="#locating-lessons-by-module-code-code-find-code">3.9. Locating lessons by module code: <code>find</code></a></h3>
 <div class="paragraph">
 <p>Finds lessons whose code match the given keywords.<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
@@ -558,7 +553,7 @@ Return lesson with any details that contains <code>TUE</code> case insensitive</
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-lesson-by-module-code-code-sort-code"><a class="link" href="#sorting-lesson-by-module-code-code-sort-code">3.11. Sorting lesson by module code: <code>sort</code></a></h3>
+<h3 id="sorting-lesson-by-module-code-code-sort-code"><a class="link" href="#sorting-lesson-by-module-code-code-sort-code">3.10. Sorting lesson by module code: <code>sort</code></a></h3>
 <div class="paragraph">
 <p>Sort the existing list.<br>
 Format: <code>sort KEYWORD</code></p>
@@ -612,7 +607,7 @@ Return a list sorted by code lexicographically</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-lesson-code-delete-code"><a class="link" href="#deleting-a-lesson-code-delete-code">3.12. Deleting a lesson : <code>delete</code></a></h3>
+<h3 id="deleting-a-lesson-code-delete-code"><a class="link" href="#deleting-a-lesson-code-delete-code">3.11. Deleting a lesson : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes all the lessons with specified attribute value in the attribute list from the ModU list.<br>
 Format: <code>delete INDEX</code></p>
@@ -663,7 +658,7 @@ Deletes the 2nd lesson in the ModU location list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-lesson-code-select-code"><a class="link" href="#selecting-a-lesson-code-select-code">3.13. Selecting a lesson : <code>select</code></a></h3>
+<h3 id="selecting-a-lesson-code-select-code"><a class="link" href="#selecting-a-lesson-code-select-code">3.12. Selecting a lesson : <code>select</code></a></h3>
 <div class="paragraph">
 <p>Selects the lesson/module/location identified by the index number used in the last listing.<br>
 Format: <code>select INDEX</code></p>
@@ -712,7 +707,7 @@ Selects the 1st location in the location list and loas the NUS campus map page s
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.14. Listing entered commands : <code>history</code></a></h3>
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.13. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
 Format: <code>history</code></p>
@@ -738,7 +733,7 @@ Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.15. Undoing previous command : <code>undo</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.14. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
 <p>Restores the list to the state before the previous <em>undoable</em> command was executed.<br>
 Format: <code>undo</code></p>
@@ -802,7 +797,7 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.16. Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.15. Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
 Format: <code>redo</code></p>
@@ -847,7 +842,7 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.17. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.16. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clears all entries from the ModU list.<br>
 Format: <code>clear</code></p>
@@ -859,7 +854,7 @@ Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.18. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.17. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
@@ -871,7 +866,7 @@ Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="customising-the-font-size-code-customise-fs-font-size-code"><a class="link" href="#customising-the-font-size-code-customise-fs-font-size-code">3.19. Customising the font size : <code>customise fs/FONT-SIZE</code></a></h3>
+<h3 id="customising-the-font-size-code-customise-fs-font-size-code"><a class="link" href="#customising-the-font-size-code-customise-fs-font-size-code">3.18. Customising the font size : <code>customise fs/FONT-SIZE</code></a></h3>
 <div class="paragraph">
 <p>Customise the font size of ModU list<br>
 Format: <code>customise</code></p>
@@ -906,7 +901,7 @@ A lesson can have any number of tags (including 0)
 </div>
 </div>
 <div class="sect2">
-<h3 id="switch-theme-code-swt-code"><a class="link" href="#switch-theme-code-swt-code">3.20. Switch theme : <code>swt</code></a></h3>
+<h3 id="switch-theme-code-swt-code"><a class="link" href="#switch-theme-code-swt-code">3.19. Switch theme : <code>swt</code></a></h3>
 <div class="paragraph">
 <p>Switch between light (default) and dark theme<br>
 Format: <code>swt</code></p>
@@ -935,7 +930,7 @@ Toggle between light and dark theme. If the current theme is light, executing <c
 </div>
 </div>
 <div class="sect2">
-<h3 id="highlighting-keywords-code-color-code"><a class="link" href="#highlighting-keywords-code-color-code">3.21. Highlighting keywords : <code>color</code></a></h3>
+<h3 id="highlighting-keywords-code-color-code"><a class="link" href="#highlighting-keywords-code-color-code">3.20. Highlighting keywords : <code>color</code></a></h3>
 <div class="paragraph">
 <p>Highlight the command keywords.<br>
 Format: <code>color enable/disable</code></p>
@@ -960,7 +955,7 @@ Format: <code>color enable/disable</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.22. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.21. Saving the data</a></h3>
 <div class="paragraph">
 <p>ModU data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -1345,7 +1340,7 @@ e.g. <code>customise disable</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-01 02:02:53 +00:00
+Last updated 2017-11-01 13:58:52 +00:00
 </div>
 </div>
 </body>
