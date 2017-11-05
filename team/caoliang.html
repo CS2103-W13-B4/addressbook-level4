@@ -19,16 +19,7 @@
 <h2 id="project-modu"><a class="link" href="#project-modu">Project: ModU</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Many universities have timetable committee to deal with all matters concerning timetabling scheduling. One prevalent concern of such matters would be timetable clashes while scheduling.</p>
-</div>
-<div class="paragraph">
-<p>Welcome to ModU, a timetable scheduling software for professors and administrators in tertiary institutions.</p>
-</div>
-<div class="paragraph">
-<p>With ModU, you are able to easily identify timetable slots that are available for the module you are scheduling. Made a mistake while scheduling the timetable? Fret not, you can easily make any changes to the timetable.</p>
-</div>
-<div class="paragraph">
-<p>ModU uses the command line interface (CLI) as the main input. The natural language input field will allow you to quickly search, add, delete and edit your timetable. Just type what you want and ModU will do the rest for you!</p>
+<p>ModU 4 is a desktop time-slot booking application used for lecturers to plan and manage their timetable. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 9 kLoC.</p>
 </div>
 <div class="paragraph">
 <p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/main/caoliangnus.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/test/caoliangnus.md">Test code</a>]</p>
@@ -74,7 +65,7 @@ Format: <code>color enable/disable</code></p>
 <div class="sect3">
 <h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
 <div class="paragraph">
-<p>Professors may find it hard to distinguish command keyword and other lesson information. So the highlighting feature helps to improve on the readability of the CommandBox.</p>
+<p>{Justify the need for, and the current design (i.e. external behavior) of, the feature}</p>
 </div>
 </div>
 <div class="sect3">
@@ -137,78 +128,6 @@ The default setting for this feature is set as disable.
 <strong>Pros:</strong> Easier for new developer to design<br>
 <strong>Cons:</strong> This method breaks encapsulation and fails to follow standard java code style.</p>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="timetable-mechanism"><a class="link" href="#timetable-mechanism">Timetable mechanism</a></h3>
-<div class="paragraph">
-<p><code>Timetable</code> is an enhancement of UI. The role of the timetable view is to display a timetable of all the lessons listed in the display panel.<br></p>
-</div>
-<div class="paragraph">
-<p><code>Timetable</code> mechanism is facilitated by the <code>GridPane</code> properties in javafx.<br>
-The first row of timetable view is the header for time slot. The range is from 0800 to 2000.<br>
-The generation of timetable column header is implemented this way:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"> <span class="directive">public</span> <span class="type">void</span> generateTimeslotHeader() {
-        <span class="comment">// ... generate column header for time slots ...//</span>
-    }</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The first col of timetable view is the header for weekday. The range is from Monday to Friday.
-The generation of timetable row header is implemented this way:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">    <span class="directive">public</span> <span class="type">void</span> generateWeekDay() {
-       <span class="comment">// ... generate row header for weekday ...//</span>
-    }</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>+</p>
-</div>
-<div class="paragraph">
-<p>When the <code>view</code> command is used, a number of lessons will be displayed on the display panel. The <code>handleViewedLessonEvent()</code> will then generate the timetable view and set it as visible.<br></p>
-</div>
-<div class="paragraph">
-<p>The generation of timetable data is implemented this way:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> generateTimeTableData() {
-        <span class="comment">// ... initGridData() ...//</span>
-        <span class="comment">// ... generate grid data for grid view ...//</span>
-    }</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The generation of timetable view is implemented this way:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> generateTimeTableGrid() {
-
-        <span class="comment">// ... generateTimeTableData(); ...//</span>
-        <span class="comment">// ... generateTimeslotHeader(); ...//</span>
-       <span class="comment">// ... generateWeekDay();  ...//</span>
-       <span class="comment">// ... generate timetable view  ...//</span>
-    }</code></pre>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design considerations</a></h4>
-<div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of Timetable.<br>
-<strong>Alternative1 (current choice): </strong> Using code to create timetable view.<br>
-<strong>Pros:</strong> It is more flexible to change the style or the text of the label.<br>
-<strong>Cons:</strong> Since everything is written in code, you can not visualise the layout until you run the code.<br>
-<strong>Alternative2:</strong> Using Scene Builder to create timetable view<br>
-<strong>Pros:</strong> It is easier to visualise the layout<br>
-<strong>Cons:</strong> There are many limitations such as unable to add time slot to span 2 columns.<br></p>
-</div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
 </div>
@@ -216,23 +135,9 @@ The generation of timetable row header is implemented this way:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="enhancement-proposed-add-command-code-import-export-code"><a class="link" href="#enhancement-proposed-add-command-code-import-export-code">Enhancement Proposed: Add command <code>import / export</code></a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>This allows students and professors to transfer data from one computer to another easily.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="enhancement-proposed-add-code-login-code-feature"><a class="link" href="#enhancement-proposed-add-code-login-code-feature">Enhancement Proposed: Add  <code>login</code> feature</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p>This feature will improve on the user security.</p>
-</li>
-</ul>
+<h3 id="enhancement-proposed-add-command-code-remark-code"><a class="link" href="#enhancement-proposed-add-command-code-remark-code">Enhancement Proposed: Add command <code>remark</code></a></h3>
+<div class="paragraph">
+<p>{Explain similar to the Undo/Redo feature above.}</p>
 </div>
 </div>
 <div class="sect2">
@@ -240,17 +145,10 @@ The generation of timetable row header is implemented this way:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Change the base from the Addressbook level 4 to ModU (Pull requests <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/50">#50</a>,<br>
-<a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/47">#47</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/51">#51</a>,<br>
-<a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/53/">#53</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/57/">#57</a>,<br>
-<a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/58/">#58</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/63/">#63</a>,)</p>
+<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
 </li>
 <li>
-<p>Wrote tutorial for User Guide (Pull requests <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/99">#99</a>,<br>
-<a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/139">#139</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/144">#144</a>,<br></p>
-</li>
-<li>
-<p>Designed a logo for ModU (Pull requests <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/118/">#118</a>)</p>
+<p>Wrote additional tests to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
 </li>
 </ul>
 </div>
@@ -260,7 +158,7 @@ The generation of timetable row header is implemented this way:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-05 13:49:59 +00:00
+Last updated 2017-11-05 13:49:41 +00:00
 </div>
 </div>
 </body>
