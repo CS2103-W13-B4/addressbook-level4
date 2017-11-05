@@ -54,7 +54,7 @@
 <li><a href="#sort-mechanism">4.7. Sort mechanism</a></li>
 <li><a href="#color-keyword-mechanism">4.8. Color Keyword mechanism</a></li>
 <li><a href="#customise-mechanism">4.9. Customise mechanism</a></li>
-<li><a href="#switch-theme-mechanism">4.10. Switch Theme mechanism</a></li>
+<li><a href="#switch-theme-mechanism">4.10. Switch theme mechanism</a></li>
 <li><a href="#logging">4.11. Logging</a></li>
 <li><a href="#configuration">4.12. Configuration</a></li>
 </ul>
@@ -1220,9 +1220,9 @@ The <code>FontSizeUnit</code> enumeration is to set a global static variable <co
 </div>
 </div>
 <div class="sect2">
-<h3 id="switch-theme-mechanism"><a class="link" href="#switch-theme-mechanism">4.10. Switch Theme mechanism</a></h3>
+<h3 id="switch-theme-mechanism"><a class="link" href="#switch-theme-mechanism">4.10. Switch theme mechanism</a></h3>
 <div class="paragraph">
-<p>The switch theme mechanism is facilitated by both the <a href="#event-bus"><code>Event Bus</code></a> and an enumeration class <code>ThemeUnit</code>. Currently, <code>SwitchThemeCommand</code> only supports toggling between light (default) and dark theme. Each time <code>SwitchThemeCommand</code> is executed, it will raise a <code>SwitchThemeRequestEvent</code> via <code>EventCenter`and update the `currentThemeUnit</code>.</p>
+<p>The switch theme mechanism is facilitated by both the <a href="#event-bus"><code>Event Bus</code></a> and an enumeration class <code>ThemeUnit</code>. Currently, <code>ThemeCommand</code> only supports changing between light (default) and dark theme. Each time <code>ThemeCommand</code> is executed, it will raise a <code>SwitchThemeRequestEvent</code> via <code>EventCenter</code> and update the <code>currentThemeUnit</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1255,7 +1255,7 @@ The <code>ThemeUnit</code> enumeration is to set a global static variable <code>
 <div class="sect3">
 <h4 id="design-considerations-10"><a class="link" href="#design-considerations-10">4.10.1. Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>SwitchThemeCommand</code><br>
+<p><strong>Aspect:</strong> Implementation of <code>ThemeCommand</code><br>
 <strong>Alternative 1 (current choice):</strong> Update static variable <code>currentThemeUnit</code> to the corresponding <code>ThemeUnit</code> and use <code>EventBus</code> to inform <code>UI</code> the change of <code>ThemeUnit</code>.
 <strong>Pros:</strong> One global variable that records current <code>ThemeUnit</code>.<br>
 <strong>Cons:</strong> Hard for new developers to understand the event center mechanism.<br>
@@ -2382,7 +2382,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-05 09:26:49 +00:00
+Last updated 2017-11-05 09:38:10 +00:00
 </div>
 </div>
 </body>
