@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.3">
+<title>Wang Junming - Project Portfolio</title>
+<link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Wang Junming - Project Portfolio</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="project-modu"><a class="link" href="#project-modu">Project: ModU</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Many universities have timetable committee to deal with all matters concerning timetabling scheduling. One prevalent concern of such matters would be timetable clashes while scheduling.</p>
+</div>
+<div class="paragraph">
+<p>Welcome to ModU, a timetable scheduling software for professors and administrators in tertiary institutions.</p>
+</div>
+<div class="paragraph">
+<p>With ModU, you are able to easily identify timetable slots that are available for the module you are scheduling. Made a mistake while scheduling the timetable? Fret not, you can easily make any changes to the timetable.</p>
+</div>
+<div class="paragraph">
+<p>ModU uses the command line interface (CLI) as the main input. The natural language input field will allow you to quickly search, add, delete and edit your timetable. Just type what you want and ModU will do the rest for you!</p>
+</div>
+<div class="paragraph">
+<p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/main/junming403.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/test/junming403.md">Test code</a>]</p>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-view-list-edit-delete"><a class="link" href="#enhancement-added-view-list-edit-delete">Enhancement Added: View/List/Edit/Delete</a></h3>
+<div class="sect3">
+<h4 id="external-behavior"><a class="link" href="#external-behavior">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-lesson-code-list-code"><a class="link" href="#listing-all-lesson-code-list-code">Listing all lesson : <code>list</code></a></h3>
+<div class="paragraph">
+<p>Shows a list of all modules in the ModU.<br>
+Format: <code>list module</code></p>
+</div>
+<div class="paragraph">
+<p>Shows a list of all location in the ModU.<br>
+Format: <code>List location</code></p>
+</div>
+<div class="paragraph">
+<p>Shows a list of all marked lessons in the ModU.<br>
+Format: <code>List marked</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/list.gif" alt="list" width="790">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-specific-lesson-from-the-list-code-view-code"><a class="link" href="#viewing-specific-lesson-from-the-list-code-view-code">Viewing specific lesson from the list: <code>view</code></a></h3>
+<div class="paragraph">
+<p>Views the detail information about a lesson.<br>
+Format: <code>view INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You can either view a lesson from a module or a location.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list module</code><br>
+<code>view 2</code><br>
+View the detail information with the second index shown in the module list.</p>
+</li>
+<li>
+<p><code>list location</code><br>
+<code>view 2</code><br>
+View the detail information with the second index shown in the location list.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/view.gif" alt="view" width="790">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-lesson-code-edit-code"><a class="link" href="#editing-a-lesson-code-edit-code">Editing a lesson : <code>edit</code></a></h3>
+<div class="paragraph">
+<p>Edits an existing lesson in the ModU list.<br>
+Format: <code>edit INDEX [m/MODULE_CODE] [ct/CLASS_TYPE] [v/VENUE] [gp/GROUP] [ts/TIME_SLOT] [l/Lecturer&#8230;&#8203;]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the lesson at the specified <code>INDEX</code>. The index refers to the index number shown in the last lesson listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When editing lecturers, the existing lecturers of the lesson will be removed i.e adding of lecturers is not cumulative.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/edit.gif" alt="edit" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Edits an existing attribute(module/location) in the ModU list.<br>
+Format: <code>edit INDEX [CODE/LOCATION]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the attribute at the specified <code>INDEX</code>. The index refers to the index number shown in the last attribute listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Requires to list by that specified attribute(module/location) first.</p>
+</li>
+<li>
+<p>All lessons with the specifed attribute value will be updated to with the attribute of input values.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list module</code><br>
+Returns a list of location<br></p>
+</li>
+<li>
+<p><code>edit 1 m/CS2101</code><br>
+Edits the module code of the 1st lesson to be <code>CS2101</code>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/editModule.gif" alt="editModule" width="790">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list location</code><br>
+Returns a list of location<br></p>
+</li>
+<li>
+<p><code>edit 3 LT27</code> +Assume
+Edits all the lessons with the third location shown in the location list to be <code>LT27</code>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/editLocation.gif" alt="editLocation" width="790">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-lesson-code-delete-code"><a class="link" href="#deleting-a-lesson-code-delete-code">Deleting a lesson : <code>delete</code></a></h3>
+<div class="paragraph">
+<p>Deletes all the lessons with specified attribute value in the attribute list from the ModU list.<br>
+Format: <code>delete INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the lesson at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the most recent listing.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list location</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd lesson in the ModU location list.</p>
+</li>
+<li>
+<p><code>find MA1101R</code><br>
+<code>delete 1</code><br>
+Deletes the 1st lesson in the results of the <code>find</code> command.</p>
+</li>
+<li>
+<p><code>list module</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd lesson in the ModU location list.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/delete.gif" alt="delete" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
+<div class="paragraph">
+<p>Since it is a module manager software, it must be able to list by various elements(listing type). In this case, module, lesson and location. Each module has a set of lessons, each location also includes a set of lessons.</p>
+</div>
+<div class="paragraph">
+<p>Since we can list by various listing type. We also need to be able to edit them accordingly.
+Thus when list lesson, we can edit/delete a specific lesson. When list by location, we can edit/delete the specific location and all lessons with this location will be edited/deleted accordingly.
+Similarly, we can list by module and edit/delete all lessons in this module.</p>
+</div>
+<div class="paragraph">
+<p>It offers a convenient way of managing lessons. You can see all the lessons of one specific module, and you can also check all lessons in a specific location and decide if you want to schedule your lessons there.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-mark-unmark"><a class="link" href="#enhancement-added-mark-unmark">Enhancement Added: Mark/Unmark</a></h3>
+<div class="sect3">
+<h4 id="external-behavior-2"><a class="link" href="#external-behavior-2">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="marking-a-lesson-code-mark-code"><a class="link" href="#marking-a-lesson-code-mark-code">Marking a lesson: <code>mark</code></a></h3>
+<div class="paragraph">
+<p>Marks a lesson to the marked list<br>
+Format: <code>mark INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Mark the lesson at the specified <code>INDEX</code>. The index refers to the index number shown in the last lesson listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>The specified lesson must be initially not in the marked list.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view 1</code><br>
+<code>mark 1</code><br>
+Mark the person into the marked list.
+=== Unmarking a lesson: <code>unmark</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>remove a lesson from the marked list<br>
+Format: <code>unmark INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Unmark the lesson at the specified <code>INDEX</code>. The index refers to the index number shown in the last lesson listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>The specified lesson must already exist in the marked list.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view 1</code><br>
+<code>unmark 1</code><br>
+Remove the lesson from the marked list.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-2"><a class="link" href="#justification-2">Justification</a></h4>
+<div class="paragraph">
+<p>By marking lessons, you can have a marked list. By which as a student, you can customize your time table. While as a lecturer, you can also mark all the lessons you are teaching to create your timetable.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-remark"><a class="link" href="#enhancement-added-remark">Enhancement Added: Remark</a></h3>
+<div class="sect3">
+<h4 id="external-behavior-3"><a class="link" href="#external-behavior-3">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="remarking-a-module-code-remark-code"><a class="link" href="#remarking-a-module-code-remark-code">Remarking a module: <code>remark</code></a></h3>
+<div class="paragraph">
+<p><code>remark a module with given content.</code><br>
+Format: <code>remark INDEX CONTENT</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Remark the module at the specified <code>INDEX</code>. The index refers to the index number shown in the last module listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Only module can be remarked therefore <code>remark</code> command only apply when listing element is module.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list module</code><br>
+<code>Remark 1 This is a very interesting Module</code> +Remark the module of index 1 with comment "This is a very interesting module".</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>delete a remark with given index.</code><br>
+Format: <code>remark -d INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The index here is the index of the remark we want to delete while the index in <code>remark INDEX CONTENT</code> refers to the index of the module we want to add our remark to.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>remark -d 1</code><br>
+Delete the remark in current remark panel with index 1.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-3"><a class="link" href="#justification-3">Justification</a></h4>
+<div class="paragraph">
+<p>As a professor, you might also want to add some supplementary information about the module, such as an introduction. Thus your student can know what is this module about.
+Thus you can remark the module. And the remark content will be shown as sticky notes.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="remark-mechanism"><a class="link" href="#remark-mechanism">Remark mechanism</a></h3>
+<div class="paragraph">
+<p>The remark mechanism is facilitated by <code>UniqueRemarkList</code>. Each time we add or delete a remark, the UniqueRemarkList is updated and changes are saved into storage.
+A filtered list is used to show remarks related to a specified module when a module is selected.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only module can be remarked, therefore user can use remark if and only if current listing element is module.
+Both adding a remark and deleting a remark used an index while the meaning of the index is different.
+The index in <code>remark INDEX CONTENT</code> is the index of the module in the module list we want to add remark to.
+While the index in <code>delete -d INDEX</code> is the index of the remark we want to delete.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following <a href="#sequence-diagram">sequence diagram</a> summarize what happens when an user execute remark command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/RemarkCommandSequenceDiagram.jpg" alt="RemarkCommandSequenceDiagram" width="900">
+</div>
+</div>
+<div class="paragraph">
+<p>The following <a href="#activity-diagram">activity diagram</a> summarize what happens when an user execute remark command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/RemarkCommandActivityDiagram.png" alt="RemarkCommandActivityDiagram" width="900">
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of RemarkCommand<br>
+<strong>Alternative 1 (current choice):</strong> use a <code>uniqueRemarkList</code> similar to <code>uniqueLessonList</code>.<br>
+<strong>Pros:</strong> Store all remarks as a single list thus it is easy to manage.
+<strong>Cons:</strong> Need to filter out a selected set of remarks when user select a specific module.</p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed-add-command-code-export-import-code"><a class="link" href="#enhancement-proposed-add-command-code-export-import-code">Enhancement Proposed: Add command <code>export/import</code></a></h3>
+<div class="paragraph">
+<p>In v2.0, ModU should be able to export/import the lessons info file out.
+In v2.0, ModU should be able to export the customized timetable out.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed-online-version"><a class="link" href="#enhancement-proposed-online-version">Enhancement Proposed: Online Version</a></h3>
+<div class="paragraph">
+<p>In v2.0, ModU should be an online platform for professors to plan the courses they are teaching and for students to make their study timetable.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Change the whole model from <code>Person(address, email, phone&#8230;&#8203;.)</code> to <code>Lesson(module code, location, time slot, class type, group number, lecturer)</code> and update test case accordingly (Pull requests <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/52/files" class="bare">https://github.com/CS2103AUG2017-W13-B4/main/pull/52/files</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/55/files" class="bare">https://github.com/CS2103AUG2017-W13-B4/main/pull/55/files</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/56/files" class="bare">https://github.com/CS2103AUG2017-W13-B4/main/pull/56/files</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/98/files" class="bare">https://github.com/CS2103AUG2017-W13-B4/main/pull/98/files</a>)</p>
+</li>
+<li>
+<p>Add in the border color together with tick or cross to indicate if the command format is valid before execution (Pull requests <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/72/files" class="bare">https://github.com/CS2103AUG2017-W13-B4/main/pull/72/files</a>)</p>
+</li>
+<li>
+<p>Enhance undo/redo mechanism. Undo redo crossing listing different type is not allowed because it causes confusion. (No specific pull request about this, can check developer guide for more info, see <code>DeveloperGuide</code> undoredo mechanism)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">Project: PowerPointLabs</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>{Optionally (not graded), you may include other projects in your portfolio.}</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2017-11-05 09:08:43 +00:00
+</div>
+</div>
+</body>
+</html>
