@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.3">
+<title>Cao Liang - Project Portfolio</title>
+<link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Cao Liang - Project Portfolio</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="project-modu"><a class="link" href="#project-modu">Project: ModU</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ModU 4 is a desktop time-slot booking application used for lecturers to plan and manage their timetable. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 9 kLoC.</p>
+</div>
+<div class="paragraph">
+<p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/main/caoliangnus.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/test/caoliangnus.md">Test code</a>]</p>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-highlighting-keywords"><a class="link" href="#enhancement-added-highlighting-keywords">Enhancement Added: Highlighting Keywords</a></h3>
+<div class="sect3">
+<h4 id="external-behavior"><a class="link" href="#external-behavior">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="highlighting-keywords-code-color-code"><a class="link" href="#highlighting-keywords-code-color-code">Highlighting keywords : <code>color</code></a></h3>
+<div class="paragraph">
+<p>Highlight the command keywords.<br>
+Format: <code>color enable/disable</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>color enable</code></p>
+</li>
+<li>
+<p><code>color disable</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/color.gif" alt="color" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
+<div class="paragraph">
+<p>{Justify the need for, and the current design (i.e. external behavior) of, the feature}</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="color-keyword-mechanism"><a class="link" href="#color-keyword-mechanism">Color Keyword mechanism</a></h3>
+<div class="paragraph">
+<p>The color keyword mechanism is facilitated by <a href="#event-bus"><code>Event Bus</code></a>. Whenever color keyword command is executed, in <code>ColorKeywordCommand</code> it will raise a <code>ColorKeywordEvent</code> via <code>EventCenter</code> which there is an listener in <code>CommandBox</code> which will enable/disable the highlighting of command keyword feature according to the parameter which was passed in by the user.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The default setting for this feature is set as disable.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the color keyword command operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ColorKeywordCommandSeqDiagram.png" alt="ColorKeywordCommandSeqDiagram" width="900">
+</div>
+</div>
+<div class="paragraph">
+<p>The following <a href="#sequence-diagram">activity diagram</a> summarize what happens when an user execute color keyword command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ColorKeywordActivityDiagram.png" alt="ColorKeywordActivityDiagram" width="900">
+</div>
+</div>
+<div class="paragraph">
+<p>The following diagram shows what happens in the <code>configBorderColor</code> method in detail:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/configBorderColor.png" alt="configBorderColor" width="900">
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of <code>ColorKeywordCommand</code><br>
+<strong>Alternative 1 (current choice):</strong>  Update boolean variable "isEnable" in the command box by calling event to set the status of this variable.<br>
+<strong>Pros:</strong> Since only command box will be updated, using event center will maintain a good data encapsulation.<br>
+<strong>Cons:</strong> Hard for new developers to understand the event center mechanism.<br>
+<strong>Alternative 1 (current choice):</strong> Declare a global boolean variable<br>
+<strong>Pros:</strong> Easier for new developer to design<br>
+<strong>Cons:</strong> This method breaks encapsulation and fails to follow standard java code style.</p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed-add-command-code-remark-code"><a class="link" href="#enhancement-proposed-add-command-code-remark-code">Enhancement Proposed: Add command <code>remark</code></a></h3>
+<div class="paragraph">
+<p>{Explain similar to the Undo/Redo feature above.}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+</li>
+<li>
+<p>Wrote additional tests to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2017-11-05 06:09:28 +00:00
+</div>
+</div>
+</body>
+</html>
