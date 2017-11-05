@@ -55,8 +55,10 @@
 <li><a href="#color-keyword-mechanism">4.8. Color Keyword mechanism</a></li>
 <li><a href="#customise-mechanism">4.9. Customise mechanism</a></li>
 <li><a href="#switch-theme-mechanism">4.10. Switch theme mechanism</a></li>
-<li><a href="#logging">4.11. Logging</a></li>
-<li><a href="#configuration">4.12. Configuration</a></li>
+<li><a href="#timetable-mechanism">4.11. Timetable mechanism</a></li>
+<li><a href="#stickynotes-mechanism">4.12. StickyNotes mechanism</a></li>
+<li><a href="#logging">4.13. Logging</a></li>
+<li><a href="#configuration">4.14. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a>
@@ -1266,7 +1268,138 @@ The <code>ThemeUnit</code> enumeration is to set a global static variable <code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.11. Logging</a></h3>
+<h3 id="timetable-mechanism"><a class="link" href="#timetable-mechanism">4.11. Timetable mechanism</a></h3>
+<div class="paragraph">
+<p><code>Timetable</code> is an enhancement of UI. The role of the timetable view is to display a timetable of all the lessons listed in the display panel.<br></p>
+</div>
+<div class="paragraph">
+<p><code>Timetable</code> mechanism is facilitated by the <code>GridPane</code> properties in javafx.<br>
+The first row of timetable view is the header for time slot. The range is from 0800 to 2000.<br>
+The generation of timetable column header is implemented this way:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"> <span class="directive">public</span> <span class="type">void</span> generateTimeslotHeader() {
+        <span class="comment">// ... generate column header for time slots ...//</span>
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first col of timetable view is the header for weekday. The range is from Monday to Friday.
+The generation of timetable row header is implemented this way:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">    <span class="directive">public</span> <span class="type">void</span> generateWeekDay() {
+       <span class="comment">// ... generate row header for weekday ...//</span>
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="paragraph">
+<p>When the <code>view</code> command is used, a number of lessons will be displayed on the display panel. The <code>handleViewedLessonEvent()</code> will then generate the timetable view and set it as visible.<br></p>
+</div>
+<div class="paragraph">
+<p>The generation of timetable data is implemented this way:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> generateTimeTableData() {
+        <span class="comment">// ... initGridData() ...//</span>
+        <span class="comment">// ... generate grid data for grid view ...//</span>
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The generation of timetable view is implemented this way:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> generateTimeTableGrid() {
+
+        <span class="comment">// ... generateTimeTableData(); ...//</span>
+        <span class="comment">// ... generateTimeslotHeader(); ...//</span>
+       <span class="comment">// ... generateWeekDay();  ...//</span>
+       <span class="comment">// ... generate timetable view  ...//</span>
+    }</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-11"><a class="link" href="#design-considerations-11">4.11.1. Design considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of Timetable.<br>
+<strong>Alternative1 (current choice): </strong> Using code to create timetable view.<br>
+<strong>Pros:</strong> It is more flexible to change the style or the text of the label.<br>
+<strong>Cons:</strong> Since everything is written in code, you can not visualise the layout until you run the code.<br>
+<strong>Alternative2:</strong> Using Scene Builder to create timetable view<br>
+<strong>Pros:</strong> It is easier to visualise the layout<br>
+<strong>Cons:</strong> There are many limitations such as unable to add time slot to span 2 columns.<br></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="stickynotes-mechanism"><a class="link" href="#stickynotes-mechanism">4.12. StickyNotes mechanism</a></h3>
+<div class="paragraph">
+<p><code>StickyNotes</code> is an enhancement of UI. The role of the stickynotes view is to display information about a module when.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The maximum number of notes for a module is 9.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>StickyNotes</code> mechanism is facilitated by the <code>GridPane</code> properties in javafx.<br></p>
+</div>
+<div class="paragraph">
+<p>When the <code>remark</code> command is used, a new note will be created and linked to a module.<br>
+The <code>handleRemarkChangedEvent()</code> will then generate the stickynotes view and set it as visible.<br></p>
+</div>
+<div class="paragraph">
+<p>The generation of stickynotes data is implemented this way:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> noteDataInit() {
+        <span class="comment">// ... generate note data for stickynotes view ...//</span>
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The generation of stickynotes view is implemented this way:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> stickyNotesInit() {
+
+        <span class="comment">// ... noteDataInit(); ...//</span>
+       <span class="comment">// ... generate stickynotes view  ...//</span>
+    }</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-12"><a class="link" href="#design-considerations-12">4.12.1. Design considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of StickyNotes.<br>
+<strong>Alternative1 (current choice): </strong> Using code to create stickynotes view.<br>
+<strong>Pros:</strong> The color of stickynotes can be changed easily.<br>
+<strong>Cons:</strong> THe developer needs to understand how to code for UI.<br>
+<strong>Alternative2:</strong> Using Scene Builder to create stickynotes view<br>
+<strong>Pros:</strong> It is easier to visualise the layout and set the properties+
+<strong>Cons:</strong> There are many limitations such as unable to show only a few TextArea objects.<br></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">4.13. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
@@ -1304,7 +1437,7 @@ The <code>ThemeUnit</code> enumeration is to set a global static variable <code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="configuration"><a class="link" href="#configuration">4.12. Configuration</a></h3>
+<h3 id="configuration"><a class="link" href="#configuration">4.14. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2382,7 +2515,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-05 13:33:30 +00:00
+Last updated 2017-11-05 13:49:59 +00:00
 </div>
 </div>
 </body>
