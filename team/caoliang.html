@@ -19,16 +19,13 @@
 <h2 id="project-modu"><a class="link" href="#project-modu">Project: ModU</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Many universities have timetable committee to deal with all matters concerning timetabling scheduling. One prevalent concern of such matters would be timetable clashes while scheduling.</p>
+<p>ModU is a software design to help teachers and lecturers to plan their weekly teaching schedule.<br></p>
 </div>
 <div class="paragraph">
-<p>Welcome to ModU, a timetable scheduling software for professors and administrators in tertiary institutions.</p>
-</div>
-<div class="paragraph">
-<p>With ModU, you are able to easily identify timetable slots that are available for the module you are scheduling. Made a mistake while scheduling the timetable? Fret not, you can easily make any changes to the timetable.</p>
-</div>
-<div class="paragraph">
-<p>ModU uses the command line interface (CLI) as the main input. The natural language input field will allow you to quickly search, add, delete and edit your timetable. Just type what you want and ModU will do the rest for you!</p>
+<p>There are many ways to improve and extend the functionality of this software and this guide provides essential information to help you get started.
+This developer guide contains information of the architecture design of this software, implementation of the existing commands that is accessible for the
+users and other useful information such as guide to teach you how to test this software. For more information please refer
+to the table of content.</p>
 </div>
 <div class="paragraph">
 <p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/main/caoliangnus.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/test/caoliangnus.md">Test code</a>]</p>
@@ -74,7 +71,8 @@ Format: <code>color enable/disable</code></p>
 <div class="sect3">
 <h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
 <div class="paragraph">
-<p>Professors may find it hard to distinguish command keyword and other lesson information. So the highlighting feature helps to improve on the readability of the CommandBox.</p>
+<p>Our software is targeting on professors. Sometimes, especially in add command, we believed that professors may find it hard to distinguish command keyword and other lesson information. Therefore, the highlighting feature is necessary in helping to improve on the readability of the command box.
+Besides that, this feature also indicates to the professor whether the command entered in the command box is valid or invalid. This ensures that the command can be executed correctly.</p>
 </div>
 </div>
 <div class="sect3">
@@ -133,9 +131,40 @@ The default setting for this feature is set as disable.
 <strong>Alternative 1 (current choice):</strong>  Update boolean variable "isEnable" in the command box by calling event to set the status of this variable.<br>
 <strong>Pros:</strong> Since only command box will be updated, using event center will maintain a good data encapsulation.<br>
 <strong>Cons:</strong> Hard for new developers to understand the event center mechanism.<br>
-<strong>Alternative 1 (current choice):</strong> Declare a global boolean variable<br>
+<strong>Alternative 2:</strong> Declare a global boolean variable<br>
 <strong>Pros:</strong> Easier for new developer to design<br>
 <strong>Cons:</strong> This method breaks encapsulation and fails to follow standard java code style.</p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-timetable"><a class="link" href="#enhancement-added-timetable">Enhancement Added: Timetable</a></h3>
+<div class="sect3">
+<h4 id="external-behavior-2"><a class="link" href="#external-behavior-2">External behavior</a></h4>
+<div class="paragraph">
+<p>The timetable feature is used to display a timetable of all the lessons listed in a module.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui" width="900">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="justification-2"><a class="link" href="#justification-2">Justification</a></h4>
+<div class="paragraph">
+<p>Our software is used for professors to build timetable. We believed that displaying lessons in a timetable format is easier for professors to visualize.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
 </div>
 </div>
 </div>
@@ -146,7 +175,7 @@ The default setting for this feature is set as disable.
 </div>
 <div class="paragraph">
 <p><code>Timetable</code> mechanism is facilitated by the <code>GridPane</code> properties in javafx.<br>
-The first row of timetable view is the header for time slot. The range is from 0800 to 2000.<br>
+The first row of timetableView is the header for time slot. In our software, the range for available time slots are from 0800 to 2000<br>
 The generation of timetable column header is implemented this way:</p>
 </div>
 <div class="listingblock">
@@ -157,7 +186,7 @@ The generation of timetable column header is implemented this way:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The first col of timetable view is the header for weekday. The range is from Monday to Friday.
+<p>The first column of timetableView is the header for weekday. In our software, the range is from Monday to Friday.<br>
 The generation of timetable row header is implemented this way:</p>
 </div>
 <div class="listingblock">
@@ -171,7 +200,10 @@ The generation of timetable row header is implemented this way:</p>
 <p>+</p>
 </div>
 <div class="paragraph">
-<p>When the <code>view</code> command is used, a number of lessons will be displayed on the display panel. The <code>handleViewedLessonEvent()</code> will then generate the timetable view and set it as visible.<br></p>
+<p>When the view command is executed, a number of lessons will be displayed on the display panel.<br>
+In the CombinePanel, the handleViewedLessonEvent() will call generateTimeTableGrid() to set up the timetableView. <br>
+The generateTimeTableGrid() will obtain the grid data from generateTimeTableData().<br>
+After that, it will display the data onto the timetableView.</p>
 </div>
 <div class="paragraph">
 <p>The generation of timetable data is implemented this way:</p>
@@ -216,11 +248,104 @@ The generation of timetable row header is implemented this way:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="enhancement-proposed-add-command-code-import-export-code"><a class="link" href="#enhancement-proposed-add-command-code-import-export-code">Enhancement Proposed: Add command <code>import / export</code></a></h3>
+<h3 id="enhancement-added-stickynotes"><a class="link" href="#enhancement-added-stickynotes">Enhancement Added: StickyNotes</a></h3>
+<div class="sect3">
+<h4 id="external-behavior-3"><a class="link" href="#external-behavior-3">External behavior</a></h4>
+<div class="paragraph">
+<p>The sticky notes feature is used to display additional information about a module.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/stickynotes.png" alt="stickynotes" width="900">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="justification-3"><a class="link" href="#justification-3">Justification</a></h4>
+<div class="paragraph">
+<p>Our software can also be used by students. We believed that the information displayed is not sufficient for student to understand a module.<br>
+Therefore, the stick notes feature allows professors to add additional information to help students to know the module better.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="stickynotes-mechanism"><a class="link" href="#stickynotes-mechanism">StickyNotes mechanism</a></h3>
+<div class="paragraph">
+<p><code>StickyNotes</code> is an enhancement of UI. The role of the stickynotes view is to display information about a module when.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The maximum number of notes for a module is 9.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>StickyNotes</code> mechanism is facilitated by the <code>GridPane</code> properties in javafx.<br></p>
+</div>
+<div class="paragraph">
+<p>When the remark command is executed, a new note will be created and linked to a module.<br>
+The handleRemarkChangedEvent() will call stickyNotesInit() to set up the stickyNotesView.<br>
+The stickyNotesInit() will obtain the grid data from noteDataInit().<br>
+After that, it will display the data onto the stickyNotesView.</p>
+</div>
+<div class="paragraph">
+<p>The generation of stickynotes data is implemented this way:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> noteDataInit() {
+        <span class="comment">// ... generate note data for stickynotes view ...//</span>
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The generation of stickynotes view is implemented this way:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> stickyNotesInit() {
+
+        <span class="comment">// ... noteDataInit(); ...//</span>
+       <span class="comment">// ... generate stickynotes view  ...//</span>
+    }</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of StickyNotes.<br>
+<strong>Alternative1 (current choice): </strong> Using code to create stickynotes view.<br>
+<strong>Pros:</strong> The color of stickynotes can be changed easily.<br>
+<strong>Cons:</strong> THe developer needs to understand how to code for UI.<br>
+<strong>Alternative2:</strong> Using Scene Builder to create stickynotes view<br>
+<strong>Pros:</strong> It is easier to visualise the layout and set the properties<br>
+<strong>Cons:</strong> There are many limitations such as unable to show only a few <code>TextArea</code> objects.<br></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed-add-command-code-import-code"><a class="link" href="#enhancement-proposed-add-command-code-import-code">Enhancement Proposed: Add command <code>import</code></a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>This allows students and professors to transfer data from one computer to another easily.</p>
+<p>Currently, our software does not support the importing data. With this feature, professors can prepare the lesson information using Excel or Word. Then our software will generate the timetable for them based on the imported data.</p>
 </li>
 </ul>
 </div>
@@ -230,7 +355,7 @@ The generation of timetable row header is implemented this way:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>This feature will improve on the user security.</p>
+<p>Currently, our software can be accessed by anyone. Since our software only allows the professors to add and edit lesson information. The students should not be allowed to make any changes to the lessons. Hence, it is necessary to improve on the security level and grant different access to professors and students.</p>
 </li>
 </ul>
 </div>
@@ -240,14 +365,14 @@ The generation of timetable row header is implemented this way:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Change the base from the Addressbook level 4 to ModU (Pull requests <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/50">#50</a>,<br>
-<a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/47">#47</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/51">#51</a>,<br>
-<a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/53/">#53</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/57/">#57</a>,<br>
+<p>Change the model base from the Addressbook level 4 to ModU (Pull requests <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/50">#50</a>,
+<a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/47">#47</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/51">#51</a>,
+<a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/53/">#53</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/57/">#57</a>,
 <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/58/">#58</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/63/">#63</a>,)</p>
 </li>
 <li>
-<p>Wrote tutorial for User Guide (Pull requests <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/99">#99</a>,<br>
-<a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/139">#139</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/144">#144</a>,<br></p>
+<p>Wrote tutorial for User Guide (Pull requests <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/99">#99</a>,
+<a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/139">#139</a>, <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/144">#144</a>,)</p>
 </li>
 <li>
 <p>Designed a logo for ModU (Pull requests <a href="https://github.com/CS2103AUG2017-W13-B4/main/pull/118/">#118</a>)</p>
@@ -260,7 +385,7 @@ The generation of timetable row header is implemented this way:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-07 00:48:37 +00:00
+Last updated 2017-11-07 14:12:01 +00:00
 </div>
 </div>
 </body>
