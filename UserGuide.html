@@ -18,7 +18,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>CS2103AUG2017-W13-B4</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>CS2103AUG2017-W13-B4</code>      Since: <code>Oct 2017</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -99,7 +99,7 @@ This app will not work with earlier versions of Java 8.
 </div>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/se-edu/addressbook-level4/releases">here</a>.</p>
+<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/CS2103AUG2017-W13-B4/main/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for your ModU.</p>
@@ -516,6 +516,9 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <li>
 <p>Lessons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>MA1101R CS2101</code> will return <code>MA1101R</code> or <code>CS2101</code></p>
 </li>
+<li>
+<p>If find command is executed after executing view command, the find command would not support find module code if it is viewed into a specific module code and if it is viewed into a specific location, it will not support find location.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -581,7 +584,7 @@ Format: <code>sort KEYWORD</code></p>
 <p><code>list location</code><br>
 Returns a list of location<br>
 <code>sort</code><br>
-Return a list of location sorted lexicographically</p>
+Return a list of location sorted in alphabetical order for letters and increasing order for numbers.</p>
 </li>
 </ul>
 </div>
@@ -596,7 +599,7 @@ Return a list of location sorted lexicographically</p>
 <p><code>list lesson</code><br>
 Returns whole module<br>
 <code>sort</code><br>
-Return a list sorted by code lexicographically</p>
+Return a list sorted by code in alphabetical order for letters and increasing order for numbers.</p>
 </li>
 </ul>
 </div>
@@ -1335,7 +1338,7 @@ e.g. <code>customise disable</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-09 13:59:50 +00:00
+Last updated 2017-11-09 15:12:02 +00:00
 </div>
 </div>
 </body>

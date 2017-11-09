@@ -63,7 +63,7 @@ Format: <code>sort KEYWORD</code></p>
 <p><code>list location</code><br>
 Returns a list of location<br>
 <code>sort</code><br>
-Return a list of location sorted lexicographically</p>
+Return a list of location sorted in alphabetical order for letters and increasing order for numbers.</p>
 </li>
 </ul>
 </div>
@@ -78,7 +78,7 @@ Return a list of location sorted lexicographically</p>
 <p><code>list lesson</code><br>
 Returns whole module<br>
 <code>sort</code><br>
-Return a list sorted by code lexicographically</p>
+Return a list sorted by code in alphabetical order for letters and increasing order for numbers.</p>
 </li>
 </ul>
 </div>
@@ -108,7 +108,7 @@ Return a list sorted by code lexicographically</p>
 <div class="sect2">
 <h3 id="sort-mechanism"><a class="link" href="#sort-mechanism">Sort mechanism</a></h3>
 <div class="paragraph">
-<p>The sort mechanism is facilitated by <a href="#event-bus"><code>Event Bus</code></a>. Whenever sort command is executed, in <code>SortCommand</code> it will raise a <code>SortListRequestEvent</code> via <code>EventCenter</code> which there is an listerner in <code>PersonListPanel</code> which will conduct the sorting list according to the attribute type of <code>list</code> command which was executed previously.</p>
+<p>The sort command is executed by sorting the <code>internalList</code> in <code>uniqueLessonList</code> based on current <code>ListingUnit</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -117,7 +117,9 @@ Return a list sorted by code lexicographically</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the previous attribute type of <code>list</code> command is location, the list will be sorted by person&#8217;s address lexicographically, such sorting will also be applied for attribute email and phone. If there is no attribute in the execution of previous <code>list</code> command, the list will be sorted by person&#8217;s name lexicographically by default.
+If the current <code>ListingUnit</code> is location, the list will be sort lesson&#8217;s location lexicographically.<br>
+If the current <code>ListingUnit</code> is module, the list will be sort lesson&#8217;s module code lexicographically.<br>
+If the current <code>ListingUnit</code> is lesson, the list will be sort lesson&#8217;s group number lexicographically.<br>
 </td>
 </tr>
 </table>
@@ -129,9 +131,6 @@ If the previous attribute type of <code>list</code> command is location, the lis
 <div class="content">
 <img src="../images/SortCommandSeqDiagram.png" alt="SortCommandSeqDiagram" width="900">
 </div>
-</div>
-<div class="paragraph">
-<p>The redo does the exact opposite (pops from <code>redoStack</code>, push to <code>undoStack</code>, and restores the address book to the state after the command is executed).</p>
 </div>
 <div class="paragraph">
 <p>The following <a href="#activity-diagram">activity diagram</a> summarize what happens when an user execute sort command.</p>
@@ -208,6 +207,9 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </li>
 <li>
 <p>Lessons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>MA1101R CS2101</code> will return <code>MA1101R</code> or <code>CS2101</code></p>
+</li>
+<li>
+<p>If find command is executed after executing view command, the find command would not support find module code if it is viewed into a specific module code and if it is viewed into a specific location, it will not support find location.</p>
 </li>
 </ul>
 </div>
@@ -364,7 +366,7 @@ This function allow ModU to distinguish the type of user who is using ModU for e
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-09 13:59:50 +00:00
+Last updated 2017-11-09 15:12:03 +00:00
 </div>
 </div>
 </body>

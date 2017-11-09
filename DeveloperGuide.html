@@ -1065,7 +1065,7 @@ While the index in <code>delete -d INDEX</code> is the index of the remark we wa
 <div class="sect2">
 <h3 id="sort-mechanism"><a class="link" href="#sort-mechanism">4.7. Sort mechanism</a></h3>
 <div class="paragraph">
-<p>The sort mechanism is facilitated by <a href="#event-bus"><code>Event Bus</code></a>. Whenever sort command is executed, in <code>SortCommand</code> it will raise a <code>SortListRequestEvent</code> via <code>EventCenter</code> which there is an listerner in <code>PersonListPanel</code> which will conduct the sorting list according to the attribute type of <code>list</code> command which was executed previously.</p>
+<p>The sort command is executed by sorting the <code>internalList</code> in <code>uniqueLessonList</code> based on current <code>ListingUnit</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1074,7 +1074,9 @@ While the index in <code>delete -d INDEX</code> is the index of the remark we wa
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the previous attribute type of <code>list</code> command is location, the list will be sorted by person&#8217;s address lexicographically, such sorting will also be applied for attribute email and phone. If there is no attribute in the execution of previous <code>list</code> command, the list will be sorted by person&#8217;s name lexicographically by default.
+If the current <code>ListingUnit</code> is location, the list will be sort lesson&#8217;s location lexicographically.<br>
+If the current <code>ListingUnit</code> is module, the list will be sort lesson&#8217;s module code lexicographically.<br>
+If the current <code>ListingUnit</code> is lesson, the list will be sort lesson&#8217;s group number lexicographically.<br>
 </td>
 </tr>
 </table>
@@ -1086,9 +1088,6 @@ If the previous attribute type of <code>list</code> command is location, the lis
 <div class="content">
 <img src="images/SortCommandSeqDiagram.png" alt="SortCommandSeqDiagram" width="900">
 </div>
-</div>
-<div class="paragraph">
-<p>The redo does the exact opposite (pops from <code>redoStack</code>, push to <code>undoStack</code>, and restores the address book to the state after the command is executed).</p>
 </div>
 <div class="paragraph">
 <p>The following <a href="#activity-diagram">activity diagram</a> summarize what happens when an user execute sort command.</p>
@@ -2520,7 +2519,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-09 13:59:50 +00:00
+Last updated 2017-11-09 15:12:02 +00:00
 </div>
 </div>
 </body>
