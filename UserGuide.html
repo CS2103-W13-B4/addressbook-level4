@@ -29,25 +29,25 @@
 <li><a href="#features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-lesson-code-add-code">3.2. Adding a lesson: <code>add</code></a></li>
-<li><a href="#marking-a-lesson-code-mark-code">3.3. Marking a lesson: <code>mark</code></a></li>
-<li><a href="#unmarking-a-lesson-code-unmark-code">3.4. Unmarking a lesson: <code>unmark</code></a></li>
-<li><a href="#remarking-a-module-code-remark-code">3.5. Remarking a module: <code>remark</code></a></li>
-<li><a href="#listing-all-lesson-code-list-code">3.6. Listing all lesson : <code>list</code></a></li>
-<li><a href="#viewing-specific-lesson-from-the-list-code-view-code">3.7. Viewing specific lesson from the list: <code>view</code></a></li>
-<li><a href="#editing-a-lesson-code-edit-code">3.8. Editing a lesson : <code>edit</code></a></li>
-<li><a href="#locating-lessons-by-module-code-code-find-code">3.9. Locating lessons by module code: <code>find</code></a></li>
-<li><a href="#sorting-lesson-by-module-code-code-sort-code">3.10. Sorting lesson by module code: <code>sort</code></a></li>
-<li><a href="#deleting-a-lesson-code-delete-code">3.11. Deleting a lesson : <code>delete</code></a></li>
-<li><a href="#selecting-a-lesson-code-select-code">3.12. Selecting a lesson : <code>select</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">3.13. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.14. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.15. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.16. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.17. Exiting the program : <code>exit</code></a></li>
-<li><a href="#customising-the-font-size-code-customise-code">3.18. Customising the font size : <code>customise</code></a></li>
-<li><a href="#change-theme-code-theme-code">3.19. Change theme : <code>theme</code></a></li>
-<li><a href="#highlighting-keywords-code-color-code">3.20. Highlighting keywords : <code>color</code></a></li>
+<li><a href="#listing-all-lesson-code-list-code">3.2. Listing all lesson : <code>list</code></a></li>
+<li><a href="#adding-a-lesson-code-add-code">3.3. Adding a lesson: <code>add</code></a></li>
+<li><a href="#marking-a-lesson-code-mark-code">3.4. Marking a lesson: <code>mark</code></a></li>
+<li><a href="#unmarking-a-lesson-code-unmark-code">3.5. Unmarking a lesson: <code>unmark</code></a></li>
+<li><a href="#viewing-specific-lesson-from-the-list-code-view-code">3.6. Viewing specific lesson from the list: <code>view</code></a></li>
+<li><a href="#editing-a-lesson-code-edit-code">3.7. Editing a lesson : <code>edit</code></a></li>
+<li><a href="#locating-lessons-by-module-code-code-find-code">3.8. Locating lessons by module code: <code>find</code></a></li>
+<li><a href="#sorting-lesson-by-module-code-code-sort-code">3.9. Sorting lesson by module code: <code>sort</code></a></li>
+<li><a href="#deleting-a-lesson-code-delete-code">3.10. Deleting a lesson : <code>delete</code></a></li>
+<li><a href="#selecting-a-lesson-code-select-code">3.11. Selecting a lesson : <code>select</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">3.12. Listing entered commands : <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">3.13. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.14. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.15. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.16. Exiting the program : <code>exit</code></a></li>
+<li><a href="#customising-the-font-size-code-customise-code">3.17. Customising the font size : <code>customise</code></a></li>
+<li><a href="#highlighting-keywords-code-color-code">3.18. Highlighting keywords : <code>color</code></a></li>
+<li><a href="#remarking-a-module-code-remark-code">3.19. Remarking a module: <code>remark</code></a></li>
+<li><a href="#change-theme-code-theme-code">3.20. Change theme : <code>theme</code></a></li>
 <li><a href="#saving-the-data">3.21. Saving the data</a></li>
 </ul>
 </li>
@@ -61,8 +61,8 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Many universities have timetable committee to deal with all matters concerning timetabling scheduling.
-One prevalent concern of such matters would be timetable clashes while scheduling.<br></p>
+<p>Many universities have a timetable committee to deal with all matters concerning timetabling scheduling.
+One concern would be timetable clashes while scheduling.<br></p>
 </div>
 <div class="paragraph">
 <p>Welcome to ModU, a timetable scheduling software for professors and administrators in tertiary institutions.<br></p>
@@ -72,8 +72,14 @@ One prevalent concern of such matters would be timetable clashes while schedulin
 Made a mistake while scheduling the timetable? Fret not, you can easily make any changes to the timetable.<br></p>
 </div>
 <div class="paragraph">
-<p>ModU uses the command line interface (CLI) as the main input. The natural language input field will allow you to
-quickly search, add, delete and edit your timetable. Just type what you want and ModU will do the rest for you!</p>
+<p>The main input of ModU is through the use of command line interface (CLI).
+The natural language input field will allow you to quickly search, add, delete and edit your timetable.
+Just type what you want and ModU will do the rest for you!<br></p>
+</div>
+<div class="paragraph">
+<p>This user guide will explain how the various commands in ModU can be carried out by giving valid examples.
+It also includes a scenario where it lists the different situations that you might encounter and how ModU is able to help you overcome them.
+The Frequently Asked Questions (FAQ) section that lists answers to commonly asked questions can be found at the end of the user guide, followed by a summary of the commands available in ModU.</p>
 </div>
 </div>
 </div>
@@ -105,7 +111,7 @@ This app will not work with earlier versions of Java 8.
 <p>Copy the file to the folder you want to use as the home folder for your ModU.</p>
 </li>
 <li>
-<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
+<p>Double-click the file to start the app. The The graphical user interface (GUI) should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/mainUi.png" alt="mainUi" width="790">
@@ -114,37 +120,40 @@ This app will not work with earlier versions of Java 8.
 </li>
 <li>
 <p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
-e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
-</li>
-<li>
-<p>Some example commands you can try:</p>
+e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.<br>
+   <br>
+    Some example commands you can try:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list</code></strong> <strong><code>module</code></strong> : lists all module</p>
+<p><strong><code>list</code></strong> <strong><code>module</code></strong> : lists all module.<br></p>
 </li>
 <li>
-<p><strong><code>add</code></strong> <strong><code>m/MA1101R ct/LEC v/LT27 gp/1 ts/FRI[1400-1600] l/ Ma Siu Lun</code></strong> : adds a lesson with module code <code>MA1101R</code> to the ModU list.</p>
+<p><strong><code>add</code></strong> <strong><code>m/MA1101R ct/LEC v/LT27 gp/1 ts/FRI[1400-1600] l/ Ma Siu Lun</code></strong> : adds a lesson with module code <code>MA1101R</code> to the ModU list.<br></p>
 </li>
 <li>
-<p><strong><code>sort</code></strong> : sort lesson shown in the current list</p>
+<p><strong><code>sort</code></strong> : sort lesson shown in the current list.<br></p>
 </li>
 <li>
-<p><strong><code>exit</code></strong> : exits the app</p>
+<p><strong><code>exit</code></strong> : exits the app.<br></p>
 </li>
 </ul>
 </div>
 </li>
-<li>
-<p>Refer to the <a href="#features">Features</a> section below for details of each command.</p>
-</li>
 </ol>
+</div>
+<div class="paragraph">
+<p>Please refer to the <a href="#features">Features</a> section below for details of each command.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="features"><a class="link" href="#features">3. Features</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><strong>We want your experience with ModU to be as positive as possible.
+Hence, please read the following information so that you will understand the command format.</strong></p>
+</div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -153,32 +162,61 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add m/CODE</code>, <code>CODE</code> is a parameter which can be used as <code>add m/MA1101R</code>.</p>
+<p>Certain commands require prefixes before the parameters. It will be stated clearly whether prefixes are required.
+Prefixes are characters followed by a backslash, for example: <code>m/</code>, <code>l/</code>, <code>gp/</code>, <code>ts/</code> and more.<br></p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>m/NAME l/LECTURER [l/LECTURER]</code> can be used as <code>m/MA1101R l/Ma Siu Lun l/Victor Tan</code> or as <code>m/MA1101R l/Ma Siu Lun</code>.</p>
+<p>Words in UPPER_CASE are the parameters to be supplied by the user
+e.g. in add m/MODULE, MODULE is a parameter that represents the module code such as MA1101R.
+The command will then look like this: add m/MA1101R.<br></p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times, at least one time e.g. <code>l/LECTURER [l/LECTURER]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 1 times), <code>l/Ma Siu Lun</code>, <code>l/Ma Siu Lun l/Victor Tan</code> etc.</p>
+<p>Parameters in square brackets are optional. For example, m/MODULE l/LECTURER [l/LECTURER] can be executed by
+typing m/MA1101R l/Ma Siu Lun l/Victor Tan or m/MA1101R l/Ma Siu Lun.<br></p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>gp/GROUP ts/TIME_SLOT ct/CLASS_TYPE</code>, <code>v/VENUE m/CODE</code> is also acceptable.</p>
+<p>Parameters followed by “…” can be entered multiple times.
+For example, l/LECTURER… can be entered as l/Ma Siu Lun l/Victor Tan l/Alex Neo and more.<br></p>
+</li>
+<li>
+<p>Parameters can be in any order. For example, if the command example states this particular
+order gp/GROUP ts/TIME_SLOT ct/CLASS_TYPE, rearranging the order to ts/TIME_SLOT ct/CLASS_TYPE gp/GROUP is also acceptable.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>List modes</strong></p>
+</div>
+<div class="paragraph">
+<p>These are the 4 list modes currently supported by ModU. They will be further explained in <a href="#listing-all-lesson-code-list-code">Listing all lessons: list</a>.<br>
+* Module list mode<br>
+* Location list mode<br>
+* Marked list mode<br>
+* Lesson list mode<br></p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
 <div class="paragraph">
-<p>Format: <code>help</code></p>
+<p>The help command will open the user guide in a new window and provide explanations of every command available in the application.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>help</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-lesson-code-add-code"><a class="link" href="#adding-a-lesson-code-add-code">3.2. Adding a lesson: <code>add</code></a></h3>
+<h3 id="listing-all-lesson-code-list-code"><a class="link" href="#listing-all-lesson-code-list-code">3.2. Listing all lesson : <code>list</code></a></h3>
 <div class="paragraph">
-<p>Adds a lesson to the ModU list<br>
-Format: <code>add m/MODULE_CODE ct/CLASS_TYPE v/VENUE gp/GROUP ts/TIME_SLOT l/LECTURER&#8230;&#8203;</code></p>
+<p>The <code>list</code> command will display a list based on the attribute specified by the user.
+There are three attributes, namely: <em>module</em>, <em>location</em> and <em>marked</em>.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>list ATTRIBUTE</code><br></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -187,98 +225,526 @@ Format: <code>add m/MODULE_CODE ct/CLASS_TYPE v/VENUE gp/GROUP ts/TIME_SLOT l/LE
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-A lesson must have at least one lecturer and a lesson must not have a same time slot and location as existing lesson in ModU
+The attribute must be in lower case.<br>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Valid examples:<br></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add m/MA1101R ct/LEC v/LT27 gp/1 ts/FRI[1400-1600] l/Ma Siu Lun</code></p>
+<p>To switch to <strong>module list mode</strong>, type <code>list module</code> to list all registered modules in ModU.<br></p>
 </li>
 <li>
-<p>`add m/CS2100 ct/LEC v/LT19 gp/1 ts/MON[1400-1600] l/Wong WEng Fa l/Suppiah `</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/add.gif" alt="add" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="marking-a-lesson-code-mark-code"><a class="link" href="#marking-a-lesson-code-mark-code">3.3. Marking a lesson: <code>mark</code></a></h3>
-<div class="paragraph">
-<p>Marks a lesson to the marked list<br>
-Format: <code>mark INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Mark the lesson at the specified <code>INDEX</code>. The index refers to the index number shown in the last lesson listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>To switch to <strong>location list mode</strong>, type <code>list location</code> to list all locations of every lesson registered in ModU.<br></p>
 </li>
 <li>
-<p>The specified lesson must be initially not in the marked list.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>view 1</code><br>
-<code>mark 1</code><br>
-Mark the person into the marked list.</p>
+<p>To switch to <strong>marked list mode</strong>, type <code>list marked</code> to list all marked lessons in ModU.<br></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="unmarking-a-lesson-code-unmark-code"><a class="link" href="#unmarking-a-lesson-code-unmark-code">3.4. Unmarking a lesson: <code>unmark</code></a></h3>
+<h3 id="adding-a-lesson-code-add-code"><a class="link" href="#adding-a-lesson-code-add-code">3.3. Adding a lesson: <code>add</code></a></h3>
 <div class="paragraph">
-<p>remove a lesson from the marked list<br>
-Format: <code>unmark INDEX</code></p>
+<p>The <code>add</code> command will add a lesson to ModU. If the module for the lesson has not been created yet,
+ModU will automatically create the module in the system. It will then insert the specified lesson into the module.<br></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
+<div class="paragraph">
+<p>Command format in command box: <code>add m/MODULE_CODE ct/CLASS_TYPE v/VENUE gp/GROUP ts/TIME_SLOT l/LECTURER…</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+A lesson must have at least one lecturer.<br>
+A lesson must not have the same time slot and location as an existing lesson in ModU.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Unmark the lesson at the specified <code>INDEX</code>. The index refers to the index number shown in the last lesson listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Type <code>add m/MA1101R ct/LEC v/LT27 gp/1 ts/FRI[1400-1600] l/Ma Siu Lun</code> to add a lesson with only one lecturer.</p>
 </li>
 <li>
-<p>The specified lesson must already exist in the marked list.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>view 1</code><br>
-<code>unmark 1</code><br>
-Remove the lesson from the marked list.</p>
+<p>Type <code>add m/CS2100 ct/LEC v/LT19 gp/1 ts/MON[1400-1600] l/Wong Weng Fai l/Suppiah</code> to add a lesson with more than one lecturers.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="remarking-a-module-code-remark-code"><a class="link" href="#remarking-a-module-code-remark-code">3.5. Remarking a module: <code>remark</code></a></h3>
+<h3 id="marking-a-lesson-code-mark-code"><a class="link" href="#marking-a-lesson-code-mark-code">3.4. Marking a lesson: <code>mark</code></a></h3>
+<div class="paragraph">
+<p>The <code>mark</code> command will mark a lesson and add it into a marked list. The index must be a positive integer: 1, 2, 3 and so on.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>mark INDEX</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The specified lesson must not initially be in the marked list.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong>module list mode</strong>, type <code>view 1</code> to display all lessons in the module.<br>
+Next, type <code>mark 1</code> to add lesson into the marked list.<br></p>
+</li>
+<li>
+<p>In <strong>lesson list mode</strong>, type <code>mark 1</code> to add the lesson into the marked list.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unmarking-a-lesson-code-unmark-code"><a class="link" href="#unmarking-a-lesson-code-unmark-code">3.5. Unmarking a lesson: <code>unmark</code></a></h3>
+<div class="paragraph">
+<p>The <code>unmark</code> command will remove a marked lesson from the marked list. The index must be a positive integer: 1, 2, 3, and so on.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>unmark INDEX</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The specified lesson must not initially be in the marked list.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Valid example:
+* Type <code>list marked</code> to list all marked lessons in ModU.<br>
+Next, type <code>unmark 1</code> to remove the lesson at index 1 from the marked list.<br></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-specific-lesson-from-the-list-code-view-code"><a class="link" href="#viewing-specific-lesson-from-the-list-code-view-code">3.6. Viewing specific lesson from the list: <code>view</code></a></h3>
+<div class="paragraph">
+<p>The <code>view</code> command will display all lessons in a module or a location.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>view INDEX</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This is the only command that allows you to switch to <strong>lesson list mode</strong>.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong>module list mode</strong>, type <code>view 2</code> to view all lessons of the module.<br></p>
+</li>
+<li>
+<p>In <strong>location list mode</strong>, type <code>view 2</code> to view all lessons conducted at this location.<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-lesson-code-edit-code"><a class="link" href="#editing-a-lesson-code-edit-code">3.7. Editing a lesson : <code>edit</code></a></h3>
+<div class="paragraph">
+<p>The <code>edit</code> command will edit existing lessons, modules or locations. The index must be a positive integer: 1, 2, 3, and so on.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>edit INDEX [m/MODULE_CODE] [ct/CLASS_TYPE] [v/VENUE] [gp/GROUP] [ts/TIME_SLOT] [l/Lecturer…]</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+At least one of the optional fields must be provided.<br>
+Existing values will be updated to the input values.<br>
+The prefix can be omitted in both <strong>module list mode</strong> and <strong>location list mode</strong>.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Type <code>list module</code> to list all registered modules in ModU.<br>
+Next, type <code>edit 2 CS2101</code> to rename all the lessons associated with the module at index 2 to CS2101.<br></p>
+</li>
+<li>
+<p>Type <code>list location</code> to list all locations of all lessons registered in ModU.<br>
+Next, type <code>edit 2 LT19</code> to relocate all the lessons associated with the location at index 2 to LT19.<br></p>
+</li>
+<li>
+<p>In <strong>lesson list mode</strong>, type <code>view 2</code> to view the lesson at index 2.<br>
+Next, type <code>edit 2 v/LT19</code> to relocate the lesson to LT19. Note that for this example, the prefix is compulsory.<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-lessons-by-module-code-code-find-code"><a class="link" href="#locating-lessons-by-module-code-code-find-code">3.8. Locating lessons by module code: <code>find</code></a></h3>
+<div class="paragraph">
+<p>The <code>find</code> command will find lessons matching the given keyword(s).<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>find KEYWORD [MORE_KEYWORDS]</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The search is case insensitive.<br>
+The order of the keywords does not matter.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Partial keywords will be matched.<br>
+Lessons matching at least one keyword will be returned as a result.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The location will be searched if the list is in <strong>location list mode</strong>.<br>
+The module code will be searched if the list is in <strong>module list mode</strong>.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Type <code>list module</code> to list all registered modules in ModU.<br>
+Next, type <code>find CS2101 ma1101r</code> to display all modules that contain the keywords CS2101 and ma1101r.<br></p>
+</li>
+<li>
+<p>Type <code>list location</code> to list all locations of all lessons registered in ModU.<br>
+Next, type <code>find LT19</code> to display all locations that contain the keyword LT19.<br></p>
+</li>
+<li>
+<p>Type <code>list module</code> to list all registered modules in ModU.<br>
+Next, type <code>view 1</code> to go into <strong>lesson list mode</strong> of module at index 1.<br>
+Type <code>find FRI</code> to display all lessons that contain the keyword FRI.<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-lesson-by-module-code-code-sort-code"><a class="link" href="#sorting-lesson-by-module-code-code-sort-code">3.9. Sorting lesson by module code: <code>sort</code></a></h3>
+<div class="paragraph">
+<p>The <code>sort</code> command will sort the existing list in alphabetical order.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>sort</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+It will sort the list according to its current listed attribute.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong>module list mode</strong>, type <code>sort</code> to arrange the modules in an alphabetical order.</p>
+</li>
+<li>
+<p>In <strong>location list mode</strong>, type <code>sort</code> to arrange the locations in an alphabetical order.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-lesson-code-delete-code"><a class="link" href="#deleting-a-lesson-code-delete-code">3.10. Deleting a lesson : <code>delete</code></a></h3>
+<div class="paragraph">
+<p>The <code>delete</code> command will delete a lesson, module or location. The index must be a positive integer: 1, 2, 3, and so on.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>delete INDEX</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong>module list mode</strong>, type <code>delete 1</code> to remove the module at index 1.<br></p>
+</li>
+<li>
+<p>In <strong>location list mode</strong>, type <code>delete 1</code> to remove the location at index 1.<br></p>
+</li>
+<li>
+<p>In <strong>lesson list mode</strong>, type <code>delete 1</code> to remove the lesson at index 1.<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-a-lesson-code-select-code"><a class="link" href="#selecting-a-lesson-code-select-code">3.11. Selecting a lesson : <code>select</code></a></h3>
+<div class="paragraph">
+<p>The <code>select</code> command will select the lesson identified by the index number. The index must be a positive integer: 1, 2, 3, and so on.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>select INDEX</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong>module list mode</strong>, type <code>select 1</code> to display all remarks of the module at index 1.<br></p>
+</li>
+<li>
+<p>In <strong>location list mode</strong>, type <code>select 1</code> to display NUS campus map of the location at index 1.<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.12. Listing entered commands : <code>history</code></a></h3>
+<div class="paragraph">
+<p>The <code>history</code> command will list all the commands that you have entered in reverse chronological order.
+For example, from the most recent command to the least recent command.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>history</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.<br>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.13. Undoing previous command : <code>undo</code></a></h3>
+<div class="paragraph">
+<p>The <code>undo</code> command will restore the list to the state before the previous undoable command was executed.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>undo</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Undoing previous command is not allowed once you have switched the list mode.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong>module list mode</strong>, type <code>delete 1</code> to remove the module at index 1.<br>
+Next, type <code>undo</code> to restore the state of the list before <code>delete 1</code> was executed.<br></p>
+</li>
+<li>
+<p>In <strong>module list mode</strong>, type <code>clear</code> to remove all registered modules in ModU.<br>
+Next, type <code>undo</code> to restore the state of the list before <code>clear</code> was executed.<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Invalid examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong>module list mode</strong>, type <code>delete 1</code> to remove the module at index 1.<br>
+Next, type <code>view 1</code> to go into <strong>lesson list mode</strong> of module at index 1.<br>
+Type <code>undo</code> in the command box.<br>
+The <code>undo</code> command fails because the list mode has changed from <strong>module list mode</strong> to <strong>lesson list mode</strong>.<br></p>
+</li>
+<li>
+<p>In <strong>module list mode</strong>, type <code>select 1</code> to display all the remarks of the module at index 1.<br>
+Next, type <code>undo</code> in the command box.<br>
+The <code>undo</code> command fails as there are no undoable commands executed previously.<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.14. Redoing the previously undone command : <code>redo</code></a></h3>
+<div class="paragraph">
+<p>The <code>redo</code> command will reverse the most recent <code>undo</code> command. The command is not redoable.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>redo</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong>module list mode</strong>, type <code>delete 1</code> to remove the module at index 1.<br>
+Next, type <code>undo</code> to restore the state of the list before <code>delete 1</code> was executed.<br>
+Type <code>redo</code> to re-execute <code>delete 1</code>.<br></p>
+</li>
+<li>
+<p>In <strong>module list mode</strong>, type <code>delete 1</code> to remove the module at index 1.<br>
+Next, type <code>clear</code> to remove all the modules.<br>
+Type <code>undo</code> to restore the state of the list before <code>clear</code> was executed.<br>
+Type <code>undo</code> to restore the state of the list before <code>delete 1</code> was executed.<br>
+Type <code>redo</code> to re-execute <code>delete 1</code>.<br>
+Type <code>redo</code> to re-execute <code>clear</code>.<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Invalid example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong>lesson list mode</strong>, type <code>delete 1</code> to remove the module at index 1.<br>
+Next, type <code>redo</code> in the command box.<br>
+The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.15. Clearing all entries : <code>clear</code></a></h3>
+<div class="paragraph">
+<p>The <code>clear</code> command will clear all data stored in ModU.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>clear</code><br></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.16. Exiting the program : <code>exit</code></a></h3>
+<div class="paragraph">
+<p>The <code>exit</code> command will exit ModU.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>exit</code><br></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="customising-the-font-size-code-customise-code"><a class="link" href="#customising-the-font-size-code-customise-code">3.17. Customising the font size : <code>customise</code></a></h3>
+<div class="paragraph">
+<p>The <code>customise</code> command will adjust the font size of the application.
+There are five font sizes for you to choose from, namely: <em>xsmall</em>, <em>small</em>, <em>normal</em>, <em>large</em>, <em>xlarge</em>.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>customise fs/FONT-SIZE</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong>module list mode</strong>, type <code>customise fx/large</code> to increase the font size from the current size to large.<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="highlighting-keywords-code-color-code"><a class="link" href="#highlighting-keywords-code-color-code">3.18. Highlighting keywords : <code>color</code></a></h3>
+<div class="paragraph">
+<p>The <code>color</code> command will highlight the command keywords. The valid attributes are <em>enable</em> and <em>disable</em>.<br></p>
+</div>
+<div class="paragraph">
+<p>Command format in command box: <code>color ATTRIBUTE</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong>module list mode</strong>, type <code>color enable</code> to enable highlighting of valid command keywords.<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="remarking-a-module-code-remark-code"><a class="link" href="#remarking-a-module-code-remark-code">3.19. Remarking a module: <code>remark</code></a></h3>
 <div class="paragraph">
 <p><code>remark a module with given content.</code><br>
 Format: <code>remark INDEX CONTENT</code></p>
@@ -336,575 +802,7 @@ Delete the remark in current remark panel with index 1.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-lesson-code-list-code"><a class="link" href="#listing-all-lesson-code-list-code">3.6. Listing all lesson : <code>list</code></a></h3>
-<div class="paragraph">
-<p>Shows a list of all modules in the ModU.<br>
-Format: <code>list module</code></p>
-</div>
-<div class="paragraph">
-<p>Shows a list of all location in the ModU.<br>
-Format: <code>List location</code></p>
-</div>
-<div class="paragraph">
-<p>Shows a list of all marked lessons in the ModU.<br>
-Format: <code>List marked</code></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/list.gif" alt="list" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="viewing-specific-lesson-from-the-list-code-view-code"><a class="link" href="#viewing-specific-lesson-from-the-list-code-view-code">3.7. Viewing specific lesson from the list: <code>view</code></a></h3>
-<div class="paragraph">
-<p>Views the detail information about a lesson.<br>
-Format: <code>view INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>You can either view a lesson from a module or a location.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list module</code><br>
-<code>view 2</code><br>
-View the detail information with the second index shown in the module list.</p>
-</li>
-<li>
-<p><code>list location</code><br>
-<code>view 2</code><br>
-View the detail information with the second index shown in the location list.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/view.gif" alt="view" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-a-lesson-code-edit-code"><a class="link" href="#editing-a-lesson-code-edit-code">3.8. Editing a lesson : <code>edit</code></a></h3>
-<div class="paragraph">
-<p>Edits an existing lesson in the ModU list.<br>
-Format: <code>edit INDEX [m/MODULE_CODE] [ct/CLASS_TYPE] [v/VENUE] [gp/GROUP] [ts/TIME_SLOT] [l/Lecturer&#8230;&#8203;]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Edits the lesson at the specified <code>INDEX</code>. The index refers to the index number shown in the last lesson listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-<li>
-<p>When editing lecturers, the existing lecturers of the lesson will be removed i.e adding of lecturers is not cumulative.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/edit.gif" alt="edit" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>Edits an existing attribute(module/location) in the ModU list.<br>
-Format: <code>edit INDEX [CODE/LOCATION]&#8230;&#8203;</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Edits the attribute at the specified <code>INDEX</code>. The index refers to the index number shown in the last attribute listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Requires to list by that specified attribute(module/location) first.</p>
-</li>
-<li>
-<p>All lessons with the specifed attribute value will be updated to with the attribute of input values.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list module</code><br>
-Returns a list of location<br></p>
-</li>
-<li>
-<p><code>edit 1 m/CS2101</code><br>
-Edits the module code of the 1st lesson to be <code>CS2101</code>.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/editModule.gif" alt="editModule" width="790">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list location</code><br>
-Returns a list of location<br></p>
-</li>
-<li>
-<p><code>edit 3 LT27</code> +Assume
-Edits all the lessons with the third location shown in the location list to be <code>LT27</code>.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/editLocation.gif" alt="editLocation" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="locating-lessons-by-module-code-code-find-code"><a class="link" href="#locating-lessons-by-module-code-code-find-code">3.9. Locating lessons by module code: <code>find</code></a></h3>
-<div class="paragraph">
-<p>Finds lessons whose code match the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The search is case insensitive. e.g <code>MA1101R</code> will match <code>Ma1101r</code></p>
-</li>
-<li>
-<p>The order of the keywords does not matter. e.g. <code>MA1101R CS2101</code> will match <code>CS2101</code> and 'MA1101R'</p>
-</li>
-<li>
-<p>The location will be search if the list is listed by location</p>
-</li>
-<li>
-<p>The module code will be search if the list is listed by module</p>
-</li>
-<li>
-<p>Any detail of a lesson will be search if view is called previously</p>
-</li>
-<li>
-<p>Partial of the code will be matched e.g. <code>MA1101</code> will match <code>MA1101R</code></p>
-</li>
-<li>
-<p>Lessons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>MA1101R CS2101</code> will return <code>MA1101R</code> or <code>CS2101</code></p>
-</li>
-<li>
-<p>If find command is executed after executing view command, the find command would not support find module code if it is viewed into a specific module code and if it is viewed into a specific location, it will not support find location.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list module</code><br>
-<code>find MA1101R</code><br>
-Returns modules with code name <code>MA1101R</code></p>
-</li>
-<li>
-<p><code>find MA1101R CS2101 CS2103</code><br>
-Returns module having code <code>MA1101R</code>, <code>CS2101</code>, or <code>CS2103</code></p>
-</li>
-<li>
-<p><code>list location</code><br>
-<code>find lt25</code><br>
-Returns location with name <code>LT25</code></p>
-</li>
-<li>
-<p><code>view 1</code><br>
-<code>find TUE</code>
-Return lesson with any details that contains <code>TUE</code> case insensitive</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/find.gif" alt="find" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sorting-lesson-by-module-code-code-sort-code"><a class="link" href="#sorting-lesson-by-module-code-code-sort-code">3.10. Sorting lesson by module code: <code>sort</code></a></h3>
-<div class="paragraph">
-<p>Sort the existing list.<br>
-Format: <code>sort KEYWORD</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The sort command will sort the list according to its current listed attribute</p>
-</li>
-<li>
-<p>If the list was not listed in any attribute, it will be sorted by code of the lesson</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list location</code><br>
-Returns a list of location<br>
-<code>sort</code><br>
-Return a list of location sorted in alphabetical order for letters and increasing order for numbers.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/sortLocation.gif" alt="sortLocation" width="790">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list lesson</code><br>
-Returns whole module<br>
-<code>sort</code><br>
-Return a list sorted by code in alphabetical order for letters and increasing order for numbers.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/sortModule.gif" alt="sortModule" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-lesson-code-delete-code"><a class="link" href="#deleting-a-lesson-code-delete-code">3.11. Deleting a lesson : <code>delete</code></a></h3>
-<div class="paragraph">
-<p>Deletes all the lessons with specified attribute value in the attribute list from the ModU list.<br>
-Format: <code>delete INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the lesson at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the most recent listing.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list location</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd lesson in the ModU location list.</p>
-</li>
-<li>
-<p><code>find MA1101R</code><br>
-<code>delete 1</code><br>
-Deletes the 1st lesson in the results of the <code>find</code> command.</p>
-</li>
-<li>
-<p><code>list module</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd lesson in the ModU location list.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/delete.gif" alt="delete" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="selecting-a-lesson-code-select-code"><a class="link" href="#selecting-a-lesson-code-select-code">3.12. Selecting a lesson : <code>select</code></a></h3>
-<div class="paragraph">
-<p>Selects the lesson/module/location identified by the index number used in the last listing.<br>
-Format: <code>select INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>If current listing element is location, Selects the location and loads the NUS campus map page showing the location at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>If current listing element is Module, Selects the module and displays all remark with the "sticky notes" related to the module at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the most recent listing.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list module</code><br>
-<code>select 2</code><br>
-Selects the 2nd module in the module list and show all remarks of this module.</p>
-</li>
-<li>
-<p><code>list location</code><br>
-<code>select 1</code><br>
-Selects the 1st location in the location list and loas the NUS campus map page showing the location.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/select.gif" alt="select" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.13. Listing entered commands : <code>history</code></a></h3>
-<div class="paragraph">
-<p>Lists all the commands that you have entered in reverse chronological order.<br>
-Format: <code>history</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Pressing the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> arrows will display the previous and next input respectively in the command box.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/history.gif" alt="history" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.14. Undoing previous command : <code>undo</code></a></h3>
-<div class="paragraph">
-<p>Restores the list to the state before the previous <em>undoable</em> command was executed.<br>
-Format: <code>undo</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>You can only use <code>undo</code> with current listing element(Module/Location/Lesson).</p>
-</li>
-<li>
-<p>Undo previous command is no longger allowed once user switched listing element.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Undoable commands: those commands that modify the list&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delete 1</code><br>
-<code>list module</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
-</li>
-<li>
-<p><code>select 1</code><br>
-<code>list module</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/undo.gif" alt="undo" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.15. Redoing the previously undone command : <code>redo</code></a></h3>
-<div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.<br>
-Format: <code>redo</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>If the most recent <code>undo</code> command is execueted with the panel listing elements different from those
-elements when the actual command is executed. The command will not be allowed to redo.</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/redo.gif" alt="redo" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.16. Clearing all entries : <code>clear</code></a></h3>
-<div class="paragraph">
-<p>Clears all entries from the ModU list.<br>
-Format: <code>clear</code></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/clear.gif" alt="clear" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.17. Exiting the program : <code>exit</code></a></h3>
-<div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/edit.gif" alt="edit" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="customising-the-font-size-code-customise-code"><a class="link" href="#customising-the-font-size-code-customise-code">3.18. Customising the font size : <code>customise</code></a></h3>
-<div class="paragraph">
-<p>Customise the font size of ModU list<br>
-Format: <code>customise</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-A lesson can have any number of tags (including 0)
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>customise fs\xsmall</code></p>
-</li>
-<li>
-<p><code>customise fs\small</code></p>
-</li>
-<li>
-<p><code>customise fs\xlarge</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="change-theme-code-theme-code"><a class="link" href="#change-theme-code-theme-code">3.19. Change theme : <code>theme</code></a></h3>
+<h3 id="change-theme-code-theme-code"><a class="link" href="#change-theme-code-theme-code">3.20. Change theme : <code>theme</code></a></h3>
 <div class="paragraph">
 <p>Change between light (default) and dark theme<br>
 Format: <code>theme</code></p>
@@ -928,34 +826,9 @@ Toggle between light and dark theme. If the current theme is light, executing <c
 </div>
 </div>
 <div class="sect2">
-<h3 id="highlighting-keywords-code-color-code"><a class="link" href="#highlighting-keywords-code-color-code">3.20. Highlighting keywords : <code>color</code></a></h3>
-<div class="paragraph">
-<p>Highlight the command keywords.<br>
-Format: <code>color enable/disable</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>color enable</code></p>
-</li>
-<li>
-<p><code>color disable</code></p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/video/color.gif" alt="color" width="790">
-</div>
-</div>
-</div>
-<div class="sect2">
 <h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.21. Saving the data</a></h3>
 <div class="paragraph">
-<p>ModU data are saved in the hard disk automatically after any command that changes the data.<br>
+<p>All data will be saved in the hard disk automatically after any command that changes the data.
 There is no need to save manually.</p>
 </div>
 </div>
@@ -965,12 +838,18 @@ There is no need to save manually.</p>
 <h2 id="tutorial"><a class="link" href="#tutorial">4. Tutorial</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Assume you are a a professor from the National University of Singapore (NUS) and you want to start planning your
-timetable for the upcoming semester. The university then introduced you to ModU,
-an effective timetable scheduling software developed by the School of Computing (SoC) students.</p>
+<p>Assume you are a professor from the National University of Singapore (NUS) and
+you want to start planning your timetable for the upcoming semester.
+The university has introduced you to ModU, an effective timetable scheduling software developed by
+the School of Computing (SoC) students.</p>
 </div>
 <div class="paragraph">
 <p>This is the screen when you first launch ModU.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tutorial/NewUi.png" alt="NewUi" width="790">
+</div>
 </div>
 <div class="ulist">
 <ul>
@@ -988,17 +867,11 @@ an effective timetable scheduling software developed by the School of Computing 
 </li>
 </ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/tutorial/NewUi.png" alt="NewUi" width="790">
-</div>
+<div class="paragraph">
+<p>Since this is the first time you are using this software, you are unsure of what are the available commands.</p>
 </div>
 <div class="paragraph">
-<p>Since this is the first time you are using this software,
-you are unsure of what are the available commands.</p>
-</div>
-<div class="paragraph">
-<p>Type <code>help</code> in the command box. ModU will automatically open up the user guide that will list all available commands.</p>
+<p>Type <code>help</code> in the command box. ModU will open up the user guide that will list all available commands in ModU.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1006,7 +879,7 @@ you are unsure of what are the available commands.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>After you have read through the commands, you realised that it is hard to remember all the commands.
+<p>After you have read through the commands, you realised that it is difficult to remember all the different commands.
 You want to be able to identify key words, prefix and check the validity of command.</p>
 </div>
 <div class="paragraph">
@@ -1170,11 +1043,8 @@ ModU will clear all modules in the timetable.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous ModU folder.</p>
-</div>
-<div class="paragraph">
-<p><strong>Q</strong>: How do I enable the highlighting of keyword feature?<br>
-<strong>A</strong>: Type <code>color enable</code> in the command box.</p>
+<strong>A</strong>: Install the app in the computer that you want to transfer the data to and overwrite the empty data file
+it creates with the file that contains the data in your ModU folder stored in the previous computer.</p>
 </div>
 <div class="paragraph">
 <p><strong>Q</strong>: How do I get support?<br>
@@ -1338,7 +1208,7 @@ e.g. <code>customise disable</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-11 04:50:55 +00:00
+Last updated 2017-11-11 08:58:22 +00:00
 </div>
 </div>
 </body>

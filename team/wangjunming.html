@@ -46,202 +46,140 @@
 <div class="sect2">
 <h3 id="listing-all-lesson-code-list-code"><a class="link" href="#listing-all-lesson-code-list-code">Listing all lesson : <code>list</code></a></h3>
 <div class="paragraph">
-<p>Shows a list of all modules in the ModU.<br>
-Format: <code>list module</code></p>
+<p>The <code>list</code> command will display a list based on the attribute specified by the user.
+There are three attributes, namely: <em>module</em>, <em>location</em> and <em>marked</em>.<br></p>
 </div>
 <div class="paragraph">
-<p>Shows a list of all location in the ModU.<br>
-Format: <code>List location</code></p>
+<p>Command format in command box: <code>list ATTRIBUTE</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The attribute must be in lower case.<br>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Shows a list of all marked lessons in the ModU.<br>
-Format: <code>List marked</code></p>
+<p>Valid examples:<br></p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/video/list.gif" alt="list" width="790">
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To switch to <strong>module list mode</strong>, type <code>list module</code> to list all registered modules in ModU.<br></p>
+</li>
+<li>
+<p>To switch to <strong>location list mode</strong>, type <code>list location</code> to list all locations of every lesson registered in ModU.<br></p>
+</li>
+<li>
+<p>To switch to <strong>marked list mode</strong>, type <code>list marked</code> to list all marked lessons in ModU.<br></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="viewing-specific-lesson-from-the-list-code-view-code"><a class="link" href="#viewing-specific-lesson-from-the-list-code-view-code">Viewing specific lesson from the list: <code>view</code></a></h3>
 <div class="paragraph">
-<p>Views the detail information about a lesson.<br>
-Format: <code>view INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>You can either view a lesson from a module or a location.</p>
-</li>
-</ul>
-</div>
-</div>
+<p>The <code>view</code> command will display all lessons in a module or a location.<br></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Command format in command box: <code>view INDEX</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This is the only command that allows you to switch to <strong>lesson list mode</strong>.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list module</code><br>
-<code>view 2</code><br>
-View the detail information with the second index shown in the module list.</p>
+<p>In <strong>module list mode</strong>, type <code>view 2</code> to view all lessons of the module.<br></p>
 </li>
 <li>
-<p><code>list location</code><br>
-<code>view 2</code><br>
-View the detail information with the second index shown in the location list.</p>
+<p>In <strong>location list mode</strong>, type <code>view 2</code> to view all lessons conducted at this location.<br></p>
 </li>
 </ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/video/view.gif" alt="view" width="790">
-</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="editing-a-lesson-code-edit-code"><a class="link" href="#editing-a-lesson-code-edit-code">Editing a lesson : <code>edit</code></a></h3>
 <div class="paragraph">
-<p>Edits an existing lesson in the ModU list.<br>
-Format: <code>edit INDEX [m/MODULE_CODE] [ct/CLASS_TYPE] [v/VENUE] [gp/GROUP] [ts/TIME_SLOT] [l/Lecturer&#8230;&#8203;]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Edits the lesson at the specified <code>INDEX</code>. The index refers to the index number shown in the last lesson listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-<li>
-<p>When editing lecturers, the existing lecturers of the lesson will be removed i.e adding of lecturers is not cumulative.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/video/edit.gif" alt="edit" width="790">
-</div>
+<p>The <code>edit</code> command will edit existing lessons, modules or locations. The index must be a positive integer: 1, 2, 3, and so on.<br></p>
 </div>
 <div class="paragraph">
-<p>Edits an existing attribute(module/location) in the ModU list.<br>
-Format: <code>edit INDEX [CODE/LOCATION]&#8230;&#8203;</code></p>
+<p>Command format in command box: <code>edit INDEX [m/MODULE_CODE] [ct/CLASS_TYPE] [v/VENUE] [gp/GROUP] [ts/TIME_SLOT] [l/Lecturer…]</code><br></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Edits the attribute at the specified <code>INDEX</code>. The index refers to the index number shown in the last attribute listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Requires to list by that specified attribute(module/location) first.</p>
-</li>
-<li>
-<p>All lessons with the specifed attribute value will be updated to with the attribute of input values.</p>
-</li>
-</ul>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+At least one of the optional fields must be provided.<br>
+Existing values will be updated to the input values.<br>
+The prefix can be omitted in both <strong>module list mode</strong> and <strong>location list mode</strong>.<br>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Valid examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list module</code><br>
-Returns a list of location<br></p>
+<p>Type <code>list module</code> to list all registered modules in ModU.<br>
+Next, type <code>edit 2 CS2101</code> to rename all the lessons associated with the module at index 2 to CS2101.<br></p>
 </li>
 <li>
-<p><code>edit 1 m/CS2101</code><br>
-Edits the module code of the 1st lesson to be <code>CS2101</code>.</p>
+<p>Type <code>list location</code> to list all locations of all lessons registered in ModU.<br>
+Next, type <code>edit 2 LT19</code> to relocate all the lessons associated with the location at index 2 to LT19.<br></p>
+</li>
+<li>
+<p>In <strong>lesson list mode</strong>, type <code>view 2</code> to view the lesson at index 2.<br>
+Next, type <code>edit 2 v/LT19</code> to relocate the lesson to LT19. Note that for this example, the prefix is compulsory.<br></p>
 </li>
 </ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/video/editModule.gif" alt="editModule" width="790">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list location</code><br>
-Returns a list of location<br></p>
-</li>
-<li>
-<p><code>edit 3 LT27</code> +Assume
-Edits all the lessons with the third location shown in the location list to be <code>LT27</code>.</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/video/editLocation.gif" alt="editLocation" width="790">
-</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="deleting-a-lesson-code-delete-code"><a class="link" href="#deleting-a-lesson-code-delete-code">Deleting a lesson : <code>delete</code></a></h3>
 <div class="paragraph">
-<p>Deletes all the lessons with specified attribute value in the attribute list from the ModU list.<br>
-Format: <code>delete INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the lesson at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the most recent listing.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
+<p>The <code>delete</code> command will delete a lesson, module or location. The index must be a positive integer: 1, 2, 3, and so on.<br></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Command format in command box: <code>delete INDEX</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list location</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd lesson in the ModU location list.</p>
+<p>In <strong>module list mode</strong>, type <code>delete 1</code> to remove the module at index 1.<br></p>
 </li>
 <li>
-<p><code>find MA1101R</code><br>
-<code>delete 1</code><br>
-Deletes the 1st lesson in the results of the <code>find</code> command.</p>
+<p>In <strong>location list mode</strong>, type <code>delete 1</code> to remove the location at index 1.<br></p>
 </li>
 <li>
-<p><code>list module</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd lesson in the ModU location list.</p>
+<p>In <strong>lesson list mode</strong>, type <code>delete 1</code> to remove the lesson at index 1.<br></p>
 </li>
 </ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/video/delete.gif" alt="delete" width="790">
-</div>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -402,65 +340,60 @@ According to current listing type, which we can obtain from <code>ListingUnit</c
 <div class="sect2">
 <h3 id="marking-a-lesson-code-mark-code"><a class="link" href="#marking-a-lesson-code-mark-code">Marking a lesson: <code>mark</code></a></h3>
 <div class="paragraph">
-<p>Marks a lesson to the marked list<br>
-Format: <code>mark INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Mark the lesson at the specified <code>INDEX</code>. The index refers to the index number shown in the last lesson listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>The specified lesson must be initially not in the marked list.</p>
-</li>
-</ul>
-</div>
-</div>
+<p>The <code>mark</code> command will mark a lesson and add it into a marked list. The index must be a positive integer: 1, 2, 3 and so on.<br></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Command format in command box: <code>mark INDEX</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The specified lesson must not initially be in the marked list.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>view 1</code><br>
-<code>mark 1</code><br>
-Mark the person into the marked list.
+<p>In <strong>module list mode</strong>, type <code>view 1</code> to display all lessons in the module.<br>
+Next, type <code>mark 1</code> to add lesson into the marked list.<br></p>
+</li>
+<li>
+<p>In <strong>lesson list mode</strong>, type <code>mark 1</code> to add the lesson into the marked list.
 === Unmarking a lesson: <code>unmark</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>remove a lesson from the marked list<br>
-Format: <code>unmark INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Unmark the lesson at the specified <code>INDEX</code>. The index refers to the index number shown in the last lesson listing. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>The specified lesson must already exist in the marked list.</p>
-</li>
-</ul>
-</div>
-</div>
+<p>The <code>unmark</code> command will remove a marked lesson from the marked list. The index must be a positive integer: 1, 2, 3, and so on.<br></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Command format in command box: <code>unmark INDEX</code><br></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>view 1</code><br>
-<code>unmark 1</code><br>
-Remove the lesson from the marked list.</p>
-</li>
-</ul>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The specified lesson must not initially be in the marked list.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Valid example:
+* Type <code>list marked</code> to list all marked lessons in ModU.<br>
+Next, type <code>unmark 1</code> to remove the lesson at index 1 from the marked list.<br></p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -714,7 +647,7 @@ In v2.0, ModU should be able to export the customized timetable out.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-11 04:50:55 +00:00
+Last updated 2017-11-11 08:58:22 +00:00
 </div>
 </div>
 </body>

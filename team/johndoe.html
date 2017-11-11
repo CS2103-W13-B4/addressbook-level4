@@ -37,110 +37,96 @@
 <div class="sect2">
 <h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
-<p>Restores the list to the state before the previous <em>undoable</em> command was executed.<br>
-Format: <code>undo</code></p>
+<p>The <code>undo</code> command will restore the list to the state before the previous undoable command was executed.<br></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>You can only use <code>undo</code> with current listing element(Module/Location/Lesson).</p>
-</li>
-<li>
-<p>Undo previous command is no longger allowed once user switched listing element.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Command format in command box: <code>undo</code><br></p>
 </div>
-</div>
-</div>
-<div class="admonitionblock note">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Undoable commands: those commands that modify the list&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
-</div>
+Undoing previous command is not allowed once you have switched the list mode.<br>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Valid examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>list module</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<p>In <strong>module list mode</strong>, type <code>delete 1</code> to remove the module at index 1.<br>
+Next, type <code>undo</code> to restore the state of the list before <code>delete 1</code> was executed.<br></p>
 </li>
 <li>
-<p><code>select 1</code><br>
-<code>list module</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<p>In <strong>module list mode</strong>, type <code>clear</code> to remove all registered modules in ModU.<br>
+Next, type <code>undo</code> to restore the state of the list before <code>clear</code> was executed.<br></p>
 </li>
 </ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/video/undo.gif" alt="undo" width="790">
+<div class="paragraph">
+<p>Invalid examples:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong>module list mode</strong>, type <code>delete 1</code> to remove the module at index 1.<br>
+Next, type <code>view 1</code> to go into <strong>lesson list mode</strong> of module at index 1.<br>
+Type <code>undo</code> in the command box.<br>
+The <code>undo</code> command fails because the list mode has changed from <strong>module list mode</strong> to <strong>lesson list mode</strong>.<br></p>
+</li>
+<li>
+<p>In <strong>module list mode</strong>, type <code>select 1</code> to display all the remarks of the module at index 1.<br>
+Next, type <code>undo</code> in the command box.<br>
+The <code>undo</code> command fails as there are no undoable commands executed previously.<br></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.<br>
-Format: <code>redo</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>If the most recent <code>undo</code> command is execueted with the panel listing elements different from those
-elements when the actual command is executed. The command will not be allowed to redo.</p>
-</div>
-</div>
+<p>The <code>redo</code> command will reverse the most recent <code>undo</code> command. The command is not redoable.<br></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Command format in command box: <code>redo</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+<p>In <strong>module list mode</strong>, type <code>delete 1</code> to remove the module at index 1.<br>
+Next, type <code>undo</code> to restore the state of the list before <code>delete 1</code> was executed.<br>
+Type <code>redo</code> to re-execute <code>delete 1</code>.<br></p>
 </li>
 <li>
-<p><code>delete 1</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+<p>In <strong>module list mode</strong>, type <code>delete 1</code> to remove the module at index 1.<br>
+Next, type <code>clear</code> to remove all the modules.<br>
+Type <code>undo</code> to restore the state of the list before <code>clear</code> was executed.<br>
+Type <code>undo</code> to restore the state of the list before <code>delete 1</code> was executed.<br>
+Type <code>redo</code> to re-execute <code>delete 1</code>.<br>
+Type <code>redo</code> to re-execute <code>clear</code>.<br></p>
 </li>
 </ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/video/redo.gif" alt="redo" width="790">
+<div class="paragraph">
+<p>Invalid example:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>In <strong>lesson list mode</strong>, type <code>delete 1</code> to remove the module at index 1.<br>
+Next, type <code>redo</code> in the command box.<br>
+The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.<br></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -400,7 +386,7 @@ If the <code>redoStack</code> is empty, then there are no other commands left to
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-11 04:50:55 +00:00
+Last updated 2017-11-11 08:58:22 +00:00
 </div>
 </div>
 </body>
