@@ -19,13 +19,10 @@
 <h2 id="project-modu"><a class="link" href="#project-modu">Project: ModU</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ModU is a software design to help teachers and lecturers to plan their weekly teaching schedule.<br></p>
+<p>ModU is a software designed to assist teachers and lecturers to plan their weekly teaching schedule.</p>
 </div>
 <div class="paragraph">
-<p>There are many ways to improve and extend the functionality of this software and this guide provides essential information to help you get started.
-This developer guide contains information of the architecture design of this software, implementation of the existing commands that is accessible for the
-users and other useful information such as guide to teach you how to test this software. For more information please refer
-to the table of content.</p>
+<p>There are many ways to improve and extend the functionality of this software and this guide provides essential information to help you get started. This developer guide contains information of the architecture design of this software, implementation of the existing commands that are accessible for the users and other useful information.</p>
 </div>
 <div class="paragraph">
 <p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/main/cctdaniel.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/test/cctdaniel.md">Test code</a>]</p>
@@ -74,7 +71,7 @@ There are five font sizes for you to choose from, namely: <em>xsmall</em>, <em>s
 <div class="sect2">
 <h3 id="customise-mechanism"><a class="link" href="#customise-mechanism">Customise mechanism</a></h3>
 <div class="paragraph">
-<p>The customise mechanism is facilitated by both the <a href="#event-bus"><code>Event Bus</code></a> and an enumeration class <code>FontSizeUnit</code>. Currently, <code>CustomiseCommand</code> only supports changing the font size of the application. Each time <code>CustomiseCommand</code> is executed, it will raise a <code>ChangedFontSizeEvent</code> via <code>EventCenter</code> according to the user specified parameter as well as update the <code>currentFontSizeUnit</code>.</p>
+<p>The customise mechanism is facilitated by both the <strong>EventBus</strong> and an enumeration class <strong>FontSizeUnit</strong>. Currently, <strong>CustomiseCommand</strong> only supports changing the font size of the application. Each time <strong>CustomiseCommand</strong> is executed, it will raise a <strong>ChangedFontSizeEvent</strong> via <strong>EventCenter</strong> according to the user specified parameter as well as update the <strong>currentFontSizeUnit</strong>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -83,13 +80,13 @@ There are five font sizes for you to choose from, namely: <em>xsmall</em>, <em>s
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>FontSizeUnit</code> enumeration is to set a global static variable <code>currentFontSizeUnit</code> so that <code>PersonCard</code> is able to follow the current font size whenever it is called.
+The <strong>FontSizeUnit</strong> enumeration is to set a global static variable <strong>currentFontSizeUnit</strong> so that <strong>PersonCard</strong> is able to obtain the current font size whenever it is called.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the customise command operation works:</p>
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 34)</em> shows how the customise command operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -97,23 +94,29 @@ The <code>FontSizeUnit</code> enumeration is to set a global static variable <co
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">activity diagram</a> summarize what happens when a user execute customise command.</p>
+<p><em>Figure 34: Sequence Diagram for CustomiseCommand</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 35)</em> summarizes what happens when a user executes customise command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/CustomiseCommandActivityDiagram.png" alt="CustomiseCommandActivityDiagram" width="900">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 35: Activity Diagram for CustomiseCommand</em></p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>CustomiseCommand</code><br>
-<strong>Alternative 1 (current choice):</strong> Update static variable <code>currentFontSizeUnit</code> to the corresponding <code>FontSizeUnit</code> and use <code>EventBus</code> to inform <code>UI</code> the change of <code>fontSizeUnit</code>.
-<strong>Pros:</strong> One global variable that records current <code>fontSizeUnit</code>.<br>
-<strong>Cons:</strong> Hard for new developers to understand the event center mechanism.<br>
-<strong>Alternative 2 (previous choice):</strong> Use a variable in model manager to keep record of <code>currentFontSizeUnit</code><br>
-<strong>Pros:</strong> No need for extra enumeration class and easier for new developers to design.<br>
-<strong>Cons:</strong> In order to get it in other components, the variable must be declared static. But we cannot define static abstract method in interface. It also does not follow Java&#8217;s standard coding style.</p>
+<p><strong>Aspect</strong>: Implementation of <strong>CustomiseCommand</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Update static variable <strong>currentFontSizeUnit</strong> to the corresponding <strong>fontSizeUnit</strong> and use <strong>EventBus</strong> to inform <a href="#ui">UI</a> of the change to <strong>fontSizeUnit</strong>.<br>
+<strong>Pros</strong>: It only requires one global variable to records current <strong>fontSizeUnit</strong>.<br>
+<strong>Cons</strong>: It would be difficult for new developers to understand the <strong>EventCenter</strong> mechanism.<br>
+<strong>Alternative 2</strong>: Use a variable in model manager to keep a record of <strong>currentFontSizeUnit</strong>.<br>
+<strong>Pros</strong>: It do not require additional enumeration class and easier for new developers to design.<br>
+<strong>Cons</strong>: In order to obtain the variable from other components, the variable must be declared static. However, we cannot define static abstract method in an interface. It also does not follow Java’s standard coding style.</p>
 </div>
 <hr>
 </div>
@@ -166,7 +169,7 @@ Toggle between light and dark theme. If the current theme is light, executing <c
 <div class="sect2">
 <h3 id="switch-theme-mechanism"><a class="link" href="#switch-theme-mechanism">Switch theme mechanism</a></h3>
 <div class="paragraph">
-<p>The switch theme mechanism is facilitated by both the <a href="#event-bus"><code>Event Bus</code></a> and an enumeration class <code>ThemeUnit</code>. Currently, <code>ThemeCommand</code> only supports changing between light (default) and dark theme. Each time <code>ThemeCommand</code> is executed, it will raise a <code>SwitchThemeRequestEvent</code> via <code>EventCenter</code> and update the <code>currentThemeUnit</code>.</p>
+<p>The switch theme mechanism is facilitated by both the <strong>EventBus</strong> and an enumeration class <strong>ThemeUnit</strong>. Currently, <strong>ThemeCommand</strong> only supports changing between light (default) and dark theme. Each time <strong>ThemeCommand</strong> is executed, it will raise a <strong>SwitchThemeRequestEvent</strong> via <strong>EventCenter</strong> and update the <strong>currentThemeUnit</strong>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -175,13 +178,13 @@ Toggle between light and dark theme. If the current theme is light, executing <c
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>ThemeUnit</code> enumeration is to set a global static variable <code>currentThemeUnit</code> so that <code>MainWindow</code> is able to obtain the current theme whenever it is called.
+The <strong>ThemeUnit</strong> enumeration is to set a global static variable <strong>currentThemeUnit</strong> so that <strong>MainWindow</strong> is able to obtain the current theme whenever it is called.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the switch theme command operation works:</p>
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 36)</em> shows how the switch theme command operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -189,23 +192,29 @@ The <code>ThemeUnit</code> enumeration is to set a global static variable <code>
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">activity diagram</a> summarize what happens when a user execute switch theme command.</p>
+<p><em>Figure 36: Sequence Diagram for ThemeCommand</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 37)</em> summarize what happens when a user executes theme command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/SwitchThemeActivityDiagram.png" alt="SwitchThemeActivityDiagram" width="900">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 37: Activity Diagram for ThemeCommand</em></p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>ThemeCommand</code><br>
-<strong>Alternative 1 (current choice):</strong> Update static variable <code>currentThemeUnit</code> to the corresponding <code>ThemeUnit</code> and use <code>EventBus</code> to inform <code>UI</code> the change of <code>ThemeUnit</code>.
-<strong>Pros:</strong> One global variable that records current <code>ThemeUnit</code>.<br>
-<strong>Cons:</strong> Hard for new developers to understand the event center mechanism.<br>
-<strong>Alternative 2 (previous choice):</strong> Use a variable in model manager to keep record of <code>currentThemeUnit</code><br>
-<strong>Pros:</strong> No need for extra enumeration class and easier for new developers to design.<br>
-<strong>Cons:</strong> In order to get it in other components, the variable must be declared static. But we cannot define static abstract method in interface. It also does not follow Java&#8217;s standard coding style.</p>
+<p><strong>Aspect</strong>: Implementation of <strong>ThemeCommand</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Update static variable <strong>currentThemeUnit</strong> to the corresponding <strong>ThemeUnit</strong> and use <strong>EventBus</strong> to inform <a href="#ui">UI</a> the change of <strong>ThemeUnit</strong>.<br>
+<strong>Pros</strong>: One global variable that records current <strong>ThemeUnit</strong>.<br>
+<strong>Cons</strong>: Hard for new developers to understand the event center mechanism.<br>
+<strong>Alternative 2</strong>:Use a variable in model manager to keep record of <strong>currentThemeUnit</strong><br>
+<strong>Pros</strong>: There is no need for an extra enumeration class and it is also easier for new developers to design.<br>
+<strong>Cons</strong>: In order to get the variable in other components, it must be declared static. However, we cannot define static abstract method in interface. It also does not follow Java’s standard coding style.</p>
 </div>
 <hr>
 </div>
@@ -252,7 +261,7 @@ The <code>ThemeUnit</code> enumeration is to set a global static variable <code>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-11 08:58:22 +00:00
+Last updated 2017-11-11 09:39:57 +00:00
 </div>
 </div>
 </body>

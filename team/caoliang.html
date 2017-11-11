@@ -19,13 +19,10 @@
 <h2 id="project-modu"><a class="link" href="#project-modu">Project: ModU</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ModU is a software design to help teachers and lecturers to plan their weekly teaching schedule.<br></p>
+<p>ModU is a software designed to assist teachers and lecturers to plan their weekly teaching schedule.</p>
 </div>
 <div class="paragraph">
-<p>There are many ways to improve and extend the functionality of this software and this guide provides essential information to help you get started.
-This developer guide contains information of the architecture design of this software, implementation of the existing commands that is accessible for the
-users and other useful information such as guide to teach you how to test this software. For more information please refer
-to the table of content.</p>
+<p>There are many ways to improve and extend the functionality of this software and this guide provides essential information to help you get started. This developer guide contains information of the architecture design of this software, implementation of the existing commands that are accessible for the users and other useful information.</p>
 </div>
 <div class="paragraph">
 <p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/main/caoliangnus.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/test/caoliangnus.md">Test code</a>]</p>
@@ -80,7 +77,7 @@ Besides that, this feature also indicates to the professor whether the command e
 <div class="sect2">
 <h3 id="color-keyword-mechanism"><a class="link" href="#color-keyword-mechanism">Color Keyword mechanism</a></h3>
 <div class="paragraph">
-<p>The color keyword mechanism is facilitated by <a href="#event-bus"><code>Event Bus</code></a>. Whenever color keyword command is executed, in <code>ColorKeywordCommand</code> it will raise a <code>ColorKeywordEvent</code> via <code>EventCenter</code> which there is an listener in <code>CommandBox</code> which will enable/disable the highlighting of command keyword feature according to the parameter which was passed in by the user.</p>
+<p>The color keyword mechanism is facilitated by <strong>EventBus</strong>. Whenever color keyword command is executed, it will raise a <strong>ColorKeywordEvent</strong> via <strong>EventCenter</strong>. A listener in <strong>CommandBox</strong> will then enable or disable the highlighting of command keyword feature according to the parameter which was passed in by the user.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -95,7 +92,7 @@ The default setting for this feature is set as disable.
 </table>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the color keyword command operation works:</p>
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 31)</em> shows how the color keyword command operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -103,7 +100,10 @@ The default setting for this feature is set as disable.
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">activity diagram</a> summarize what happens when an user execute color keyword command.</p>
+<p><em>Figure 31: Sequence Diagram for ColorKeywordCommand</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 32)</em> summarizes what happens when a user executes color keyword command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -111,23 +111,18 @@ The default setting for this feature is set as disable.
 </div>
 </div>
 <div class="paragraph">
-<p>The following diagram shows what happens in the <code>configBorderColor</code> method in detail:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/configBorderColor.png" alt="configBorderColor" width="900">
-</div>
+<p><em>Figure 32: Activity Diagram for ColorKeywordCommand</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>ColorKeywordCommand</code><br>
-<strong>Alternative 1 (current choice):</strong>  Update boolean variable "isEnable" in the command box by calling event to set the status of this variable.<br>
-<strong>Pros:</strong> Since only command box will be updated, using event center will maintain a good data encapsulation.<br>
-<strong>Cons:</strong> Hard for new developers to understand the event center mechanism.<br>
-<strong>Alternative 2:</strong> Declare a global boolean variable<br>
-<strong>Pros:</strong> Easier for new developer to design<br>
-<strong>Cons:</strong> This method breaks encapsulation and fails to follow standard java code style.</p>
+<p><strong>Aspect</strong>: Implementation of <strong>ColorKeywordCommand</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Update boolean variable "isEnable" in the command box by calling event to set the status of this variable.<br>
+<strong>Pros</strong>: Since only command box will be updated, using <strong>EventCenter</strong> will maintain good data encapsulation.<br>
+<strong>Cons</strong>: It would be difficult for new developers to understand the <strong>EventCenter</strong> mechanism.<br>
+<strong>Alternative 2</strong>: Declare a global boolean variable.<br>
+<strong>Pros</strong>: It would be easier for new developer to design.<br>
+<strong>Cons</strong>: This method breaks encapsulation and fails to follow the standard java coding style.</p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -165,12 +160,16 @@ The default setting for this feature is set as disable.
 <div class="sect2">
 <h3 id="timetable-mechanism"><a class="link" href="#timetable-mechanism">Timetable mechanism</a></h3>
 <div class="paragraph">
-<p><code>Timetable</code> is an enhancement of UI. The role of the timetable view is to display a timetable of all the lessons listed in the display panel.<br></p>
+<p><strong>Timetable</strong> is an enhancement of <a href="#ui">UI</a>. The role of the timetable view is to display a timetable of all the lessons listed in the display panel.</p>
 </div>
 <div class="paragraph">
-<p><code>Timetable</code> mechanism is facilitated by the <code>GridPane</code> properties in javafx.<br>
-The first row of timetableView is the header for time slot. In our software, the range for available time slots are from 0800 to 2000<br>
-The generation of timetable column header is implemented this way:</p>
+<p><strong>Timetable</strong> mechanism is facilitated by the <strong>GridPane</strong> properties in <a href="#javaFX">JavaFx</a>.</p>
+</div>
+<div class="paragraph">
+<p>The first row of <strong>timetableView</strong> is the header for time slot. In our software, the range for available time slots are from 0800 to 2000.</p>
+</div>
+<div class="paragraph">
+<p>The generation of timetable column header is implemented this way:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -180,8 +179,10 @@ The generation of timetable column header is implemented this way:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The first column of timetableView is the header for weekday. In our software, the range is from Monday to Friday.<br>
-The generation of timetable row header is implemented this way:</p>
+<p>The first column of <strong>timetableView</strong> is the header for weekday. In our software, the range is from Monday to Friday.</p>
+</div>
+<div class="paragraph">
+<p>The generation of timetable row header is implemented this way:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -191,13 +192,8 @@ The generation of timetable row header is implemented this way:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>+</p>
-</div>
-<div class="paragraph">
-<p>When the view command is executed, a number of lessons will be displayed on the display panel.<br>
-In the CombinePanel, the handleViewedLessonEvent() will call generateTimeTableGrid() to set up the timetableView. <br>
-The generateTimeTableGrid() will obtain the grid data from generateTimeTableData().<br>
-After that, it will display the data onto the timetableView.</p>
+<p>When the view command is executed, a number of lessons will be displayed on the display panel.
+In the <strong>CombinePanel</strong>, the <strong>handleViewedLessonEvent()</strong> will call <strong>generateTimeTableGrid()</strong> to set up the <strong>timetableView</strong>. The <strong>generateTimeTableGrid()</strong> will then obtain the grid data from <strong>generateTimeTableData()</strong>.After that, it will display the data onto the <strong>timetableView</strong>.</p>
 </div>
 <div class="paragraph">
 <p>The generation of timetable data is implemented this way:</p>
@@ -227,13 +223,13 @@ After that, it will display the data onto the timetableView.</p>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of Timetable.<br>
-<strong>Alternative1 (current choice): </strong> Using code to create timetable view.<br>
-<strong>Pros:</strong> It is more flexible to change the style or the text of the label.<br>
-<strong>Cons:</strong> Since everything is written in code, you can not visualise the layout until you run the code.<br>
-<strong>Alternative2:</strong> Using Scene Builder to create timetable view<br>
-<strong>Pros:</strong> It is easier to visualise the layout<br>
-<strong>Cons:</strong> There are many limitations such as unable to add time slot to span 2 columns.<br></p>
+<p><strong>Aspect</strong>: Implementation of <strong>Timetable</strong>.<br>
+<strong>Alternative 1 (current choice)</strong>: Use java code to create the timetable view instead of SceneBuilder.<br>
+<strong>Pros</strong>: It is more flexible to change the style or the text of the label.<br>
+<strong>Cons</strong>: Since everything is written in code, you cannot visualise the layout until you run the code.<br>
+<strong>Alternative 2</strong>: Use SceneBuilder to create the timetable view.<br>
+<strong>Pros</strong>: It is easier to visualise the layout.<br>
+<strong>Cons</strong>: There are many limitations such as unable to add time slot to span 2 columns.</p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -272,7 +268,7 @@ Therefore, the stick notes feature allows professors to add additional informati
 <div class="sect2">
 <h3 id="stickynotes-mechanism"><a class="link" href="#stickynotes-mechanism">StickyNotes mechanism</a></h3>
 <div class="paragraph">
-<p><code>StickyNotes</code> is an enhancement of UI. The role of the stickynotes view is to display information about a module when.<br></p>
+<p><strong>StickyNotes</strong> is an enhancement of <a href="#ui">UI</a>. The role of the stickynotes view is to display information about a module.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -287,13 +283,10 @@ The maximum number of notes for a module is 9.
 </table>
 </div>
 <div class="paragraph">
-<p><code>StickyNotes</code> mechanism is facilitated by the <code>GridPane</code> properties in javafx.<br></p>
+<p><strong>StickyNotes</strong> mechanism is facilitated by the <strong>GridPane</strong> properties in <a href="#javaFX">JavaFx</a>.</p>
 </div>
 <div class="paragraph">
-<p>When the remark command is executed, a new note will be created and linked to a module.<br>
-The handleRemarkChangedEvent() will call stickyNotesInit() to set up the stickyNotesView.<br>
-The stickyNotesInit() will obtain the grid data from noteDataInit().<br>
-After that, it will display the data onto the stickyNotesView.</p>
+<p>When the remark command is executed, a new note will be created and linked to a module. The <strong>handleRemarkChangedEvent()</strong> will call <strong>stickyNotesInit()</strong> to set up the <strong>stickyNotesView</strong>. The <strong>stickyNotesInit()</strong> will then obtain the grid data from <strong>noteDataInit()</strong>. After that, it will display the data onto the <strong>stickyNotesView</strong>.</p>
 </div>
 <div class="paragraph">
 <p>The generation of stickynotes data is implemented this way:</p>
@@ -320,13 +313,13 @@ After that, it will display the data onto the stickyNotesView.</p>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of StickyNotes.<br>
-<strong>Alternative1 (current choice): </strong> Using code to create stickynotes view.<br>
-<strong>Pros:</strong> The color of stickynotes can be changed easily.<br>
-<strong>Cons:</strong> THe developer needs to understand how to code for UI.<br>
-<strong>Alternative2:</strong> Using Scene Builder to create stickynotes view<br>
-<strong>Pros:</strong> It is easier to visualise the layout and set the properties<br>
-<strong>Cons:</strong> There are many limitations such as unable to show only a few <code>TextArea</code> objects.<br></p>
+<p><strong>Aspect</strong>: Implementation of <strong>StickyNotes</strong>.<br>
+<strong>Alternative 1 (current choice)</strong>: Use java code to create the stickynotes view instead of SceneBuilder.<br>
+<strong>Pros</strong>: The color of stickynotes can be changed easily.<br>
+<strong>Cons</strong>: It might be difficult to implement for new developers.<br>
+<strong>Alternative 2</strong>: Use Scene Builder to create the stickynotes view.<br>
+<strong>Pros</strong>: It is easier to visualise the layout and set the properties needed.<br>
+<strong>Cons</strong>: There are many limitations such as unable to show only a selected few TextArea objects.</p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -379,7 +372,7 @@ After that, it will display the data onto the stickyNotesView.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-11 08:58:22 +00:00
+Last updated 2017-11-11 09:39:57 +00:00
 </div>
 </div>
 </body>

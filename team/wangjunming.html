@@ -210,8 +210,7 @@ Similarly, we can list by module and edit/delete all lessons in this module.</p>
 <div class="sect2">
 <h3 id="listingunit-mechanism"><a class="link" href="#listingunit-mechanism">ListingUnit mechanism</a></h3>
 <div class="paragraph">
-<p><code>ListingUnit</code> is a enumeration class which has enumeration type <code>LESSON</code>, <code>MODULE</code> and <code>LOCATION</code>. It records the current listing element type of the lesson list panel. It has static method <code>getCurrentListingUnit</code> and <code>setCurrentListingUnit</code>. By which we can conveniently record the current listing type and get the current listing type at any time.
-It is implemented in this way:</p>
+<p><strong>ListingUnit</strong> is an enumeration class which has three enumeration types: <strong>LESSON</strong>, <strong>MODULE</strong> and <strong>LOCATION</strong>. It records the current listing attribute of the lesson list panel. It has static method <strong>getCurrentListingUnit</strong> and <strong>setCurrentListingUnit</strong> that allows us to record the current listing type and get the current listing type at any time. It is implemented in this way:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -226,35 +225,29 @@ It is implemented in this way:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>When <code>list</code> command is used. The variable <code>currentListingUnit</code> will be set accordingly(either <code>LOCATION</code> or <code>MODULE</code>) in order for future reference of other operation.
-Similarly, when <code>view</code> command is used, the variable <code>currentListingUnit</code> will be set to <code>LESSON</code>.</p>
+<p>When list command is used, the variable <strong>currentListingUnit</strong> will be set accordingly, either by <strong>LOCATION</strong> or <strong>MODULE</strong>. Similarly, when view command is used, the variable <strong>currentListingUnit</strong> will be set to <strong>LESSON</strong>.</p>
 </div>
 <div class="paragraph">
-<p>It facilitates the implementation of many parts of <code>logic component</code>. Such as <code>EditCommandParser</code>, <code>ViewCommand</code>, <code>DeleteCommand</code> etc.
-For example, edit command will need to know the current listing type in order to parse the arguments accordingly, the execution of delete command will need to know the current listing type in order to decide either delete a lesson specified by the index or a collection of lessons specified by the attribute.</p>
+<p><strong>ListingUnit</strong> facilitates the implementation of the various parts of the Logic component, such as <strong>EditCommand</strong>, <strong>ViewCommand</strong>, <strong>DeleteCommand</strong> and others. For example, <strong>EditCommand</strong> will need to know the current listing attribute in order to parse the arguments.</p>
 </div>
 <div class="paragraph">
-<p><code>ListingUnit</code> also records the current predicate used in <code>filteredLessonList</code>, it has static method <code>setCurrentPredicate</code> and <code>getCurrentPredicate</code>.
-Whenever the predicate is changed, the variable <code>currentPredicate</code> will be updated accordingly.</p>
+<p>ListingUnit also records the current predicate used in <strong>filteredLessonList</strong> and has static methods <strong>setCurrentPredicate</strong> and <strong>getCurrentPredicate</strong>. Whenever the predicate is changed, the variable <strong>currentPredicate</strong> will be updated accordingly.</p>
 </div>
 <div class="paragraph">
-<p>The recorded predicate is mainly used to facilitate the implementation of <code>redo</code> command. As we discussed above about <code>redo</code> command. We are not allowing redo the previous command in a different context. Since many of the commands are Index-based, it will have different effects to execute the command again with a different listing.
-As a result, when implement the redo mechanism, we can obtain the <code>currentPredicate</code> and compare it with the predicate memoried by the command and only push it into the <code>redostack</code> if the predicate is the same.</p>
+<p>The recorded predicate is mainly used to facilitate the implementation of <strong>RedoCommand</strong>. We do not allow redoing of the previous command in a different context. Since many of the commands are index-based, executing the command with a different listing type will cause different results. As a result, when implementing the redo mechanism, we can obtain the <strong>currentPredicate</strong> and compare it with the predicate memorised by the command and only push it onto the <strong>redoStack</strong> if the predicate is the same.</p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>ListingUnit</code><br>
-<strong>Alternative 1 (current choice):</strong>  Construct a enumeration class <code>ListingUnit</code> and record current listing type and predicates.<br>
-<strong>Pros:</strong> It makes the implementation of many other features easier.<br>
-<strong>Cons:</strong> In testing, <code>ListingUnit</code> class carry data from one test to another even when we want each test to be independent of the others.<br>
-<strong>Alternative 2 (previous choice):</strong> Use a variable in model manager to keep record of currentListingUnit<br>
-<strong>Pros:</strong> No need for extra enumeration class.<br>
-<strong>Cons:</strong> In order to access the variable in other components, the variable must be declared static. But we cannot define static abstract method in interface.
+<p><strong>Aspect</strong>: Implementation of <strong>ListingUnit</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Construct an enumeration class <strong>ListingUnit</strong> and record current listing type and predicates.<br>
+<strong>Pros</strong>: It makes the implementation of many other features easier.<br>
+<strong>Cons</strong>: In testing, <strong>ListingUnit</strong> class carries data from one test to another even when we want each test to be independent of the others.<br>
+<strong>Alternative 2 (previous choice)</strong>: Use a variable in model manager to keep record of current <strong>ListingUnit</strong>.<br>
+<strong>Pros</strong>: There is no need for an extra enumeration class.<br>
+<strong>Cons</strong>: In order to access the variable in other components, the variable must be declared static. However, we cannot define static abstract methods in an interface.
 === List/View mechanism
-The list and view mechanisms are similar and both are facilitated by <code>ListingUnit</code> and <code>Predicate</code>.
-When user list by different attributes, the static variable <code>currentListingUnit</code> will be reset to either <code>MODULE</code> or <code>LOCATION</code>.
-When user view by index, the the static variable <code>currentListingUnit</code> will be set to <code>LESSON</code>.</p>
+The list and view mechanisms are similar and both are facilitated by <strong>ListingUnit</strong> and predicate. When the user lists by different attributes, the static variable current <strong>ListingUnit</strong> will reset to either <strong>MODULE</strong> or <strong>LOCATION</strong>, depending on the user’s input. When the user view by index, the static variable current <strong>ListingUnit</strong> will be set to <strong>LESSON</strong>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -263,18 +256,16 @@ When user view by index, the the static variable <code>currentListingUnit</code>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The default listing is to list all modules. When list by attribute, for example, <code>list location</code>, the currentListingUnit will be set to <code>location</code> and show a list of all locations.
+The default listing unit is <strong>MODULE</strong>. When listing by attribute, for example, list location, the <strong>currentListingUnit</strong> will be set to <strong>LOCATION</strong> and shows a list of all locations.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>For different listing type, we always use the same lessonList but set different <code>Predicate</code> to it.
-<code>UniqueModuleCodePredicate</code> and <code>UniqueLocationPredicate</code> are used to facilitate the implementation of list.
-For example, when user types in <code>list module</code>, a <code>UniqueModulePredicate</code> will be used to filter the lessonList and UI will hide all other irrelevant information of the lesson and results in showing a list of all Modules.</p>
+<p>For different listing type, we always use the same <strong>lessonList</strong> but set different predicate to it. <strong>UniqueModuleCodePredicate</strong> and <strong>UniqueLocationPredicate</strong> are used to facilitate the implementation of list. For example, when the user types in list module, a <strong>UniqueModulePredicate</strong> will be used to filter the <strong>lessonList</strong>. <a href="#ui">UI</a> will hide all other irrelevant information of the lesson such as location and time slot and shows a list of all modules.</p>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the list command works:</p>
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 20)</em> shows how the list command works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -282,7 +273,10 @@ For example, when user types in <code>list module</code>, a <code>UniqueModulePr
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#activity-diagram">activity diagram</a> summarize what happens when an user execute list command.</p>
+<p><em>Figure 20: Sequence Diagram for ListCommand</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 21)</em> summarizes what happens when a user executes list command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -290,11 +284,13 @@ For example, when user types in <code>list module</code>, a <code>UniqueModulePr
 </div>
 </div>
 <div class="paragraph">
-<p><code>FixedCodePredicate</code> and <code>FixedLocationPredicate</code> are used to facilitate the implementation of <code>view</code> command.
-According to current listing type, which we can obtain from <code>ListingUnit</code>, we create either a <code>FixedCodePredicate</code> or a <code>FixedLocationPredicate</code> to filter the lesson list and set <code>currentListingUnit</code> to be <code>Lesson</code>.</p>
+<p><em>Figure 10: Activity Diagram for ListCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the view command works:</p>
+<p><strong>FixedCodePredicate</strong> and <strong>FixedLocationPredicate</strong> are used to facilitate the implementation of <strong>ViewCommand</strong>. According to the current listing type, which we can obtain from <strong>ListingUnit</strong>, we can create either a <strong>FixedCodePredicate</strong> or a <strong>FixedLocationPredicate</strong> to filter the lesson list and set <strong>currentListingUnit</strong> to be <strong>LESSON</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 22)</em> shows how the view command works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -302,24 +298,30 @@ According to current listing type, which we can obtain from <code>ListingUnit</c
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#activity-diagram">activity diagram</a> summarize what happens when an user execute view command.</p>
+<p><em>Figure 22 Sequence Diagram for ViewCommand</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 23)</em> summarizes what happens when a user executes <strong>ViewCommand</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ViewCommandActivityDiagram.png" alt="ViewCommandActivityDiagram" width="900">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 23: Activity Diagram for view</em></p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>List</code> and <code>View</code><br>
-<strong>Alternative 1 (current choice):</strong>  set different predicates to the <code>filteredList</code> and hide irrelevant information in the panel.<br>
-<strong>Pros:</strong> Easy to understand and do not use extra space to store different kinds of lists(For example, location list).<br>
-<strong>Cons:</strong> Overhead of setting predicates repeatedly.<br>
-<strong>Alternative 2 (previous choice):</strong> Store lesson list, unique module list and unique location list separately. and switch to different panel list and view command is called.<br>
-<strong>Pros:</strong> More well-organized structure.<br>
-<strong>Cons:</strong> Much harder to implement and overhead of switching to different panels instead of using one.</p>
+<p><strong>Aspect</strong>: Implementation of <strong>List</strong> and <strong>View Command</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Set different predicates to the <strong>filteredList</strong> and hide irrelevant information in the lesson list panel.<br>
+<strong>Pros</strong>: It would be easy to understand and do not use extra spaces to store different kind of lists (For example, location list).<br>
+<strong>Cons</strong>: This will increase overhead due to implementation of new predicates.<br>
+<strong>Alternative 2 (previous choice)</strong>: Store lesson list, unique module list and unique location list separately and switches to different panel list before calling view command.<br>
+<strong>Pros</strong>: This implementation will make the overall structure more organized.<br>
+<strong>Cons</strong>: It would be much harder to implement and the switching of panel will cause heavier load to the system compared to a single panel.</p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -416,17 +418,13 @@ Next, type <code>unmark 1</code> to remove the lesson at index 1 from the marked
 <div class="sect2">
 <h3 id="mark-unmark-mechanism"><a class="link" href="#mark-unmark-mechanism">Mark/Unmark mechanism</a></h3>
 <div class="paragraph">
-<p>The mark mechanism is facilitated by an extra attribute <code>isMarked</code> of <code>Lesson</code> class. <code>isMarked</code> is a boolean attribute which indicates if the given lesson is in the marked list.</p>
+<p>The mark mechanism is facilitated by an extra attribute <strong>isMarked</strong> of Lesson class. <strong>isMarked</strong> is a boolean attribute which indicates if the given lesson is in the marked list.</p>
 </div>
 <div class="paragraph">
-<p>When user <code>mark</code> a lesson. The <code>isMarked</code> attribute of the specified lesson will be set to <code>true</code>.
-When user <code>unmark</code> a lesson, the <code>isMarked</code> attribute of the specified lesson will be set to <code>false</code>.</p>
+<p>When the user mark a lesson, the specified lesson’s <strong>isMarked</strong> attribute will be set to true. When the user unmark a lesson, the specified lesson’s <strong>isMarked</strong> attribute will be set to false.</p>
 </div>
 <div class="paragraph">
-<p>When a new lesson is added. By default it is not in the marked list thus the <code>isMarked</code> filed will be set to false.</p>
-</div>
-<div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the mark command works:</p>
+<p>By default, when a new lesson is added, it is not in the marked list and thus the <strong>isMarked</strong> attribute will be set to false. The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 24)</em> shows how the mark command works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -434,7 +432,10 @@ When user <code>unmark</code> a lesson, the <code>isMarked</code> attribute of t
 </div>
 </div>
 <div class="paragraph">
-<p>You can see a list of all marked lesson by command <code>list marked</code>.</p>
+<p><em>Figure 24: Sequence Diagram for MarkCommand</em></p>
+</div>
+<div class="paragraph">
+<p>You can see a list of all marked lessons by the command list marked.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -443,7 +444,7 @@ When user <code>unmark</code> a lesson, the <code>isMarked</code> attribute of t
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Each lesson is only allowed to be added into the <code>marked list</code> once, thus any further <code>mark</code> attempt will cause an exception being thrown.
+Each lesson is only allowed to be added into the marked list once, thus any further mark attempt will cause an exception to be thrown.
 </td>
 </tr>
 </table>
@@ -451,13 +452,13 @@ Each lesson is only allowed to be added into the <code>marked list</code> once, 
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of mark/unmark.<br>
-<strong>Alternative 1 (current choice):</strong>  Create an extra attribute <code>isMarked</code> for each lesson to record if the lesson is in the <code>marked list</code>.
-<strong>Pros:</strong> Easy to implement <code>list marked</code> since we are always using predicates to update the lesson list showing.<br>
-<strong>Cons:</strong> Need to filter out marked lessons every time.<br>
-<strong>Alternative 2 (previous choice):</strong> Store an extra marked lesson list.<br>
-<strong>Pros:</strong> We do not need to filter out the marked lessons each time.<br>
-<strong>Cons:</strong> Inefficient storage, many lessons might be stored multiple times.</p>
+<p><strong>Aspect</strong>: Implementation of mark/unmark<br>
+<strong>Alternative 1 (current choice)</strong>: Create an extra attribute <strong>isMarked</strong> for each lesson to record if the lesson is in the marked list.<br>
+<strong>Pros</strong>: It would be easier to implement list marked since we are using predicates to update the lesson list.<br>
+<strong>Cons</strong>: It is requires to filter out marked lessons every time.<br>
+<strong>Alternative 2 (previous choice)</strong>: Stores additional marked lesson list.<br>
+<strong>Pros</strong>: We do not need to filter out the marked lessons each time.<br>
+<strong>Cons</strong>: Lessons might be stored multiple times.</p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -554,8 +555,7 @@ Thus you can remark the module. And the remark content will be shown as sticky n
 <div class="sect2">
 <h3 id="remark-mechanism"><a class="link" href="#remark-mechanism">Remark mechanism</a></h3>
 <div class="paragraph">
-<p>The remark mechanism is facilitated by <code>UniqueRemarkList</code>. Each time we add or delete a remark, the UniqueRemarkList is updated and changes are saved into storage.
-A filtered list is used to show remarks related to a specified module when a module is selected.</p>
+<p>The remark mechanism is facilitated by <strong>UniqueRemarkList</strong>. Each time we add or delete a remark, the <strong>UniqueRemarkList</strong> is updated and changes are saved into storage. A filtered list is used to show remarks related to a specified module when a module is selected.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -564,16 +564,13 @@ A filtered list is used to show remarks related to a specified module when a mod
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Only module can be remarked, therefore user can use remark if and only if current listing element is module.
-Both adding a remark and deleting a remark used an index while the meaning of the index is different.
-The index in <code>remark INDEX CONTENT</code> is the index of the module in the module list we want to add remark to.
-While the index in <code>delete -d INDEX</code> is the index of the remark we want to delete.
+Only module can be remarked, therefore user can use remark if and only if the current listing element is <strong>MODULE</strong>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> summarize what happens when an user execute remark command.</p>
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 27)</em> shows how the remark operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -581,20 +578,26 @@ While the index in <code>delete -d INDEX</code> is the index of the remark we wa
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#activity-diagram">activity diagram</a> summarize what happens when an user execute remark command.</p>
+<p><em>Figure 27: Sequence Diagram for RemarkCommand</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 28)</em> summarizes what happens when a user executes remark command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/RemarkCommandActivityDiagram.png" alt="RemarkCommandActivityDiagram" width="900">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 28: Activity Diagram for RemarkCommand</em></p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of RemarkCommand<br>
-<strong>Alternative 1 (current choice):</strong> use a <code>uniqueRemarkList</code> similar to <code>uniqueLessonList</code>.<br>
-<strong>Pros:</strong> Store all remarks as a single list thus it is easy to manage.
-<strong>Cons:</strong> Need to filter out a selected set of remarks when user select a specific module.</p>
+<p><strong>Aspect</strong>: Implementation of <strong>RemarkCommand</strong><br>
+<strong>Alternative 1 (current choice)</strong>: use a <strong>uniqueRemarkList</strong> similar to <strong>uniqueLessonList</strong>.<br>
+<strong>Pros</strong>: Store all remarks as a single list thus it is easy to manage.<br>
+<strong>Cons</strong>: Need to filter out a selected set of remarks when user select a specific module.</p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -647,7 +650,7 @@ In v2.0, ModU should be able to export the customized timetable out.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-11 08:58:22 +00:00
+Last updated 2017-11-11 09:39:57 +00:00
 </div>
 </div>
 </body>

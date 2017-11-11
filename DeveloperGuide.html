@@ -18,7 +18,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>CS2103AUG2017-W13-B4</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>CS2103AUG2017-W13-B4</code>      Since: <code>Oct 2017</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -87,7 +87,6 @@
 <li><a href="#use-cases">Appendix B: Use Cases</a></li>
 <li><a href="#non-functional-requirements">Appendix C: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix D: Glossary</a></li>
-<li><a href="#product-survey">Appendix E: Product Survey</a></li>
 </ul>
 </div>
 </div>
@@ -95,13 +94,10 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ModU is a software design to help teachers and lecturers to plan their weekly teaching schedule.<br></p>
+<p>ModU is a software designed to assist teachers and lecturers to plan their weekly teaching schedule.</p>
 </div>
 <div class="paragraph">
-<p>There are many ways to improve and extend the functionality of this software and this guide provides essential information to help you get started.
-This developer guide contains information of the architecture design of this software, implementation of the existing commands that is accessible for the
-users and other useful information such as guide to teach you how to test this software. For more information please refer
-to the table of content.</p>
+<p>There are many ways to improve and extend the functionality of this software and this guide provides essential information to help you get started. This developer guide contains information of the architecture design of this software, implementation of the existing commands that are accessible for the users and other useful information.</p>
 </div>
 </div>
 </div>
@@ -113,7 +109,7 @@ to the table of content.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>JDK <code>1.8.0_60</code></strong> or later</p>
+<p><strong>JDK <code>1.8.0_60</code></strong> or later have to be installed in your computer.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -121,15 +117,14 @@ to the table of content.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Having any Java 8 version is not enough.<br>
-This app will not work with earlier versions of Java 8.
+This application will not work with earlier versions of Java 8.
 </td>
 </tr>
 </table>
 </div>
 </li>
 <li>
-<p><strong>IntelliJ</strong> IDE</p>
+<p>IntelliJ IDE have to be installed in your computer.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -155,32 +150,32 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 <p>Fork this repo, and clone the fork to your computer</p>
 </li>
 <li>
-<p>Open IntelliJ (if you are not in the welcome screen, click <code>File</code> &gt; <code>Close Project</code> to close the existing project dialog first)</p>
+<p>2.	Launch IntelliJ (if you are not in the welcome screen, click <code>File</code> &gt; <code>Close Project</code> to close the existing project dialog).</p>
 </li>
 <li>
-<p>Set up the correct JDK version for <a href="#gradle">Gradle</a></p>
+<p>Set up the correct JDK version for <a href="#gradle">Gradle</a>.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Click <code>Configure</code> &gt; <code>Project Defaults</code> &gt; <code>Project Structure</code></p>
+<p>Click <code>Configure</code> &gt; <code>Project Defaults</code> &gt; <code>Project Structure</code>.</p>
 </li>
 <li>
-<p>Click <code>New&#8230;&#8203;</code> and find the directory of the JDK</p>
+<p>Click <code>New&#8230;&#8203;</code> and find the directory of the JDK.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Click <code>Import Project</code></p>
+<p>Click <code>Import Project</code>.</p>
 </li>
 <li>
-<p>Locate the <code>build.gradle</code> file and select it. Click <code>OK</code></p>
+<p>Locate the <code>build.gradle</code> file and select it. Click <code>OK</code>.</p>
 </li>
 <li>
-<p>Click <code>Open as Project</code></p>
+<p>Click <code>Open as Project</code>.</p>
 </li>
 <li>
-<p>Click <code>OK</code> to accept the default settings</p>
+<p>Click <code>OK</code> to accept the default settings.</p>
 </li>
 <li>
 <p>Open a console and run the command <code>gradlew processResources</code> (Mac/Linux: <code>./gradlew processResources</code>). It should finish with the <code>BUILD SUCCESSFUL</code> message.<br>
@@ -194,7 +189,7 @@ This will generate all resources required by the application and tests.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Run the <code>seedu.address.MainApp</code> and try a few commands</p>
+<p>Run the <code>seedu.address.MainApp</code> and try a few commands.</p>
 </li>
 <li>
 <p><a href="#testing">Run the tests</a> to ensure they all pass.</p>
@@ -212,20 +207,20 @@ This will generate all resources required by the application and tests.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <code>File</code> &gt; <code>Settings&#8230;&#8203;</code> (Windows/Linux), or <code>IntelliJ IDEA</code> &gt; <code>Preferences&#8230;&#8203;</code> (macOS)</p>
+<p>Go to <code>File</code> &gt; <code>Settings&#8230;&#8203;</code> (Windows/Linux), or <code>IntelliJ IDEA</code> &gt; <code>Preferences&#8230;&#8203;</code> (macOS).</p>
 </li>
 <li>
-<p>Select <code>Editor</code> &gt; <code>Code Style</code> &gt; <code>Java</code></p>
+<p>Select <code>Editor</code> &gt; <code>Code Style</code> &gt; <code>Java</code>.</p>
 </li>
 <li>
-<p>Click on the <code>Imports</code> tab to set the order</p>
+<p>Click on the <code>Imports</code> tab to set the order.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>For <code>Class count to use import with '*'</code> and <code>Names count to use static import with '*'</code>: Set to <code>999</code> to prevent IntelliJ from contracting the import statements</p>
+<p>For <code>Class count to use import with '*'</code> and <code>Names count to use static import with '*'</code>: Set to <code>999</code> to prevent IntelliJ from contracting the import statements.</p>
 </li>
 <li>
-<p>For <code>Import Layout</code>: The order is <code>import static all other imports</code>, <code>import java.*</code>, <code>import javax.*</code>, <code>import org.*</code>, <code>import com.*</code>, <code>import all other imports</code>. Add a <code>&lt;blank line&gt;</code> between each <code>import</code></p>
+<p>For <code>Import Layout</code>: The order is <code>import static all other imports</code>, <code>import java.*</code>, <code>import javax.*</code>, <code>import org.*</code>, <code>import com.*</code>, <code>import all other imports</code>. Add a <code>&lt;blank line&gt;</code> between each <code>import</code>.</p>
 </li>
 </ul>
 </div>
@@ -251,7 +246,8 @@ This will generate all resources required by the application and tests.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Having both <a href="#travis">Travis</a> and AppVeyor ensures your App works on both Unix-based platforms and Windows-based platforms (Travis is Unix-based and AppVeyor is Windows-based)
+Having both <a href="#travis">Travis</a> and AppVeyor ensures your App works on both Unix-based platforms and Windows-based platforms.<br>
+<a href="#travis">Travis</a> is Unix-based and AppVeyor is Windows-based.
 </td>
 </tr>
 </table>
@@ -260,17 +256,7 @@ Having both <a href="#travis">Travis</a> and AppVeyor ensures your App works on 
 <div class="sect3">
 <h4 id="getting-started-with-coding"><a class="link" href="#getting-started-with-coding">2.4.3. Getting started with coding</a></h4>
 <div class="paragraph">
-<p>When you are ready to start coding,</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Get some sense of the overall design by reading the <a href="#architecture">Architecture</a> section.</p>
-</li>
-<li>
-<p>Take a look at the section <a href="#suggested-programming-tasks-to-get-started">Suggested Programming Tasks to Get Started</a>.</p>
-</li>
-</ol>
+<p>Before you start coding, understand the overall design by reading the <a href="#architecture">Architecture</a> section.</p>
 </div>
 </div>
 </div>
@@ -287,22 +273,17 @@ Having both <a href="#travis">Travis</a> and AppVeyor ensures your App works on 
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.1.1 : Architecture Diagram</em></p>
+<p><em>Figure 1 : Architecture Diagram</em></p>
 </div>
 <div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
+<p>The <strong><em>Architecture Diagram (Figure 1)</em></strong> above explains the high-level design of the application. Given below is a quick overview of each component.</p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/se-edu/addressbook-level4/tree/master/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
-</td>
-</tr>
-</table>
+<div class="ulist TIP">
+<ul class="TIP">
+<li>
+<p>The <code>.pptx</code> files used to create diagrams in this document can be found in the <code>diagrams</code> folder. To update a diagram, modify the diagram in the <code>.pptx</code> file, select the objects of the diagram, and choose <code>Save as picture</code>.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><code>Main</code> has only one class called <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
@@ -310,7 +291,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 <div class="ulist">
 <ul>
 <li>
-<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
+<p>At application launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
 </li>
 <li>
 <p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
@@ -318,34 +299,34 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="#common-classes"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components. Two of those classes play important roles at the architecture level.</p>
+<p><a href="#common-classes"><strong><code>Commons</code></strong></a> represent a collection of classes used by multiple other components. Two of those classes play important roles at the architecture level.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>EventsCenter</code> : This class (written using <a href="https://github.com/google/guava/wiki/EventBusExplained">Google&#8217;s Event Bus library</a>) is used by components to communicate with other components using events (i.e. a form of <em>Event Driven</em> design)</p>
+<p><code>EventsCenter</code> : This class (written using <a href="https://github.com/google/guava/wiki/EventBusExplained">Google&#8217;s Event Bus library</a>) is used by components to communicate with other components using events (i.e. a form of <em>Event Driven</em> design).</p>
 </li>
 <li>
-<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
+<p><code>LogsCenter</code> : This class is used by other classes to write log messages to the application’s log file.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The rest of the App consists of four components.</p>
+<p>The rest of the application consists of four components:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#ui-component"><strong><code>UI</code></strong></a> : The <a href="#ui">UI</a> of the App.</p>
+<p><a href="#ui-component"><strong><code>UI</code></strong></a> : The user interface of the application.</p>
 </li>
 <li>
 <p><a href="#logic-component"><strong><code>Logic</code></strong></a> : The command executor.</p>
 </li>
 <li>
-<p><a href="#model-component"><strong><code>Model</code></strong></a> : Holds the data of the App in-memory.</p>
+<p><a href="#model-component"><strong><code>Model</code></strong></a> : The data handler in the application.</p>
 </li>
 <li>
-<p><a href="#storage-component"><strong><code>Storage</code></strong></a> : Reads data from, and writes data to, the hard disk.</p>
+<p><a href="#storage-component"><strong><code>Storage</code></strong></a> : The storage manager.</p>
 </li>
 </ul>
 </div>
@@ -355,7 +336,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 <div class="ulist">
 <ul>
 <li>
-<p>Defines its <em><a href="#api">API</a></em> in an <code>interface</code> with the same name as the Component.</p>
+<p>Defines its <a href="#api">API</a> in an interface with the same name as the Component.</p>
 </li>
 <li>
 <p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
@@ -363,7 +344,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </ul>
 </div>
 <div class="paragraph">
-<p>For example, the <code>Logic</code> component (see the <a href="#class-diagram">class diagram</a> given below) defines it&#8217;s <a href="#api">API</a> in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
+<p>For example, the Logic component (see the <em><a href="#class-diagram">Class Diagram</a> (Figure 2)</em> given below) defines its <a href="#api">API</a> in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -371,11 +352,11 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.1.2 : <a href="#class-diagram">Class Diagram</a> of the Logic Component</em></p>
+<p><em>Figure 2 : <a href="#class-diagram">Class Diagram</a> of the Logic Component</em></p>
 </div>
 <h4 id="events-driven-nature-of-the-design" class="discrete">Events-Driven nature of the design</h4>
 <div class="paragraph">
-<p>The <em><a href="#sequence-diagram">Sequence Diagram</a></em> below shows how the components interact for the scenario where the user issues the command <code>delete 1</code>.</p>
+<p>The <em><a href="#sequence-diagram">Sequence Diagram</a>(Figure 3)</em> below shows how the components interact for the scenario where the user executes the command <code>delete 1</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -383,7 +364,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.1.3a : Component interactions for <code>delete 1</code> command (part 1)</em></p>
+<p><em>Figure 3 : Sequence Diagram for delete 1 command (part 1)</em></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -392,13 +373,13 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Note how the <code>Model</code> simply raises a <code>AddressBookChangedEvent</code> when the ModU data are changed, instead of asking the <code>Storage</code> to save the updates to the hard disk.
+Note how the Model simply raises a <strong>AddressBookChangedEvent</strong> when ModU data are changed, instead of asking the Storage to save the updates to the hard disk.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The diagram below shows how the <code>EventsCenter</code> reacts to that event, which eventually results in the updates being saved to the hard disk and the status bar of the <a href="#ui">UI</a> being updated to reflect the 'Last Updated' time.</p>
+<p>The <em><a href="#sequence-diagram">Sequence diagram</a> below (Figure 4)</em> shows how the <strong>EventsCenter</strong> reacts to that event, which eventually results in the updates being saved to the hard disk and the status bar of the UI being updated to reflect the 'Last Updated' time.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -406,7 +387,7 @@ Note how the <code>Model</code> simply raises a <code>AddressBookChangedEvent</c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.1.3b : Component interactions for <code>delete 1</code> command (part 2)</em></p>
+<p><em>Figure 4 : Sequence Diagram for delete 1 command (part 2)</em></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -415,7 +396,7 @@ Note how the <code>Model</code> simply raises a <code>AddressBookChangedEvent</c
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Note how the event is propagated through the <code>EventsCenter</code> to the <code>Storage</code> and <code>UI</code> without <code>Model</code> having to be coupled to either of them. This is an example of how this Event Driven approach helps us reduce direct coupling between components.
+Note how the event is propagated through the <strong>EventsCenter</strong> to the Storage and <a href="#ui">UI</a> without Model having to be coupled to either of them. This is an example of how this event driven approach helps us reduce direct coupling between components.
 </td>
 </tr>
 </table>
@@ -432,16 +413,16 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.2.1 : Structure of the <a href="#ui">UI</a> Component</em></p>
+<p><em>Figure 5 : Class Diagram of the UI Component</em></p>
 </div>
 <div class="paragraph">
 <p><strong><a href="#api">API</a></strong> : <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <a href="#ui">UI</a> consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>As shown in the <em><a href="#class-diagram">Class diagram</a> above (Figure 5)</em>, the <a href="#ui">UI</a> consists of a <strong>MainWindow</strong> that is made up of subcomponents e.g. <strong>CommandBox</strong>, <strong>ResultDisplay</strong>, <strong>PersonListPanel</strong>, and etc. All of them inherit from the abstract <strong>UiPart</strong> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code><a href="#ui">UI</a></code> component uses <a href="#javaFX">JavaFX</a> <a href="#ui">UI</a> framework. The layout of these <a href="#ui">UI</a> parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <a href="#ui">UI</a> component uses <a href="#javaFX">JavaFx</a> <a href="#ui">UI</a> framework. The layout of these <a href="#ui">UI</a> parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view folder</code>. For example, the layout of the <strong>MainWindow</strong> is specified in <code>MainWindow.java</code>.</p>
 </div>
 <div class="paragraph">
 <p>The <code><a href="#ui">UI</a></code> component,</p>
@@ -449,13 +430,13 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="ulist">
 <ul>
 <li>
-<p>Executes user commands using the <code>Logic</code> component.</p>
+<p>executes user commands using the Logic component.</p>
 </li>
 <li>
-<p>Binds itself to some data in the <code>Model</code> so that the <a href="#ui">UI</a> can auto-update when data in the <code>Model</code> change.</p>
+<p>binds itself to some data in the Model so that the <a href="#ui">UI</a> component can auto-update when the data in the Model component changes.</p>
 </li>
 <li>
-<p>Responds to events raised from various parts of the App and updates the <a href="#ui">UI</a> accordingly.</p>
+<p>responds to events raised from various parts of the application and updates the <a href="#ui">UI</a> accordingly.</p>
 </li>
 </ul>
 </div>
@@ -468,7 +449,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.3.1 : Structure of the Logic Component</em></p>
+<p><em>Figure 6: Class Diagram of the Logic Component</em></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -476,30 +457,31 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.3.2 : Structure of Commands in the Logic Component. This diagram shows finer details concerning <code>XYZCommand</code> and <code>Command</code> in Figure 2.3.1</em></p>
+<p><em>Figure 7: Inheritance Diagram of Commands in the Logic Component. This diagram shows finer details concerning XYZCommand and Command in Figure 5</em></p>
 </div>
 <div class="paragraph">
-<p><strong><a href="#api">API</a></strong> :
-<a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<p><strong><a href="#api">API</a></strong>:
+<a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a>
+ <em>(Figure 6 and 7)</em></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
+<p>The Logic component uses the <strong>AddressBookParser</strong> class to parse the user command.</p>
 </li>
 <li>
-<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
+<p>This results in a Command object which is executed by the <strong>LogicManager</strong>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a lesson) and/or raise events.</p>
+<p>The command execution can affect the Model component (e.g. adding a lesson) and/or raise events.</p>
 </li>
 <li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+<p>The result of the command execution is encapsulated as a <strong>CommandResult</strong> object which is passed back to the <a href="#ui">UI</a> component.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Given below is the <a href="#sequence-diagram">Sequence Diagram</a> for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> <a href="#api">API</a> call.</p>
+<p>Given below is the <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 8)</em> for interactions within the Logic component for the execution of  <code>("delete 1")</code> <a href="#api">API</a> call.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -507,7 +489,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.3.1 : Interactions Inside the Logic Component for the <code>delete 1</code> Command</em></p>
+<p><em>Figure 8: Sequence Diagram for the delete 1 Command</em></p>
 </div>
 </div>
 <div class="sect2">
@@ -518,24 +500,24 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.4.1 : Structure of the Model Component</em></p>
+<p><em>Figure 9: Class Diagram of the Model Component</em></p>
 </div>
 <div class="paragraph">
 <p><strong><a href="#api">API</a></strong> : <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>Model</code>,</p>
+<p><em>The Model component (Figure 9)</em>,</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+<p>stores a <strong>UserPref</strong> object that represents the user’s preferences.</p>
 </li>
 <li>
-<p>stores the ModU data.</p>
+<p>stores all the data of ModU.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;ReadOnlyLesson&gt;</code> that can be 'observed' e.g. the <a href="#ui">UI</a> can be bound to this list so that the <a href="#ui">UI</a> automatically updates when the data in the list change.</p>
+<p>exposes an unmodifiable <strong>ObservableList&lt;ReadOnlyLesson&gt;</strong> that can be 'observed' e.g. the <a href="#ui">UI</a> component can be bound to this list so that it automatically updates when the data in the list has changed.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
@@ -551,21 +533,27 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.5.1 : Structure of the Storage Component</em></p>
+<p><em>Figure 10: Class Diagram of the Storage Component</em></p>
 </div>
 <div class="paragraph">
 <p><strong><a href="#api">API</a></strong> : <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>Storage</code> component,</p>
+<p>The <code>Storage</code> component <em>(Figure 10)</em>,</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>can save <code>UserPref</code> objects in json format and read it back.</p>
+<p>can save <strong>UserPref</strong> objects in json format.</p>
 </li>
 <li>
-<p>can save the ModU data in xml format and read it back.</p>
+<p>can read <strong>UserPref</strong> objects in json format.</p>
+</li>
+<li>
+<p>can save all other data in xml format.</p>
+</li>
+<li>
+<p>can read all other data in xml format.</p>
 </li>
 </ul>
 </div>
@@ -582,15 +570,15 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section describes some noteworthy details on how certain features are implemented.</p>
+<p>This section describes how certain features are implemented.</p>
 </div>
 <div class="sect2">
 <h3 id="undo-redo-mechanism"><a class="link" href="#undo-redo-mechanism">4.1. Undo/Redo mechanism</a></h3>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by an <code>UndoRedoStack</code>, which resides inside <code>LogicManager</code>. It supports undoing and redoing of commands that modifies the state of the ModU (e.g. <code>add</code>, <code>edit</code>). Such commands will inherit from <code>UndoableCommand</code>.</p>
+<p>The undo/redo mechanism is facilitated by an <strong>UndoRedoStack</strong>, which resides in <strong>LogicManager</strong>. It supports undoing and redoing of commands that modify the state of ModU (e.g. add, edit). Such commands will inherit from <strong>UndoableCommand</strong>.</p>
 </div>
 <div class="paragraph">
-<p><code>UndoRedoStack</code> only deals with <code>UndoableCommands</code>. Commands that cannot be undone will inherit from <code>Command</code> instead. The following diagram shows the inheritance diagram for commands:</p>
+<p><strong>UndoRedoStack</strong> only deals with <strong>UndoableCommands</strong>. Commands that cannot be undone will inherit from <strong>Command</strong> instead. The following diagram shows the <em>Inheritance Diagram (Figure 11)</em> for commands.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -598,10 +586,16 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p>As you can see from the diagram, <code>UndoableCommand</code> adds an extra layer between the abstract <code>Command</code> class and concrete commands that can be undone, such as the <code>DeleteCommand</code>. Note that extra tasks need to be done when executing a command in an <em>undoable</em> way, such as saving the state of the ModU before execution. <code>UndoableCommand</code> contains the high-level algorithm for those extra tasks while the child classes implements the details of how to execute the specific command. Note that this technique of putting the high-level algorithm in the parent class and lower-level steps of the algorithm in child classes is also known as the <a href="https://www.tutorialspoint.com/design_pattern/template_pattern.htm">template pattern</a>.</p>
+<p><em>Figure 11: Inheritance Diagram of Commands in the Logic Component</em></p>
 </div>
 <div class="paragraph">
-<p>Commands that are not undoable are implemented this way:</p>
+<p>As you can see from the diagram, <strong>UndoableCommand</strong> adds an extra layer between the abstract <strong>Command</strong> class and concrete <strong>Commands</strong> that can be undone, such as the <strong>AddCommand</strong>. Note that extra tasks need to be done when executing a command in an undoable way, such as saving the state of ModU before execution.</p>
+</div>
+<div class="paragraph">
+<p><strong>UndoableCommand</strong> contains the high-level algorithm for those extra tasks while the child classes implement the details of how to execute the specific command. Note that this technique of putting the high-level algorithm in the parent class and lower-level steps of the algorithm in child classes is also known as the template pattern.</p>
+</div>
+<div class="paragraph">
+<p><strong>Commands</strong> that are not undoable are implemented this way:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -636,10 +630,12 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p>Suppose that the user has just launched the application. The <code>UndoRedoStack</code> will be empty at the beginning. And the panel is listing all modules.</p>
+<p>Suppose that the user has just launched the application. The <strong>UndoRedoStack</strong> will be empty at the beginning.</p>
 </div>
-<div class="paragraph">
-<p>The user executes a new <code>UndoableCommand</code>, <code>delete 5</code>, to delete all lessons associate with 5th Module in the ModU. The current state of the ModU is saved before the <code>delete 5</code> command executes. The <code>delete 5</code> command will then be pushed onto the <code>undoStack</code> (the current state is saved together with the command).</p>
+<div class="literalblock">
+<div class="content">
+<pre>The user executes a new UndoableCommand, delete 5, to delete all lessons associated with the module in index 5. The current state of ModU is saved before executing the command. The command will then be pushed onto the undoStack (the current state is saved together with the command) (Figure 12).</pre>
+</div>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -647,13 +643,19 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p>As the user continues to use the program, more commands are added into the <code>undoStack</code>. For example, the user may execute <code>add m/CS2103T &#8230;&#8203;</code> to add a new lesson.</p>
+<p><em>Figure 12: undoStack Diagram 1</em></p>
+</div>
+<div class="paragraph">
+<p>As the user continues to use the program, more commands are pushed onto the <strong>undoStack</strong>. For example, the user may execute add m/CS2103T … to add a new lesson <em>(Figure 13)</em>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/UndoRedoNewCommand1StackDiagram.png" alt="UndoRedoNewCommand1StackDiagram" width="800">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 13: undoStack Diagram 2</em></p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -661,22 +663,25 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a command fails its execution, it will not be pushed to the <code>UndoRedoStack</code> at all.
+If a command fails its execution, it will not be pushed onto the <strong>UndoRedoStack</strong>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The user now decides that adding the lesson was a mistake, and decides to undo that action using <code>undo</code>.</p>
+<p>Suppose that the user now decides that adding the lesson was a mistake, and wants to undo that action using undo.</p>
 </div>
 <div class="paragraph">
-<p>We will pop the most recent command out of the <code>undoStack</code>, and check if the command is redoable now, we say a command is redoable if the listing panel has not been changed(For example, user type <code>list location</code>, then current listing element changed to location from module, or user types in <code>find MA1101</code>, then only a selected set of Module is listed.), since command like <code>delete 5</code> has different meaning when listing by module and location, redo the command is no longer allowed. However, if the listing element has not been changed, we will push it back to the <code>redoStack</code>. We will restore the ModU to the state before the <code>add</code> command executed.</p>
+<p>We will pop the most recent command out of the undoStack, and check if the command is redoable (a command is redoable if the listing panel has not been changed). For example, delete 5 has different meaning when listing by module and location, and thus redoing the command is no longer allowed. However, if the listing element has not been changed, we will push it back to the redoStack. We will restore ModU to the state before the add command was executed <em>(Figure 14)</em>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/UndoRedoExecuteUndoStackDiagram.png" alt="UndoRedoExecuteUndoStackDiagram" width="800">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 14: undoStack Diagram 3</em></p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -684,13 +689,13 @@ If a command fails its execution, it will not be pushed to the <code>UndoRedoSta
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>undoStack</code> is empty, then there are no other commands left to be undone, and an <code>Exception</code> will be thrown when popping the <code>undoStack</code>.
+If the <strong>undoStack</strong> is empty, then there are no other commands left to be undone, and an exception will be thrown when trying to pop from the undoStack.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the undo operation works:</p>
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 15)</em> shows how the undo operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -698,7 +703,10 @@ If the <code>undoStack</code> is empty, then there are no other commands left to
 </div>
 </div>
 <div class="paragraph">
-<p>The redo does the exact opposite (pops from <code>redoStack</code>, push to <code>undoStack</code>, and restores the ModU to the state after the command is executed).</p>
+<p><em>Figure 15: Sequence Diagram for undo operation</em></p>
+</div>
+<div class="paragraph">
+<p>The redo command does the exact opposite (pops from <strong>redoStack</strong>, push to <strong>undoStack</strong>, and restores ModU to the state after the command is executed).</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -707,13 +715,13 @@ If the <code>undoStack</code> is empty, then there are no other commands left to
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>redoStack</code> is empty, then there are no other commands left to be redone, and an <code>Exception</code> will be thrown when popping the <code>redoStack</code>.
+If the <strong>redoStack</strong> is empty, then there are no other commands left to redo. In this case, an exception will be thrown when trying to pop from the <strong>redoStack</strong>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The user now decides to execute a new command, <code>clear</code>. As before, <code>clear</code> will be pushed into the <code>undoStack</code>. This time the <code>redoStack</code> is no longer empty. It will be purged as it no longer make sense to redo the <code>add m/MA1101R</code> command (this is the behavior that most modern desktop applications follow).</p>
+<p>The user now decides to execute a new command, clear. As before, clear will be pushed onto the <strong>undoStack</strong>. This time, the <strong>undoStack</strong> is no longer empty. It will be purged as it no longer make sense to redo the <code>add m/MA1101R command</code> (this is the behaviour that most modern desktop applications follow) (<em>Figure 16</em>).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -721,7 +729,10 @@ If the <code>redoStack</code> is empty, then there are no other commands left to
 </div>
 </div>
 <div class="paragraph">
-<p>Commands that are not undoable are not added into the <code>undoStack</code>. For example, <code>list</code>, which inherits from <code>Command</code> rather than <code>UndoableCommand</code>, will not be added after execution:</p>
+<p><em>Figure 16: RedoStack Diagram 4</em></p>
+</div>
+<div class="paragraph">
+<p><strong>Commands</strong> that are not undoable are not pushed onto the <strong>undoStack</strong>. For example, list, which inherits from <strong>Command</strong> rather than <strong>UndoableCommand</strong>, will not be pushed onto the <strong>undoStack</strong> after execution (<em>Figure 17</em>):</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -729,7 +740,10 @@ If the <code>redoStack</code> is empty, then there are no other commands left to
 </div>
 </div>
 <div class="paragraph">
-<p>Suppose now user wants to view all lessons of Module Code CS2103, thus user types command <code>view 1</code>(Suppose the index of Module CS2103 is 1), command <code>view</code> will result in listing element changed from <code>Module</code> to <code>Lesson</code>. Then the <code>undoStack</code> is cleared. Because User can only undo if the listing element type has not been switched.</p>
+<p><em>Figure 17: RedoStack Diagram 5</em></p>
+</div>
+<div class="paragraph">
+<p>Suppose now user wants to view all lessons of module code CS2103, thus user types command view 1 (Suppose the index of module CS2103 is 1), command view will change the listing element from <strong>MODULE</strong> to <strong>LESSON</strong>. The <strong>undoStack</strong> will then be cleared because the user can only undo if the listing element type has not been switched <em>(Figure 18)</em>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -737,62 +751,66 @@ If the <code>redoStack</code> is empty, then there are no other commands left to
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#activity-diagram">activity diagram</a> summarize what happens inside the <code>UndoRedoStack</code> when a user executes a new command:</p>
+<p><em>Figure 18: RedoStack Diagram 6</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 19)</em> summarizes what happens inside the <strong>UndoRedoStack</strong> when a user executes a new command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="200">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 19: Activity Diagram</em></p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.1. Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>UndoableCommand</code><br>
-<strong>Alternative 1 (current choice):</strong> Add a new abstract method <code>executeUndoableCommand()</code><br>
-<strong>Pros:</strong> We will not lose any undone/redone functionality as it is now part of the default behaviour. Classes that deal with <code>Command</code> do not have to know that <code>executeUndoableCommand()</code> exist.<br>
-<strong>Cons:</strong> Hard for new developers to understand the template pattern.<br>
-<strong>Alternative 2:</strong> Just override <code>execute()</code><br>
-<strong>Pros:</strong> Does not involve the template pattern, easier for new developers to understand.<br>
-<strong>Cons:</strong> Classes that inherit from <code>UndoableCommand</code> must remember to call <code>super.execute()</code>, or lose the ability to undo/redo.</p>
+<p><strong>Aspect</strong>: Implementation of <strong>UndoableCommand</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Add a new abstract method <strong>executeUndoableCommand()</strong>.<br>
+<strong>Pros</strong>: This implementation allows us to not lose any undo/redo functionality as it is now part of the default behaviour. Classes that deal with <strong>Command</strong> do not have to know that <strong>executeUndoableCommand()</strong> exists.<br>
+<strong>Cons</strong>: It would be difficult for new developers to understand the template pattern.<br>
+<strong>Alternative 2</strong>: Override <strong>execute()</strong> method.<br>
+<strong>Pros</strong>: This implementation does not involve the template pattern which makes it easier for new developers to understand.<br>
+<strong>Cons</strong>: Classes which inherit from <strong>UndoableCommand</strong> must remember to call <strong>super.execute()</strong>, or risk losing the ability to undo/redo.</p>
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>Aspect:</strong> How undo &amp; redo executes<br>
-<strong>Alternative 1 (current choice):</strong> Saves the entire ModU.<br>
-<strong>Pros:</strong> Easy to implement.<br>
-<strong>Cons:</strong> May have performance issues in terms of memory usage.<br>
-<strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.<br>
-<strong>Pros:</strong> Will use less memory (e.g. for <code>delete</code>, just save the lesson being deleted).<br>
-<strong>Cons:</strong> We must ensure that the implementation of each individual command are correct.</p>
+<p><strong>Aspect</strong>: How undo &amp; redo executes<br>
+<strong>Alternative 1 (current choice)</strong>: Save the current state of ModU.<br>
+<strong>Pros</strong>: This implementation requires less effort.<br>
+<strong>Cons</strong>: It may have performance issues in terms of memory usage.<br>
+<strong>Alternative 2</strong>: Undo/redo are executed by individual commands.<br>
+<strong>Pros</strong>: This implementation will use less memory.<br>
+<strong>Cons</strong>: We must ensure that the implementation of each individual command is correct.</p>
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Type of commands that can be undone/redone<br>
-<strong>Alternative 1 (current choice):</strong> Only include commands that modifies the ModU (<code>add</code>, <code>clear</code>, <code>edit</code>).<br>
-<strong>Pros:</strong> We only revert changes that are hard to change back (the view can easily be re-modified as no data are lost).<br>
-<strong>Cons:</strong> User might think that undo also applies when the list is modified (undoing filtering for example), only to realize that it does not do that, after executing <code>undo</code>.<br>
-<strong>Alternative 2:</strong> Include all commands.<br>
-<strong>Pros:</strong> Might be more intuitive for the user.<br>
-<strong>Cons:</strong> User have no way of skipping such commands if he or she just want to reset the state of the ModU and not the view.<br>
-<strong>Additional Info:</strong> See our discussion  <a href="https://github.com/se-edu/addressbook-level4/issues/390#issuecomment-298936672">here</a>.</p>
+<p><strong>Aspect</strong>: Type of commands that can be undone/redone+
+<strong>Alternative 1 (current choice)</strong>: Include only commands that modifies the data in ModU (add, clear, edit).<br>
+<strong>Pros</strong>: We only revert changes that are difficult to change back (the view can easily be re-modified as no data are lost).<br>
+<strong>Cons</strong>: User might think that undo also applies when the list is modified (undoing filtering for example), only to realize that it does not do that, after executing undo.<br>
+<strong>Alternative 2</strong>: Include all commands.<br>
+<strong>Pros</strong>: This implementation might be more intuitive for the user.<br>
+<strong>Cons</strong>: User could not skip such commands if he or she just wants to reset the state of ModU and not the view mode.</p>
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Data structure to support the undo/redo commands<br>
-<strong>Alternative 1 (current choice):</strong> Use separate stack for undo and redo<br>
-<strong>Pros:</strong> Easy to understand for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.<br>
-<strong>Cons:</strong> Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>UndoRedoStack</code>.<br>
-<strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo<br>
-<strong>Pros:</strong> We do not need to maintain a separate stack, and just reuse what is already in the codebase.<br>
-<strong>Cons:</strong> Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.<br></p>
+<p><strong>Aspect</strong>: Data structure to support the undo/redo commands<br>
+<strong>Alternative 1 (current choice)</strong>: Use separate stack for undo/redo.<br>
+<strong>Pros</strong>: This implementation makes it easy for developers who are taking over this application to understand.<br>
+<strong>Cons</strong>: The Logic component is duplicated twice. For example, when a new command is executed, we must remember to update both <strong>HistoryManager</strong> and <strong>UndoRedoStack</strong>.<br>
+<strong>Alternative 2</strong>: Use <strong>HistoryManager</strong> for undo/redo.<br>
+<strong>Pros</strong>: This implementation does not require maintaining a separate stack, thus allowing us to reuse existing codes in the codebase.<br>
+<strong>Cons</strong>: It would require dealing with commands that have already been undone and we must remember to skip these commands. It also violates Single Responsibility Principle and Separation of Concerns as HistoryManager now needs to do two things.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="listingunit-mechanism"><a class="link" href="#listingunit-mechanism">4.2. ListingUnit mechanism</a></h3>
 <div class="paragraph">
-<p><code>ListingUnit</code> is a enumeration class which has enumeration type <code>LESSON</code>, <code>MODULE</code> and <code>LOCATION</code>. It records the current listing element type of the lesson list panel. It has static method <code>getCurrentListingUnit</code> and <code>setCurrentListingUnit</code>. By which we can conveniently record the current listing type and get the current listing type at any time.
-It is implemented in this way:</p>
+<p><strong>ListingUnit</strong> is an enumeration class which has three enumeration types: <strong>LESSON</strong>, <strong>MODULE</strong> and <strong>LOCATION</strong>. It records the current listing attribute of the lesson list panel. It has static method <strong>getCurrentListingUnit</strong> and <strong>setCurrentListingUnit</strong> that allows us to record the current listing type and get the current listing type at any time. It is implemented in this way:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -807,40 +825,34 @@ It is implemented in this way:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>When <code>list</code> command is used. The variable <code>currentListingUnit</code> will be set accordingly(either <code>LOCATION</code> or <code>MODULE</code>) in order for future reference of other operation.
-Similarly, when <code>view</code> command is used, the variable <code>currentListingUnit</code> will be set to <code>LESSON</code>.</p>
+<p>When list command is used, the variable <strong>currentListingUnit</strong> will be set accordingly, either by <strong>LOCATION</strong> or <strong>MODULE</strong>. Similarly, when view command is used, the variable <strong>currentListingUnit</strong> will be set to <strong>LESSON</strong>.</p>
 </div>
 <div class="paragraph">
-<p>It facilitates the implementation of many parts of <code>logic component</code>. Such as <code>EditCommandParser</code>, <code>ViewCommand</code>, <code>DeleteCommand</code> etc.
-For example, edit command will need to know the current listing type in order to parse the arguments accordingly, the execution of delete command will need to know the current listing type in order to decide either delete a lesson specified by the index or a collection of lessons specified by the attribute.</p>
+<p><strong>ListingUnit</strong> facilitates the implementation of the various parts of the Logic component, such as <strong>EditCommand</strong>, <strong>ViewCommand</strong>, <strong>DeleteCommand</strong> and others. For example, <strong>EditCommand</strong> will need to know the current listing attribute in order to parse the arguments.</p>
 </div>
 <div class="paragraph">
-<p><code>ListingUnit</code> also records the current predicate used in <code>filteredLessonList</code>, it has static method <code>setCurrentPredicate</code> and <code>getCurrentPredicate</code>.
-Whenever the predicate is changed, the variable <code>currentPredicate</code> will be updated accordingly.</p>
+<p>ListingUnit also records the current predicate used in <strong>filteredLessonList</strong> and has static methods <strong>setCurrentPredicate</strong> and <strong>getCurrentPredicate</strong>. Whenever the predicate is changed, the variable <strong>currentPredicate</strong> will be updated accordingly.</p>
 </div>
 <div class="paragraph">
-<p>The recorded predicate is mainly used to facilitate the implementation of <code>redo</code> command. As we discussed above about <code>redo</code> command. We are not allowing redo the previous command in a different context. Since many of the commands are Index-based, it will have different effects to execute the command again with a different listing.
-As a result, when implement the redo mechanism, we can obtain the <code>currentPredicate</code> and compare it with the predicate memoried by the command and only push it into the <code>redostack</code> if the predicate is the same.</p>
+<p>The recorded predicate is mainly used to facilitate the implementation of <strong>RedoCommand</strong>. We do not allow redoing of the previous command in a different context. Since many of the commands are index-based, executing the command with a different listing type will cause different results. As a result, when implementing the redo mechanism, we can obtain the <strong>currentPredicate</strong> and compare it with the predicate memorised by the command and only push it onto the <strong>redoStack</strong> if the predicate is the same.</p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.1. Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>ListingUnit</code><br>
-<strong>Alternative 1 (current choice):</strong>  Construct a enumeration class <code>ListingUnit</code> and record current listing type and predicates.<br>
-<strong>Pros:</strong> It makes the implementation of many other features easier.<br>
-<strong>Cons:</strong> In testing, <code>ListingUnit</code> class carry data from one test to another even when we want each test to be independent of the others.<br>
-<strong>Alternative 2 (previous choice):</strong> Use a variable in model manager to keep record of currentListingUnit<br>
-<strong>Pros:</strong> No need for extra enumeration class.<br>
-<strong>Cons:</strong> In order to access the variable in other components, the variable must be declared static. But we cannot define static abstract method in interface.</p>
+<p><strong>Aspect</strong>: Implementation of <strong>ListingUnit</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Construct an enumeration class <strong>ListingUnit</strong> and record current listing type and predicates.<br>
+<strong>Pros</strong>: It makes the implementation of many other features easier.<br>
+<strong>Cons</strong>: In testing, <strong>ListingUnit</strong> class carries data from one test to another even when we want each test to be independent of the others.<br>
+<strong>Alternative 2 (previous choice)</strong>: Use a variable in model manager to keep record of current <strong>ListingUnit</strong>.<br>
+<strong>Pros</strong>: There is no need for an extra enumeration class.<br>
+<strong>Cons</strong>: In order to access the variable in other components, the variable must be declared static. However, we cannot define static abstract methods in an interface.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="list-view-mechanism"><a class="link" href="#list-view-mechanism">4.3. List/View mechanism</a></h3>
 <div class="paragraph">
-<p>The list and view mechanisms are similar and both are facilitated by <code>ListingUnit</code> and <code>Predicate</code>.
-When user list by different attributes, the static variable <code>currentListingUnit</code> will be reset to either <code>MODULE</code> or <code>LOCATION</code>.
-When user view by index, the the static variable <code>currentListingUnit</code> will be set to <code>LESSON</code>.</p>
+<p>The list and view mechanisms are similar and both are facilitated by <strong>ListingUnit</strong> and predicate. When the user lists by different attributes, the static variable current <strong>ListingUnit</strong> will reset to either <strong>MODULE</strong> or <strong>LOCATION</strong>, depending on the user’s input. When the user view by index, the static variable current <strong>ListingUnit</strong> will be set to <strong>LESSON</strong>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -849,18 +861,16 @@ When user view by index, the the static variable <code>currentListingUnit</code>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The default listing is to list all modules. When list by attribute, for example, <code>list location</code>, the currentListingUnit will be set to <code>location</code> and show a list of all locations.
+The default listing unit is <strong>MODULE</strong>. When listing by attribute, for example, list location, the <strong>currentListingUnit</strong> will be set to <strong>LOCATION</strong> and shows a list of all locations.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>For different listing type, we always use the same lessonList but set different <code>Predicate</code> to it.
-<code>UniqueModuleCodePredicate</code> and <code>UniqueLocationPredicate</code> are used to facilitate the implementation of list.
-For example, when user types in <code>list module</code>, a <code>UniqueModulePredicate</code> will be used to filter the lessonList and UI will hide all other irrelevant information of the lesson and results in showing a list of all Modules.</p>
+<p>For different listing type, we always use the same <strong>lessonList</strong> but set different predicate to it. <strong>UniqueModuleCodePredicate</strong> and <strong>UniqueLocationPredicate</strong> are used to facilitate the implementation of list. For example, when the user types in list module, a <strong>UniqueModulePredicate</strong> will be used to filter the <strong>lessonList</strong>. <a href="#ui">UI</a> will hide all other irrelevant information of the lesson such as location and time slot and shows a list of all modules.</p>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the list command works:</p>
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 20)</em> shows how the list command works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -868,7 +878,10 @@ For example, when user types in <code>list module</code>, a <code>UniqueModulePr
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#activity-diagram">activity diagram</a> summarize what happens when an user execute list command.</p>
+<p><em>Figure 20: Sequence Diagram for ListCommand</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 21)</em> summarizes what happens when a user executes list command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -876,11 +889,13 @@ For example, when user types in <code>list module</code>, a <code>UniqueModulePr
 </div>
 </div>
 <div class="paragraph">
-<p><code>FixedCodePredicate</code> and <code>FixedLocationPredicate</code> are used to facilitate the implementation of <code>view</code> command.
-According to current listing type, which we can obtain from <code>ListingUnit</code>, we create either a <code>FixedCodePredicate</code> or a <code>FixedLocationPredicate</code> to filter the lesson list and set <code>currentListingUnit</code> to be <code>Lesson</code>.</p>
+<p><em>Figure 10: Activity Diagram for ListCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the view command works:</p>
+<p><strong>FixedCodePredicate</strong> and <strong>FixedLocationPredicate</strong> are used to facilitate the implementation of <strong>ViewCommand</strong>. According to the current listing type, which we can obtain from <strong>ListingUnit</strong>, we can create either a <strong>FixedCodePredicate</strong> or a <strong>FixedLocationPredicate</strong> to filter the lesson list and set <strong>currentListingUnit</strong> to be <strong>LESSON</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 22)</em> shows how the view command works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -888,40 +903,42 @@ According to current listing type, which we can obtain from <code>ListingUnit</c
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#activity-diagram">activity diagram</a> summarize what happens when an user execute view command.</p>
+<p><em>Figure 22 Sequence Diagram for ViewCommand</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 23)</em> summarizes what happens when a user executes <strong>ViewCommand</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ViewCommandActivityDiagram.png" alt="ViewCommandActivityDiagram" width="900">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 23: Activity Diagram for view</em></p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.1. Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>List</code> and <code>View</code><br>
-<strong>Alternative 1 (current choice):</strong>  set different predicates to the <code>filteredList</code> and hide irrelevant information in the panel.<br>
-<strong>Pros:</strong> Easy to understand and do not use extra space to store different kinds of lists(For example, location list).<br>
-<strong>Cons:</strong> Overhead of setting predicates repeatedly.<br>
-<strong>Alternative 2 (previous choice):</strong> Store lesson list, unique module list and unique location list separately. and switch to different panel list and view command is called.<br>
-<strong>Pros:</strong> More well-organized structure.<br>
-<strong>Cons:</strong> Much harder to implement and overhead of switching to different panels instead of using one.</p>
+<p><strong>Aspect</strong>: Implementation of <strong>List</strong> and <strong>View Command</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Set different predicates to the <strong>filteredList</strong> and hide irrelevant information in the lesson list panel.<br>
+<strong>Pros</strong>: It would be easy to understand and do not use extra spaces to store different kind of lists (For example, location list).<br>
+<strong>Cons</strong>: This will increase overhead due to implementation of new predicates.<br>
+<strong>Alternative 2 (previous choice)</strong>: Store lesson list, unique module list and unique location list separately and switches to different panel list before calling view command.<br>
+<strong>Pros</strong>: This implementation will make the overall structure more organized.<br>
+<strong>Cons</strong>: It would be much harder to implement and the switching of panel will cause heavier load to the system compared to a single panel.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="mark-unmark-mechanism"><a class="link" href="#mark-unmark-mechanism">4.4. Mark/Unmark mechanism</a></h3>
 <div class="paragraph">
-<p>The mark mechanism is facilitated by an extra attribute <code>isMarked</code> of <code>Lesson</code> class. <code>isMarked</code> is a boolean attribute which indicates if the given lesson is in the marked list.</p>
+<p>The mark mechanism is facilitated by an extra attribute <strong>isMarked</strong> of Lesson class. <strong>isMarked</strong> is a boolean attribute which indicates if the given lesson is in the marked list.</p>
 </div>
 <div class="paragraph">
-<p>When user <code>mark</code> a lesson. The <code>isMarked</code> attribute of the specified lesson will be set to <code>true</code>.
-When user <code>unmark</code> a lesson, the <code>isMarked</code> attribute of the specified lesson will be set to <code>false</code>.</p>
+<p>When the user mark a lesson, the specified lesson’s <strong>isMarked</strong> attribute will be set to true. When the user unmark a lesson, the specified lesson’s <strong>isMarked</strong> attribute will be set to false.</p>
 </div>
 <div class="paragraph">
-<p>When a new lesson is added. By default it is not in the marked list thus the <code>isMarked</code> filed will be set to false.</p>
-</div>
-<div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the mark command works:</p>
+<p>By default, when a new lesson is added, it is not in the marked list and thus the <strong>isMarked</strong> attribute will be set to false. The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 24)</em> shows how the mark command works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -929,7 +946,10 @@ When user <code>unmark</code> a lesson, the <code>isMarked</code> attribute of t
 </div>
 </div>
 <div class="paragraph">
-<p>You can see a list of all marked lesson by command <code>list marked</code>.</p>
+<p><em>Figure 24: Sequence Diagram for MarkCommand</em></p>
+</div>
+<div class="paragraph">
+<p>You can see a list of all marked lessons by the command list marked.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -938,7 +958,7 @@ When user <code>unmark</code> a lesson, the <code>isMarked</code> attribute of t
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Each lesson is only allowed to be added into the <code>marked list</code> once, thus any further <code>mark</code> attempt will cause an exception being thrown.
+Each lesson is only allowed to be added into the marked list once, thus any further mark attempt will cause an exception to be thrown.
 </td>
 </tr>
 </table>
@@ -946,24 +966,36 @@ Each lesson is only allowed to be added into the <code>marked list</code> once, 
 <div class="sect3">
 <h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.4.1. Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of mark/unmark.<br>
-<strong>Alternative 1 (current choice):</strong>  Create an extra attribute <code>isMarked</code> for each lesson to record if the lesson is in the <code>marked list</code>.
-<strong>Pros:</strong> Easy to implement <code>list marked</code> since we are always using predicates to update the lesson list showing.<br>
-<strong>Cons:</strong> Need to filter out marked lessons every time.<br>
-<strong>Alternative 2 (previous choice):</strong> Store an extra marked lesson list.<br>
-<strong>Pros:</strong> We do not need to filter out the marked lessons each time.<br>
-<strong>Cons:</strong> Inefficient storage, many lessons might be stored multiple times.</p>
+<p><strong>Aspect</strong>: Implementation of mark/unmark<br>
+<strong>Alternative 1 (current choice)</strong>: Create an extra attribute <strong>isMarked</strong> for each lesson to record if the lesson is in the marked list.<br>
+<strong>Pros</strong>: It would be easier to implement list marked since we are using predicates to update the lesson list.<br>
+<strong>Cons</strong>: It is requires to filter out marked lessons every time.<br>
+<strong>Alternative 2 (previous choice)</strong>: Stores additional marked lesson list.<br>
+<strong>Pros</strong>: We do not need to filter out the marked lessons each time.<br>
+<strong>Cons</strong>: Lessons might be stored multiple times.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="find-mechanism"><a class="link" href="#find-mechanism">4.5. Find mechanism</a></h3>
 <div class="paragraph">
-<p>The find mechanism is facilitated by predicates. Whenever find command is executed, in <code>FindCommandParser</code> will turn the paramater into a string list which will pass to the <code>FindCommand</code>.
-In <code>FindCommand</code> different find predicate will be called depends on what the current <code>ListingUnit</code> is and will update the predicate of <code>filteredList</code> with one of these three predicates.
-<code>LocationContainsKeywordPredicate</code> which find the lessons with name that contains the keywords, <code>ModuleContainsKeywordPredicate</code> which find lesson with module code that contains the keyword and
-, <code>MarkedLessonContainsKeywordPredicate</code> which find the marked lessons with name that contains the keywords and
-finally <code>LessonContainsKeywordPredicate</code> which find lessons with any information they have that contains the keywords.</p>
+<p>The find mechanism is facilitated by predicates. Whenever find command is executed, <strong>FindCommandParser</strong> will turn the parameter into a string list and passed to <strong>FindCommand</strong>. In <strong>FindCommand</strong>, different find predicates will be called depending on what the current <strong>ListingUnit</strong> is and updates the predicate of <strong>filteredList</strong> with one of the following four predicates:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>LocationContainsKeywordPredicate</strong></p>
+</li>
+<li>
+<p><strong>ModuleContainsKeywordPredicate</strong></p>
+</li>
+<li>
+<p><strong>MarkedLessonContainsKeywordPredicate</strong></p>
+</li>
+<li>
+<p><strong>LessonContainsKeywordPredicate</strong></p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -972,16 +1004,16 @@ finally <code>LessonContainsKeywordPredicate</code> which find lessons with any 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>LocationContainsKeywordPredicate</code> will be used when the current <code>ListingUnit</code> is <code>LOCATION</code>.<br>
-<code>ModuleContainsKeywordPredicate</code> will be used when the current <code>ListingUnit</code> is <code>MODULE</code>.<br>
-<code>MarkedLessonContainsKeywordPredicate</code> will be used when the current <code>ListingUnit</code> is <code>LESSON</code> and <code>currentViewingPredicate</code> is <code>marked</code>.
-<code>LessonContainsKeywordPredicate</code> will be used when the current <code>ListingUnit</code> is <code>LESSON</code>.
+The <strong>LocationContainsKeywordPredicate</strong> will be used when the current <strong>ListingUnit</strong> is <strong>LOCATION</strong>.<br>
+The <strong>ModuleContainsKeywordPredicate</strong> will be used when the current <strong>ListingUnit</strong> is <strong>MODULE</strong>.<br>
+The <strong>MarkedLessonContainsKeywordPredicate</strong> will be used when the current <strong>ListingUnit</strong> is <strong>LESSON</strong> and <strong>currentViewingPredicate</strong> is marked.<br>
+The <strong>LessonContainsKeywordPredicate</strong> will be used when the current <strong>ListingUnit</strong> is <strong>LESSON</strong>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the find operation works:</p>
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 25)</em> shows how the find operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -989,37 +1021,36 @@ finally <code>LessonContainsKeywordPredicate</code> which find lessons with any 
 </div>
 </div>
 <div class="paragraph">
-<p>The redo does the exact opposite (pops from <code>redoStack</code>, push to <code>undoStack</code>, and restores the address book to the state after the command is executed).</p>
+<p><em>Figure 25:  Sequence Diagram for FindCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <a href="#activity-diagram">activity diagram</a> summarize what happens when an user execute find command.</p>
+<p>The following <em>Activity Diagram (Figure 26)</em> summarizes what happens when a user executes find command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/FindCommandActivityDiagram.png" alt="FindCommandActivityDiagram" width="900">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 26: Activity Diagram for FindCommand</em></p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">4.5.1. Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>FindCommand</code><br>
-<strong>Alternative 1 (current choice):</strong> Find module/lesson/location base on the current <code>ListingUnit</code>.<br>
-<strong>Pros:</strong> Make more sense to implement this way as in ModU as user do not always view all lessons in <code>LessonListPanel</code>.
-It will not make sense for the user to find something that is not currently in <code>LessonListPanel</code>.<br>
-<strong>Cons:</strong> More work need to be done as implementing <code>FindCommand</code> this way would need to create multiple <code>Predicates</code> for different type of <code>ListCommand</code> attributes.<br>
-<strong>Alternative 2:</strong> Find lesson based on the full list regardless which previous <code>ListCommand</code> attribute.<br>
-<strong>Pros:</strong> Less work.<br>
-<strong>Cons:</strong> Make no sense for user as the <code>FindCommand</code> will return something that is irrelevant for the user.
- For example, the <code>LessonListingPanel</code> shows a list of modules and the user want to search for module "CS1010", the <code>FindCommand</code>
- will return a list of "CS1010" lessons instead of the module the user is trying to look for.<br></p>
+<p><strong>Aspect</strong>: Implementation of <strong>FindCommand</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Find module/lesson/location based on the current <strong>ListingUnit</strong>.<br>
+<strong>Pros</strong>: User does not always view all the lessons under <strong>LessonListPanel</strong>, it makes more sense for this implementation.<br>
+<strong>Cons</strong>: It would requires more work to be done as implementing <strong>FindCommand</strong> as this implementation would need to create multiple predicates for different type of <strong>ListCommand</strong> attributes.<br>
+<strong>Alternative 2</strong>: Find lessons based on the full list regardless of which listing attribute was executed previously.<br>
+<strong>Pros</strong>: It would require less work to implement the <strong>FindCommand</strong> as compared to alternative 1.<br>
+<strong>Cons</strong>: It does not make sense for the user as <strong>FindCommand</strong> will return a result that is irrelevant for the user. For example, the <strong>LessonListPanel</strong> shows a list of modules and when the user wants to search for module "CS1010", <strong>FindCommand</strong> will return a list of "CS1010" lessons instead of the module the user is trying to look for.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="remark-mechanism"><a class="link" href="#remark-mechanism">4.6. Remark mechanism</a></h3>
 <div class="paragraph">
-<p>The remark mechanism is facilitated by <code>UniqueRemarkList</code>. Each time we add or delete a remark, the UniqueRemarkList is updated and changes are saved into storage.
-A filtered list is used to show remarks related to a specified module when a module is selected.</p>
+<p>The remark mechanism is facilitated by <strong>UniqueRemarkList</strong>. Each time we add or delete a remark, the <strong>UniqueRemarkList</strong> is updated and changes are saved into storage. A filtered list is used to show remarks related to a specified module when a module is selected.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1028,16 +1059,13 @@ A filtered list is used to show remarks related to a specified module when a mod
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Only module can be remarked, therefore user can use remark if and only if current listing element is module.
-Both adding a remark and deleting a remark used an index while the meaning of the index is different.
-The index in <code>remark INDEX CONTENT</code> is the index of the module in the module list we want to add remark to.
-While the index in <code>delete -d INDEX</code> is the index of the remark we want to delete.
+Only module can be remarked, therefore user can use remark if and only if the current listing element is <strong>MODULE</strong>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> summarize what happens when an user execute remark command.</p>
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 27)</em> shows how the remark operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1045,27 +1073,33 @@ While the index in <code>delete -d INDEX</code> is the index of the remark we wa
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#activity-diagram">activity diagram</a> summarize what happens when an user execute remark command.</p>
+<p><em>Figure 27: Sequence Diagram for RemarkCommand</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 28)</em> summarizes what happens when a user executes remark command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/RemarkCommandActivityDiagram.png" alt="RemarkCommandActivityDiagram" width="900">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 28: Activity Diagram for RemarkCommand</em></p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">4.6.1. Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of RemarkCommand<br>
-<strong>Alternative 1 (current choice):</strong> use a <code>uniqueRemarkList</code> similar to <code>uniqueLessonList</code>.<br>
-<strong>Pros:</strong> Store all remarks as a single list thus it is easy to manage.
-<strong>Cons:</strong> Need to filter out a selected set of remarks when user select a specific module.</p>
+<p><strong>Aspect</strong>: Implementation of <strong>RemarkCommand</strong><br>
+<strong>Alternative 1 (current choice)</strong>: use a <strong>uniqueRemarkList</strong> similar to <strong>uniqueLessonList</strong>.<br>
+<strong>Pros</strong>: Store all remarks as a single list thus it is easy to manage.<br>
+<strong>Cons</strong>: Need to filter out a selected set of remarks when user select a specific module.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="sort-mechanism"><a class="link" href="#sort-mechanism">4.7. Sort mechanism</a></h3>
 <div class="paragraph">
-<p>The sort command is executed by sorting the <code>internalList</code> in <code>uniqueLessonList</code> based on current <code>ListingUnit</code>.</p>
+<p>The sort mechanism is executed by sorting the internalList in <strong>UniqueLessonList</strong> depending on the current <strong>ListingUnit</strong>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1074,15 +1108,13 @@ While the index in <code>delete -d INDEX</code> is the index of the remark we wa
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the current <code>ListingUnit</code> is location, the list will be sort lesson&#8217;s location lexicographically.<br>
-If the current <code>ListingUnit</code> is module, the list will be sort lesson&#8217;s module code lexicographically.<br>
-If the current <code>ListingUnit</code> is lesson, the list will be sort lesson&#8217;s group number lexicographically.<br>
+If the previous attribute type of list command is module, the list will be sorted by the lesson’s module code alphabetically for alphabets and in ascending order for number. Such sorting will also be applied for the location and lesson attributes. If there is no attribute in the execution of previous list command, the list will be sorted by the lesson’s module code by default.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the sort operation works:</p>
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 29)</em> shows how the sort operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1090,40 +1122,46 @@ If the current <code>ListingUnit</code> is lesson, the list will be sort lesson&
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#activity-diagram">activity diagram</a> summarize what happens when an user execute sort command.</p>
+<p><em>Figure 29: Sequence Diagram for SortCommand</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 30)</em> summarizes what happens when a user executes sort command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/sortCommandactivitydiagram.png" alt="sortCommandactivitydiagram" width="900">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 30: Activity Diagram for SortCommand</em></p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">4.7.1. Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>SortCommand</code><br>
-<strong>Alternative 1 (current choice):</strong> Sort the actual <code>internalList</code> in <code>UniqueLessonList</code>.<br>
-<strong>Pros:</strong> Easier for new developer to understand the operation of SortCommand execution as it is more intuitive. Prevent conflicting with other command execution which use the <code>internalList</code>.<br>
-<strong>Cons:</strong> More work as need to create different level of abstraction in model for a single method.<br>
-<strong>Alternative 2:</strong> Sort list by calling event to sort the current Observable&lt;ReadOnlyLesson&gt; lesson list on <code>LessonListPanel</code>.<br>
-<strong>Pros:</strong> This implementation requires lesser work compare to alternative 1.<br>
-<strong>Cons:</strong> Could be counter intuitive for new developer who is looking at the code for the first time as normally developers would relate such execution in the <code>Model</code> component of this product. In additional, this will make the <code>internalList</code> to be different with the <code>list</code> users see on the <code>LessonListPanel</code> which sill make other command operate to not operate properly.<br></p>
+<p><strong>Aspect</strong>: Implementation of <strong>SortCommand</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Sort the <strong>internalList</strong> in <strong>UniqueLessonList</strong>.<br>
+<strong>Pros</strong>: It would be easier for new developer to understand the operation of <strong>SortCommand</strong> execution as it is more intuitive. Prevent conflicting with other command execution which uses <strong>internalList</strong>.<br>
+<strong>Cons</strong>: This implementation would require creation of different levels of abstraction of the same sort method in Model for a single method which results to more work.<br>
+<strong>Alternative 2</strong>: Sort list by raising an event to sort the current <strong>Observable&lt;ReadOnlyLesson&gt; lessonList</strong> in <strong>LessonListPanel</strong>.<br>
+<strong>Pros</strong>: This implementation of <strong>SortCommand</strong> would requires less work.<br>
+<strong>Cons</strong>: This implementation could be counter intuitive for new developer who is looking at the code for the first time as normally developers would implement it in the Model component.</p>
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>Aspect:</strong> How sort executes<br>
-<strong>Alternative 1 (current choice):</strong> Sort exiting list base on the attribute type of previous <code>List</code> command called.<br>
-<strong>Pros:</strong> Make more sense as if address attribute was provided as parameter for previous <code>List</code> command, the existing list before sort been execute will only shown a list addresses.<br>
-<strong>Cons:</strong> Need to find out with attribute type was given as parameter for previous <code>List</code> command and sort accordingly which amount to more work.<br>
-<strong>Alternative 2:</strong> Despite the previous <code>List</code> attribute type and return a list with all the details from all attributes and sorted by name.<br>
-<strong>Pros:</strong> Less work.<br>
-<strong>Cons:</strong> <code>Sort</code> command will not go hand in hand with <code>List</code> command.</p>
+<p><strong>Aspect</strong>: Execution <strong>of SortCommand</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Sort list based on the attribute type of previous <strong>ListCommand</strong>.<br>
+<strong>Pros</strong>: This implementation could allow user to sort by different attributes and work hand in hand with <strong>ListCommand</strong>.<br>
+<strong>Cons</strong>: This implementation requires ModU to find out what attribute type was given as a attribute for previous <strong>ListCommand</strong> and sort accordingly which amount to more work.<br>
+<strong>Alternative 2</strong>: Ignore previous list attribute type and return a list with all the details from all attributes sorted by name.<br>
+<strong>Pros</strong>: This implementation of <strong>SortCommand</strong> would require less work.<br>
+<strong>Cons</strong>: <strong>SortCommand</strong> will not work well with <strong>ListCommand</strong>.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="color-keyword-mechanism"><a class="link" href="#color-keyword-mechanism">4.8. Color Keyword mechanism</a></h3>
 <div class="paragraph">
-<p>The color keyword mechanism is facilitated by <a href="#event-bus"><code>Event Bus</code></a>. Whenever color keyword command is executed, in <code>ColorKeywordCommand</code> it will raise a <code>ColorKeywordEvent</code> via <code>EventCenter</code> which there is an listener in <code>CommandBox</code> which will enable/disable the highlighting of command keyword feature according to the parameter which was passed in by the user.</p>
+<p>The color keyword mechanism is facilitated by <strong>EventBus</strong>. Whenever color keyword command is executed, it will raise a <strong>ColorKeywordEvent</strong> via <strong>EventCenter</strong>. A listener in <strong>CommandBox</strong> will then enable or disable the highlighting of command keyword feature according to the parameter which was passed in by the user.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1138,7 +1176,7 @@ The default setting for this feature is set as disable.
 </table>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the color keyword command operation works:</p>
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 31)</em> shows how the color keyword command operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1146,7 +1184,10 @@ The default setting for this feature is set as disable.
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">activity diagram</a> summarize what happens when an user execute color keyword command.</p>
+<p><em>Figure 31: Sequence Diagram for ColorKeywordCommand</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 32)</em> summarizes what happens when a user executes color keyword command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1154,30 +1195,25 @@ The default setting for this feature is set as disable.
 </div>
 </div>
 <div class="paragraph">
-<p>The following diagram shows what happens in the <code>configBorderColor</code> method in detail:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/configBorderColor.png" alt="configBorderColor" width="900">
-</div>
+<p><em>Figure 32: Activity Diagram for ColorKeywordCommand</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">4.8.1. Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>ColorKeywordCommand</code><br>
-<strong>Alternative 1 (current choice):</strong>  Update boolean variable "isEnable" in the command box by calling event to set the status of this variable.<br>
-<strong>Pros:</strong> Since only command box will be updated, using event center will maintain a good data encapsulation.<br>
-<strong>Cons:</strong> Hard for new developers to understand the event center mechanism.<br>
-<strong>Alternative 2:</strong> Declare a global boolean variable<br>
-<strong>Pros:</strong> Easier for new developer to design<br>
-<strong>Cons:</strong> This method breaks encapsulation and fails to follow standard java code style.</p>
+<p><strong>Aspect</strong>: Implementation of <strong>ColorKeywordCommand</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Update boolean variable "isEnable" in the command box by calling event to set the status of this variable.<br>
+<strong>Pros</strong>: Since only command box will be updated, using <strong>EventCenter</strong> will maintain good data encapsulation.<br>
+<strong>Cons</strong>: It would be difficult for new developers to understand the <strong>EventCenter</strong> mechanism.<br>
+<strong>Alternative 2</strong>: Declare a global boolean variable.<br>
+<strong>Pros</strong>: It would be easier for new developer to design.<br>
+<strong>Cons</strong>: This method breaks encapsulation and fails to follow the standard java coding style.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="customise-mechanism"><a class="link" href="#customise-mechanism">4.9. Customise mechanism</a></h3>
 <div class="paragraph">
-<p>The customise mechanism is facilitated by both the <a href="#event-bus"><code>Event Bus</code></a> and an enumeration class <code>FontSizeUnit</code>. Currently, <code>CustomiseCommand</code> only supports changing the font size of the application. Each time <code>CustomiseCommand</code> is executed, it will raise a <code>ChangedFontSizeEvent</code> via <code>EventCenter</code> according to the user specified parameter as well as update the <code>currentFontSizeUnit</code>.</p>
+<p>The customise mechanism is facilitated by both the <strong>EventBus</strong> and an enumeration class <strong>FontSizeUnit</strong>. Currently, <strong>CustomiseCommand</strong> only supports changing the font size of the application. Each time <strong>CustomiseCommand</strong> is executed, it will raise a <strong>ChangedFontSizeEvent</strong> via <strong>EventCenter</strong> according to the user specified parameter as well as update the <strong>currentFontSizeUnit</strong>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1186,13 +1222,13 @@ The default setting for this feature is set as disable.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>FontSizeUnit</code> enumeration is to set a global static variable <code>currentFontSizeUnit</code> so that <code>PersonCard</code> is able to follow the current font size whenever it is called.
+The <strong>FontSizeUnit</strong> enumeration is to set a global static variable <strong>currentFontSizeUnit</strong> so that <strong>PersonCard</strong> is able to obtain the current font size whenever it is called.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the customise command operation works:</p>
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 34)</em> shows how the customise command operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1200,30 +1236,36 @@ The <code>FontSizeUnit</code> enumeration is to set a global static variable <co
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">activity diagram</a> summarize what happens when a user execute customise command.</p>
+<p><em>Figure 34: Sequence Diagram for CustomiseCommand</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 35)</em> summarizes what happens when a user executes customise command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/CustomiseCommandActivityDiagram.png" alt="CustomiseCommandActivityDiagram" width="900">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 35: Activity Diagram for CustomiseCommand</em></p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-9"><a class="link" href="#design-considerations-9">4.9.1. Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>CustomiseCommand</code><br>
-<strong>Alternative 1 (current choice):</strong> Update static variable <code>currentFontSizeUnit</code> to the corresponding <code>FontSizeUnit</code> and use <code>EventBus</code> to inform <code>UI</code> the change of <code>fontSizeUnit</code>.
-<strong>Pros:</strong> One global variable that records current <code>fontSizeUnit</code>.<br>
-<strong>Cons:</strong> Hard for new developers to understand the event center mechanism.<br>
-<strong>Alternative 2 (previous choice):</strong> Use a variable in model manager to keep record of <code>currentFontSizeUnit</code><br>
-<strong>Pros:</strong> No need for extra enumeration class and easier for new developers to design.<br>
-<strong>Cons:</strong> In order to get it in other components, the variable must be declared static. But we cannot define static abstract method in interface. It also does not follow Java&#8217;s standard coding style.</p>
+<p><strong>Aspect</strong>: Implementation of <strong>CustomiseCommand</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Update static variable <strong>currentFontSizeUnit</strong> to the corresponding <strong>fontSizeUnit</strong> and use <strong>EventBus</strong> to inform <a href="#ui">UI</a> of the change to <strong>fontSizeUnit</strong>.<br>
+<strong>Pros</strong>: It only requires one global variable to records current <strong>fontSizeUnit</strong>.<br>
+<strong>Cons</strong>: It would be difficult for new developers to understand the <strong>EventCenter</strong> mechanism.<br>
+<strong>Alternative 2</strong>: Use a variable in model manager to keep a record of <strong>currentFontSizeUnit</strong>.<br>
+<strong>Pros</strong>: It do not require additional enumeration class and easier for new developers to design.<br>
+<strong>Cons</strong>: In order to obtain the variable from other components, the variable must be declared static. However, we cannot define static abstract method in an interface. It also does not follow Java’s standard coding style.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="switch-theme-mechanism"><a class="link" href="#switch-theme-mechanism">4.10. Switch theme mechanism</a></h3>
 <div class="paragraph">
-<p>The switch theme mechanism is facilitated by both the <a href="#event-bus"><code>Event Bus</code></a> and an enumeration class <code>ThemeUnit</code>. Currently, <code>ThemeCommand</code> only supports changing between light (default) and dark theme. Each time <code>ThemeCommand</code> is executed, it will raise a <code>SwitchThemeRequestEvent</code> via <code>EventCenter</code> and update the <code>currentThemeUnit</code>.</p>
+<p>The switch theme mechanism is facilitated by both the <strong>EventBus</strong> and an enumeration class <strong>ThemeUnit</strong>. Currently, <strong>ThemeCommand</strong> only supports changing between light (default) and dark theme. Each time <strong>ThemeCommand</strong> is executed, it will raise a <strong>SwitchThemeRequestEvent</strong> via <strong>EventCenter</strong> and update the <strong>currentThemeUnit</strong>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1232,13 +1274,13 @@ The <code>FontSizeUnit</code> enumeration is to set a global static variable <co
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <code>ThemeUnit</code> enumeration is to set a global static variable <code>currentThemeUnit</code> so that <code>MainWindow</code> is able to obtain the current theme whenever it is called.
+The <strong>ThemeUnit</strong> enumeration is to set a global static variable <strong>currentThemeUnit</strong> so that <strong>MainWindow</strong> is able to obtain the current theme whenever it is called.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">sequence diagram</a> shows how the switch theme command operation works:</p>
+<p>The following <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 36)</em> shows how the switch theme command operation works:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1246,35 +1288,45 @@ The <code>ThemeUnit</code> enumeration is to set a global static variable <code>
 </div>
 </div>
 <div class="paragraph">
-<p>The following <a href="#sequence-diagram">activity diagram</a> summarize what happens when a user execute switch theme command.</p>
+<p><em>Figure 36: Sequence Diagram for ThemeCommand</em></p>
+</div>
+<div class="paragraph">
+<p>The following <em>Activity Diagram (Figure 37)</em> summarize what happens when a user executes theme command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/SwitchThemeActivityDiagram.png" alt="SwitchThemeActivityDiagram" width="900">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 37: Activity Diagram for ThemeCommand</em></p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-10"><a class="link" href="#design-considerations-10">4.10.1. Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>ThemeCommand</code><br>
-<strong>Alternative 1 (current choice):</strong> Update static variable <code>currentThemeUnit</code> to the corresponding <code>ThemeUnit</code> and use <code>EventBus</code> to inform <code>UI</code> the change of <code>ThemeUnit</code>.
-<strong>Pros:</strong> One global variable that records current <code>ThemeUnit</code>.<br>
-<strong>Cons:</strong> Hard for new developers to understand the event center mechanism.<br>
-<strong>Alternative 2 (previous choice):</strong> Use a variable in model manager to keep record of <code>currentThemeUnit</code><br>
-<strong>Pros:</strong> No need for extra enumeration class and easier for new developers to design.<br>
-<strong>Cons:</strong> In order to get it in other components, the variable must be declared static. But we cannot define static abstract method in interface. It also does not follow Java&#8217;s standard coding style.</p>
+<p><strong>Aspect</strong>: Implementation of <strong>ThemeCommand</strong><br>
+<strong>Alternative 1 (current choice)</strong>: Update static variable <strong>currentThemeUnit</strong> to the corresponding <strong>ThemeUnit</strong> and use <strong>EventBus</strong> to inform <a href="#ui">UI</a> the change of <strong>ThemeUnit</strong>.<br>
+<strong>Pros</strong>: One global variable that records current <strong>ThemeUnit</strong>.<br>
+<strong>Cons</strong>: Hard for new developers to understand the event center mechanism.<br>
+<strong>Alternative 2</strong>:Use a variable in model manager to keep record of <strong>currentThemeUnit</strong><br>
+<strong>Pros</strong>: There is no need for an extra enumeration class and it is also easier for new developers to design.<br>
+<strong>Cons</strong>: In order to get the variable in other components, it must be declared static. However, we cannot define static abstract method in interface. It also does not follow Java’s standard coding style.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="timetable-mechanism"><a class="link" href="#timetable-mechanism">4.11. Timetable mechanism</a></h3>
 <div class="paragraph">
-<p><code>Timetable</code> is an enhancement of UI. The role of the timetable view is to display a timetable of all the lessons listed in the display panel.<br></p>
+<p><strong>Timetable</strong> is an enhancement of <a href="#ui">UI</a>. The role of the timetable view is to display a timetable of all the lessons listed in the display panel.</p>
 </div>
 <div class="paragraph">
-<p><code>Timetable</code> mechanism is facilitated by the <code>GridPane</code> properties in javafx.<br>
-The first row of timetableView is the header for time slot. In our software, the range for available time slots are from 0800 to 2000<br>
-The generation of timetable column header is implemented this way:</p>
+<p><strong>Timetable</strong> mechanism is facilitated by the <strong>GridPane</strong> properties in <a href="#javaFX">JavaFx</a>.</p>
+</div>
+<div class="paragraph">
+<p>The first row of <strong>timetableView</strong> is the header for time slot. In our software, the range for available time slots are from 0800 to 2000.</p>
+</div>
+<div class="paragraph">
+<p>The generation of timetable column header is implemented this way:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1284,8 +1336,10 @@ The generation of timetable column header is implemented this way:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The first column of timetableView is the header for weekday. In our software, the range is from Monday to Friday.<br>
-The generation of timetable row header is implemented this way:</p>
+<p>The first column of <strong>timetableView</strong> is the header for weekday. In our software, the range is from Monday to Friday.</p>
+</div>
+<div class="paragraph">
+<p>The generation of timetable row header is implemented this way:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1295,13 +1349,8 @@ The generation of timetable row header is implemented this way:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>+</p>
-</div>
-<div class="paragraph">
-<p>When the view command is executed, a number of lessons will be displayed on the display panel.<br>
-In the CombinePanel, the handleViewedLessonEvent() will call generateTimeTableGrid() to set up the timetableView. <br>
-The generateTimeTableGrid() will obtain the grid data from generateTimeTableData().<br>
-After that, it will display the data onto the timetableView.</p>
+<p>When the view command is executed, a number of lessons will be displayed on the display panel.
+In the <strong>CombinePanel</strong>, the <strong>handleViewedLessonEvent()</strong> will call <strong>generateTimeTableGrid()</strong> to set up the <strong>timetableView</strong>. The <strong>generateTimeTableGrid()</strong> will then obtain the grid data from <strong>generateTimeTableData()</strong>.After that, it will display the data onto the <strong>timetableView</strong>.</p>
 </div>
 <div class="paragraph">
 <p>The generation of timetable data is implemented this way:</p>
@@ -1331,20 +1380,20 @@ After that, it will display the data onto the timetableView.</p>
 <div class="sect3">
 <h4 id="design-considerations-11"><a class="link" href="#design-considerations-11">4.11.1. Design considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of Timetable.<br>
-<strong>Alternative1 (current choice): </strong> Using code to create timetable view.<br>
-<strong>Pros:</strong> It is more flexible to change the style or the text of the label.<br>
-<strong>Cons:</strong> Since everything is written in code, you can not visualise the layout until you run the code.<br>
-<strong>Alternative2:</strong> Using Scene Builder to create timetable view<br>
-<strong>Pros:</strong> It is easier to visualise the layout<br>
-<strong>Cons:</strong> There are many limitations such as unable to add time slot to span 2 columns.<br></p>
+<p><strong>Aspect</strong>: Implementation of <strong>Timetable</strong>.<br>
+<strong>Alternative 1 (current choice)</strong>: Use java code to create the timetable view instead of SceneBuilder.<br>
+<strong>Pros</strong>: It is more flexible to change the style or the text of the label.<br>
+<strong>Cons</strong>: Since everything is written in code, you cannot visualise the layout until you run the code.<br>
+<strong>Alternative 2</strong>: Use SceneBuilder to create the timetable view.<br>
+<strong>Pros</strong>: It is easier to visualise the layout.<br>
+<strong>Cons</strong>: There are many limitations such as unable to add time slot to span 2 columns.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="stickynotes-mechanism"><a class="link" href="#stickynotes-mechanism">4.12. StickyNotes mechanism</a></h3>
 <div class="paragraph">
-<p><code>StickyNotes</code> is an enhancement of UI. The role of the stickynotes view is to display information about a module when.<br></p>
+<p><strong>StickyNotes</strong> is an enhancement of <a href="#ui">UI</a>. The role of the stickynotes view is to display information about a module.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1359,13 +1408,10 @@ The maximum number of notes for a module is 9.
 </table>
 </div>
 <div class="paragraph">
-<p><code>StickyNotes</code> mechanism is facilitated by the <code>GridPane</code> properties in javafx.<br></p>
+<p><strong>StickyNotes</strong> mechanism is facilitated by the <strong>GridPane</strong> properties in <a href="#javaFX">JavaFx</a>.</p>
 </div>
 <div class="paragraph">
-<p>When the remark command is executed, a new note will be created and linked to a module.<br>
-The handleRemarkChangedEvent() will call stickyNotesInit() to set up the stickyNotesView.<br>
-The stickyNotesInit() will obtain the grid data from noteDataInit().<br>
-After that, it will display the data onto the stickyNotesView.</p>
+<p>When the remark command is executed, a new note will be created and linked to a module. The <strong>handleRemarkChangedEvent()</strong> will call <strong>stickyNotesInit()</strong> to set up the <strong>stickyNotesView</strong>. The <strong>stickyNotesInit()</strong> will then obtain the grid data from <strong>noteDataInit()</strong>. After that, it will display the data onto the <strong>stickyNotesView</strong>.</p>
 </div>
 <div class="paragraph">
 <p>The generation of stickynotes data is implemented this way:</p>
@@ -1392,50 +1438,50 @@ After that, it will display the data onto the stickyNotesView.</p>
 <div class="sect3">
 <h4 id="design-considerations-12"><a class="link" href="#design-considerations-12">4.12.1. Design considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of StickyNotes.<br>
-<strong>Alternative1 (current choice): </strong> Using code to create stickynotes view.<br>
-<strong>Pros:</strong> The color of stickynotes can be changed easily.<br>
-<strong>Cons:</strong> THe developer needs to understand how to code for UI.<br>
-<strong>Alternative2:</strong> Using Scene Builder to create stickynotes view<br>
-<strong>Pros:</strong> It is easier to visualise the layout and set the properties<br>
-<strong>Cons:</strong> There are many limitations such as unable to show only a few <code>TextArea</code> objects.<br></p>
+<p><strong>Aspect</strong>: Implementation of <strong>StickyNotes</strong>.<br>
+<strong>Alternative 1 (current choice)</strong>: Use java code to create the stickynotes view instead of SceneBuilder.<br>
+<strong>Pros</strong>: The color of stickynotes can be changed easily.<br>
+<strong>Cons</strong>: It might be difficult to implement for new developers.<br>
+<strong>Alternative 2</strong>: Use Scene Builder to create the stickynotes view.<br>
+<strong>Pros</strong>: It is easier to visualise the layout and set the properties needed.<br>
+<strong>Cons</strong>: There are many limitations such as unable to show only a selected few TextArea objects.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="logging"><a class="link" href="#logging">4.13. Logging</a></h3>
 <div class="paragraph">
-<p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
+<p>We are using <code>java.util.logging</code> package for logging. The <strong>LogsCenter</strong> class is used to manage the logging levels and logging destinations.<br></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#configuration">Configuration</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#configuration">Configuration</a>)<br></p>
 </li>
 <li>
-<p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
+<p>The Logger for a class can be obtained using <strong>LogsCenter.getLogger(Class)</strong> which will log messages according to the specified logging level<br></p>
 </li>
 <li>
-<p>Currently log messages are output through: <code>Console</code> and to a <code>.log</code> file.</p>
+<p>Currently log messages are output through: Console and to a <code>.log</code> file.<br></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Logging Levels</strong></p>
+<p>Logging Levels<br></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>SEVERE</code> : Critical problem detected which may possibly cause the termination of the application</p>
+<p><code>SEVERE</code>: Critical problem detected which may possibly cause the termination of the application.<br></p>
 </li>
 <li>
-<p><code>WARNING</code> : Can continue, but with caution</p>
+<p><code>WARNING</code>: Potential problem detected which will not terminate the application but cause application oddities.<br></p>
 </li>
 <li>
-<p><code>INFO</code> : Information showing the noteworthy actions by the App</p>
+<p><code>INFO</code>: Information showing the noteworthy actions by the application<br></p>
 </li>
 <li>
-<p><code>FINE</code> : Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size</p>
+<p><code>FINE</code>: Details that is not usually noteworthy but may be useful in debugging e.g. print the actual list instead of just its size.</p>
 </li>
 </ul>
 </div>
@@ -1443,7 +1489,7 @@ After that, it will display the data onto the stickyNotesView.</p>
 <div class="sect2">
 <h3 id="configuration"><a class="link" href="#configuration">4.14. Configuration</a></h3>
 <div class="paragraph">
-<p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
+<p>Certain properties of the application can be controlled (e.g application name, logging level) through the configuration file (default: <code>config.json</code> ).</p>
 </div>
 </div>
 </div>
@@ -1499,7 +1545,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <p>Within Chrome, click on the <code>Print</code> option in Chrome&#8217;s menu.</p>
 </li>
 <li>
-<p>Set the destination to <code>Save as PDF</code>, then click <code>Save</code> to save a copy of the file in PDF format. For best results, use the settings indicated in the screenshot below.</p>
+<p>Set the destination to <code>Save as PDF</code>, then click <code>Save</code> to save a copy of the file in PDF format. For best results, use the settings indicated in the screenshot below <em>(Figure 38)</em>.</p>
 </li>
 </ol>
 </div>
@@ -1509,7 +1555,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.6.1 : Saving documentation as PDF files in Chrome</em></p>
+<p><em>Figure 38: Saving documentation as PDF files in Chrome</em></p>
 </div>
 </div>
 </div>
@@ -1573,7 +1619,7 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <p><strong>Method 3: Using <a href="#gradle">Gradle</a> (headless)</strong></p>
 </div>
 <div class="paragraph">
-<p>Thanks to the <a href="https://github.com/TestFX/TestFX">TestFX</a> library we use, our <a href="#gui">GUI</a> tests can be run in the <em>headless</em> mode. In the headless mode, GUI tests do not show up on the screen. That means the developer can do other things on the Computer while the tests are running.</p>
+<p>Thanks to the <a href="https://github.com/TestFX/TestFX">TestFX</a> library we use, our <a href="#gui">GUI</a> tests can be run in the headless mode. In the headless mode, <a href="#gui">GUI</a> tests do not show up on the screen. That means the developer can do other things on the Computer while the tests are running.</p>
 </div>
 <div class="paragraph">
 <p>To run tests in headless mode, open a console and run the command <code>gradlew clean headless allTests</code> (Mac/Linux: <code>./gradlew clean headless allTests</code>)</p>
@@ -1591,10 +1637,10 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>System Tests</em> that test the entire App by simulating user actions on the <a href="#gui">GUI</a>. These are in the <code>systemtests</code> package.</p>
+<p>System Tests that test the entire App by simulating user actions on the <a href="#gui">GUI</a>. These are in the <code>systemtests</code> package.</p>
 </li>
 <li>
-<p><em>Unit tests</em> that test the individual components. These are in <code>seedu.address.ui</code> package.</p>
+<p>Unit tests that test the individual components. These are in <code>seedu.address.ui</code> package.</p>
 </li>
 </ol>
 </div>
@@ -1604,11 +1650,11 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>Unit tests</em> targeting the lowest level methods/classes.<br>
+<p>Unit tests targeting the lowest level methods/classes.<br>
 e.g. <code>seedu.address.commons.StringUtilTest</code></p>
 </li>
 <li>
-<p><em>Integration tests</em> that are checking the integration of multiple code units (those code units are assumed to be working).<br>
+<p>Integration tests that are checking the integration of multiple code units (those code units are assumed to be working).<br>
 e.g. <code>seedu.address.storage.StorageManagerTest</code></p>
 </li>
 <li>
@@ -1651,7 +1697,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <div class="sect2">
 <h3 id="continuous-integration"><a class="link" href="#continuous-integration">7.2. Continuous Integration</a></h3>
 <div class="paragraph">
-<p>We use <a href="https://travis-ci.org/">Travis CI</a> and <a href="https://www.appveyor.com/">AppVeyor</a> to perform <em>Continuous Integration</em> on our projects. See <a href="UsingTravis.html">UsingTravis.adoc</a> and <a href="UsingAppVeyor.html">UsingAppVeyor.adoc</a> for more details.</p>
+<p>We use <a href="https://travis-ci.org/">Travis CI</a> and <a href="https://www.appveyor.com/">AppVeyor</a> to perform Continuous Integration on our projects. See <a href="UsingTravis.html">UsingTravis.adoc</a> and <a href="UsingAppVeyor.html">UsingAppVeyor.adoc</a> for more details.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1679,9 +1725,17 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <div class="sect2">
 <h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">7.4. Managing Dependencies</a></h3>
 <div class="paragraph">
-<p>A project often depends on third-party libraries. For example, ModU depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using <a href="#gradle">Gradle</a>. For example, <a href="#gradle">Gradle</a> can download the dependencies automatically, which is better than these alternatives.<br>
-a. Include those libraries in the repo (this bloats the repo size)<br>
-b. Require developers to download those libraries manually (this creates extra work for developers)</p>
+<p>A project often depends on third-party libraries. For example, ModU depends on the   Jackson library for XML parsing. Managing these dependencies can be automated using <a href="#gradle">Gradle</a>. For example, <a href="#gradle">Gradle</a> can download the dependencies automatically, which is better than these alternatives.<br></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Include those libraries in the repo (this bloats the repo size)<br></p>
+</li>
+<li>
+<p>Require developers to download those libraries manually (this creates extra work for developers)</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -1711,212 +1765,212 @@ b. Require developers to download those libraries manually (this creates extra w
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add new module into the system</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can allow the teachers and students to access this new module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add new module into the system.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allow the teachers and students to access this new module.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add new teachers into the system</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can allow new teachers to access the software</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add new teachers into the system.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allow new teachers to access the software.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list the existing modules</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can view how many and what module do i have in the system</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list the existing modules.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view how many and what module do i have in the system.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">update the detail of the existing module</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can make changes to the module without having to delete the module and recreate it</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update the detail of the existing module.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make changes to the module without having to delete the module and recreate it.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete teachers from the system</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can take away the access right of the teachers who are no longer working for the school</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete teachers from the system.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">take away the access right of the teachers who are no longer working for the school.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">update the detail of the teachers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can make changes of the detail of the teachers without having to delete and recreate them</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update the detail of the teachers.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make changes of the detail of the teachers without having to delete and recreate them.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view the commands/function i can use in this software</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I no need to memorise the function in this software and can review them conviencely whenever i want</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the commands/function i can use in this software.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">review the commands in ModU conveniently whenever i want.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add new location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can update the list of location in the system whenever a new location is constructed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add new location.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update the list of location in the system whenever a new location is constructed.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find a particular lecturer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I no need to search manually in the list of teachers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find a particular lecturer.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">search for lecturer immediately.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">generate comprehensive reports of the current semester detail</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can save time from making this report myself</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generate comprehensive reports of the current semester detail.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">save time from making this report myself.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view the history of commands</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">so I no need to go through the list to know what I have added so far</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the history of commands.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know what command I have used so far.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">check location and time slot of different modules</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can make my study plan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">check location and time slot of different modules.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make my study plan.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view all modules that are available next semester</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I plan what module I would like to take next semester</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all modules that are available next semester.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plan what module I would like to take next semester.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add new timeslot in timetable</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can plan my teaching schedule</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add new timeslot in timetable.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plan my teaching schedule.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete an existing module in a particular time slot</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can make changes to the time slot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete an existing module in a particular time slot.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make changes to the time slot.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete an existing module in a particular location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can make changes to the time slot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete an existing module in a particular location.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make changes to the time slot.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">update an existing module time slot</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can change the current time slot to an updated one</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update an existing module time slot.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">change the current time slot to an updated one.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">update an existing module location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can change the current location to an updated one</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update an existing module location.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">change the current location to an updated one.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list all the locations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I know all the locations I can choose from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list all the locations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know all the locations I can choose from.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view the help file</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I know all the available functions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the help file.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know all the available functions.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view available slots at a specified location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can determine if i can schedule my lecture there</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view available slots at a specified location.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">determine if i can schedule my lecture there.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">login with my username/password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can secure the information in my account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">login with my username/password.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">secure the information in my account.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">register with username/password</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can gain access to the personalised timetable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">register with username/password.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gain access to the personalised timetable.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">undo the previous command</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can revert to the previous state</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo the previous command.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">revert to the previous state.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">redo the previously undo-ed command</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can revert to the previous state</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redo the previously undo-ed command.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">revert to the previous state.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">show history of commands</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I know what my previous commands were</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">show history of commands.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know what my previous commands were.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">back up my file</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can retrieve back data</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">teacher/student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">export the timetable to various files (pdf, excel, png, jpeg)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can print the timetable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">back up my file.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">retrieve back data.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher/student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">report bugs to developers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">developer can solve the bug and improve the product</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">export the timetable to various files (pdf, excel, png, jpeg).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">print the timetable.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">teacher/student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bookmark a particular module</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I can have easy access to the particular module</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">report bugs to developers.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help developer to solve the bug and improve the product.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">teacher/student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bookmark a particular module.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have easy access to the particular module.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use the App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use the App.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete a lesson</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a lesson.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find a lecturer by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of lecturers without having to go through the entire list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find a lecturer by name.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of lecturers without having to go through the entire list.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user with many lessons in the ModU</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user with many lessons in the ModU.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sort lessons by code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate a lesson easily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">locate a lesson easily.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2076,9 +2130,6 @@ b. Require developers to download those libraries manually (this creates extra w
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>{More to be added}</p>
-</div>
 <h3 id="use-case-redo-command" class="discrete">Use case: Redo command</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -2216,20 +2267,17 @@ b. Require developers to download those libraries manually (this creates extra w
 </li>
 </ul>
 </div>
-<h3 id="use-case-list-tag-name-module-location" class="discrete">Use case: list [tag-name(module / location)]</h3>
+<h3 id="use-case-list-attribute-module-location-marked" class="discrete">Use case: list [attribute (module / location/ marked)]</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list by tag-name.</p>
+<p>User requests to list by attribute.</p>
 </li>
 <li>
-<p>ModU shows a list of information by tag-name.</p>
-</li>
-<li>
-<p>User requests to view specific information of tag-name.</p>
+<p>ModU shows a list of information by attribute.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2242,19 +2290,13 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-<li>
-<p>3a. The given index is invalid.</p>
+<p>2a. The attribute given by user is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. ModU shows an error message.</p>
+<p>2a1. ModU shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -2313,38 +2355,38 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="literalblock">
 <div class="content">
 <pre>Environment requirement(s):
-    .  Should work on any link:#mainstream-os[mainstream OS] as long as it has Java `1.8.0_60` or higher installed.
-    .  Minimum 512 MB of RAM memory
-    .  Server should have minimum 5 GB of storage size
-    .  Compatible with both 32-bits and 64-bits systems</pre>
+    . The application should work on any mainstream OS as long as it has Java `1.8.0_60` or higher installed.
+    . The application requires a minimum 512 MB of RAM memory.
+    . The server should have minimum 5 GB of storage size.
+    . The application should compatible with both 32-bits and 64-bits systems.</pre>
 </div>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Capacity
-    .  Should be able to hold up to 10000 lessons without a noticeable sluggishness in performance for typical usage.</pre>
+<pre>Capacity:
+    .  The application should be able to hold up to 10000 lessons without a noticeable sluggishness in performance for typical usage.</pre>
 </div>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>Constraint(s)
-    .  The system should be backward compatible with data produced by earlier version of the system
-    .  The total project cost should not exceed $10,000
+    .  The application should be backward compatible with data produced by earlier version of the system.
+    .  The total project cost should not exceed $10,000.
     .  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</pre>
 </div>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>Performance requirement(s):
-    .  The application should be respond to 1000 people within 2 seconds
-    .  Time to restart after failure should not be more than 5 seconds
-    .  Screen refresh time should be less than 1 second</pre>
+    .  The application should be respond to 1000 people within 2 seconds.
+    .  Time to restart after failure should not be more than 5 seconds.
+    .  The screen refresh time should be less than 1 second.</pre>
 </div>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>Quality requirement(s):
-    .  The system should be usable by a novice who has never used an online timetable planner</pre>
+    .  The application should be usable by a novice who has never used an online timetable planner.</pre>
 </div>
 </div>
 <div class="literalblock">
@@ -2356,32 +2398,32 @@ b. Require developers to download those libraries manually (this creates extra w
 <div class="literalblock">
 <div class="content">
 <pre>Privacy:
-    .  Admin have higher access than lecturer as they have to manage the system</pre>
+    .  Admin have higher access than lecturer as they have to manage the system.</pre>
 </div>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>Notes about project scope:
-    .  The product is not required to allow users to chat and message with each other</pre>
+    .  The product is not required to allow users to chat and message with each other.</pre>
 </div>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>Portability:
-    .  Can be compiled and run in different operating systems and processors</pre>
+    .  Can be compiled and run in different operating systems and processors.</pre>
 </div>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>Security:
-    .  The application must preserve the availability, integrity and confidentiality of data</pre>
+    .  The application must preserve the availability, integrity and confidentiality of data.</pre>
 </div>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre>Reliability:
-    .  Data created in the system will be retained for 2 years
-    .  System must have less than 1 hour downtime per 3 months (e.g. to update/maintain the system)</pre>
+    .  Data created in the system will be retained for 2 years.
+    .  The application must have less than 1 hour downtime per 3 months (e.g. to update/maintain the system).</pre>
 </div>
 </div>
 </div>
@@ -2394,7 +2436,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Windows, Linux, Unix, OS-X</pre>
+<pre>Windows, Linux, Unix, OS-X.</pre>
 </div>
 </div>
 <div id="private-contact-detail" class="paragraph">
@@ -2402,7 +2444,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>A contact detail that is not meant to be shared with others</pre>
+<pre>A contact detail that is not meant to be shared with others.</pre>
 </div>
 </div>
 <div id="api" class="paragraph">
@@ -2426,7 +2468,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Gradle is a flexible general purpose build tool</pre>
+<pre>Gradle is a flexible general purpose build tool.</pre>
 </div>
 </div>
 <div id="travis" class="paragraph">
@@ -2479,47 +2521,10 @@ b. Require developers to download those libraries manually (this creates extra w
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix E: Product Survey</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-11 08:58:22 +00:00
+Last updated 2017-11-11 09:39:56 +00:00
 </div>
 </div>
 </body>
