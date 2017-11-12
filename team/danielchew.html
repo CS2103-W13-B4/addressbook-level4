@@ -22,7 +22,8 @@
 <p>ModU is a software designed to assist teachers and lecturers to plan their weekly teaching schedule.</p>
 </div>
 <div class="paragraph">
-<p>There are many ways to improve and extend the functionality of this software and this guide provides essential information to help you get started. This developer guide contains information of the architecture design of this software, implementation of the existing commands that are accessible for the users and other useful information.</p>
+<p>There are many ways to improve and extend the functionality of this software and this guide provides essential information to help you get started.
+This developer guide contains information of the architecture design of this software, implementation of the existing commands that are accessible for the users and other useful information</p>
 </div>
 <div class="paragraph">
 <p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/main/cctdaniel.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/collated/test/cctdaniel.md">Test code</a>]</p>
@@ -55,6 +56,11 @@ There are five font sizes for you to choose from, namely: <em>xsmall</em>, <em>s
 <p>In <strong>module list mode</strong>, type <code>customise fx/large</code> to increase the font size from the current size to large.<br></p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/customise.gif" alt="customise" width="790">
+</div>
 </div>
 <hr>
 <div class="sect3">
@@ -97,7 +103,7 @@ The <strong>FontSizeUnit</strong> enumeration is to set a global static variable
 <p><em>Figure 34: Sequence Diagram for CustomiseCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 35)</em> summarizes what happens when a user executes customise command.</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 35)</em> summarizes what happens when a user executes customise command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -134,33 +140,30 @@ The <strong>FontSizeUnit</strong> enumeration is to set a global static variable
 <div class="sect2">
 <h3 id="change-theme-code-theme-code"><a class="link" href="#change-theme-code-theme-code">Change theme : <code>theme</code></a></h3>
 <div class="paragraph">
-<p>Change between light (default) and dark theme<br>
-Format: <code>theme</code></p>
+<p>The theme command will change the theme of the application. There are 2 themes to choose from, namely: light (default) and dark.<br></p>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Toggle between light and dark theme. If the current theme is light, executing <code>theme</code> will change the theme to be dark theme.
-</td>
-</tr>
-</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Command format in command box</dt>
+<dd>
+<p><code>theme</code></p>
+</dd>
+</dl>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Valid example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>theme dark</code></p>
-</li>
-<li>
-<p><code>theme light</code></p>
+<p>Type theme dark to switch the theme from light to dark.</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/theme.gif" alt="theme" width="790">
+</div>
 </div>
 <hr>
 <div class="sect3">
@@ -203,7 +206,7 @@ The <strong>ThemeUnit</strong> enumeration is to set a global static variable <s
 <p><em>Figure 36: Sequence Diagram for ThemeCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 37)</em> summarize what happens when a user executes theme command.</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 37)</em> summarize what happens when a user executes theme command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -222,7 +225,7 @@ The <strong>ThemeUnit</strong> enumeration is to set a global static variable <s
 <strong>Cons</strong>: Hard for new developers to understand the event center mechanism.<br>
 <strong>Alternative 2</strong>:Use a variable in model manager to keep record of <strong>currentThemeUnit</strong><br>
 <strong>Pros</strong>: There is no need for an extra enumeration class and it is also easier for new developers to design.<br>
-<strong>Cons</strong>: In order to get the variable in other components, it must be declared static. However, we cannot define static abstract method in interface. It also does not follow Java’s standard coding style.</p>
+<strong>Cons</strong>: In order to access the variable in other components, it must be declared static. However, we cannot define static abstract method in interface. It also does not follow Java’s standard coding style.</p>
 </div>
 <hr>
 </div>
@@ -269,7 +272,7 @@ The <strong>ThemeUnit</strong> enumeration is to set a global static variable <s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 03:50:23 +00:00
+Last updated 2017-11-12 05:10:51 +00:00
 </div>
 </div>
 </body>

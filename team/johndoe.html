@@ -69,6 +69,11 @@ Next, type <code>undo</code> to restore the state of the list before <code>clear
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/undoValid.gif" alt="undoValid" width="790">
+</div>
+</div>
 <div class="paragraph">
 <p>Invalid examples:</p>
 </div>
@@ -86,6 +91,11 @@ Next, type <code>undo</code> in the command box.<br>
 The <code>undo</code> command fails as there are no undoable commands executed previously.<br></p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/undoInvalid.gif" alt="undoInvalid" width="790">
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -116,6 +126,11 @@ Type <code>redo</code> to re-execute <code>clear</code>.<br></p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/redoValid.gif" alt="redoValid" width="790">
+</div>
+</div>
 <div class="paragraph">
 <p>Invalid example:</p>
 </div>
@@ -127,6 +142,11 @@ Next, type <code>redo</code> in the command box.<br>
 The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.<br></p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/redoInvalid.gif" alt="redoInvalid" width="790">
+</div>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -207,7 +227,9 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 <p>Suppose that the user has just launched the application. The <strong>UndoRedoStack</strong> will be empty at the beginning.</p>
 </div>
 <div class="paragraph">
-<p>The user executes a new UndoableCommand, delete 5, to delete all lessons associated with the module in index 5. The current state of ModU is saved before executing the command. The command will then be pushed onto the undoStack (the current state is saved together with the command) (Figure 12).</p>
+<p>The user executes a new UndoableCommand, delete 5, to delete all lessons associated with the module in index 5.
+The current state of ModU is saved before executing the command.
+The command will then be pushed onto the undoStack (the current state is saved together with the command) (Figure 12).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -326,7 +348,7 @@ If the <strong>redoStack</strong> is empty, then there are no other commands lef
 <p><em>Figure 18: RedoStack Diagram 6</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 19)</em> summarizes what happens inside the <strong>UndoRedoStack</strong> when a user executes a new command:</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 19)</em> summarizes what happens inside the <strong>UndoRedoStack</strong> when a user executes a new command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -415,7 +437,7 @@ If the <strong>redoStack</strong> is empty, then there are no other commands lef
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 03:50:23 +00:00
+Last updated 2017-11-12 05:10:51 +00:00
 </div>
 </div>
 </body>

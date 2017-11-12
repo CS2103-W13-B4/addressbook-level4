@@ -36,7 +36,7 @@
 <li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
 <li><a href="#architecture">3.1. Architecture</a></li>
-<li><a href="#a-href-ui-ui-a-component">3.2. <a href="#ui">UI</a> component</a></li>
+<li><a href="#a-href-ui-ui-component-a">3.2. <a href="#ui">UI component</a></a></li>
 <li><a href="#logic-component">3.3. Logic component</a></li>
 <li><a href="#model-component">3.4. Model component</a></li>
 <li><a href="#storage-component">3.5. Storage component</a></li>
@@ -97,7 +97,8 @@
 <p>ModU is a software designed to assist teachers and lecturers to plan their weekly teaching schedule.</p>
 </div>
 <div class="paragraph">
-<p>There are many ways to improve and extend the functionality of this software and this guide provides essential information to help you get started. This developer guide contains information of the architecture design of this software, implementation of the existing commands that are accessible for the users and other useful information.</p>
+<p>There are many ways to improve and extend the functionality of this software and this guide provides essential information to help you get started.
+This developer guide contains information of the architecture design of this software, implementation of the existing commands that are accessible for the users and other useful information</p>
 </div>
 </div>
 </div>
@@ -150,7 +151,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 <p>Fork this repo, and clone the fork to your computer</p>
 </li>
 <li>
-<p>2.	Launch IntelliJ (if you are not in the welcome screen, click <code>File</code> &gt; <code>Close Project</code> to close the existing project dialog).</p>
+<p>Launch IntelliJ (if you are not in the welcome screen, click <code>File</code> &gt; <code>Close Project</code> to close the existing project dialog).</p>
 </li>
 <li>
 <p>Set up the correct JDK version for <a href="#gradle">Gradle</a>.</p>
@@ -178,7 +179,8 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 <p>Click <code>OK</code> to accept the default settings.</p>
 </li>
 <li>
-<p>Open a console and run the command <code>gradlew processResources</code> (Mac/Linux: <code>./gradlew processResources</code>). It should finish with the <code>BUILD SUCCESSFUL</code> message.<br>
+<p>Open a console and run the command <code>gradlew processResources</code> (Mac/Linux: <code>./gradlew processResources</code>).
+It should finish with the <code>BUILD SUCCESSFUL</code> message.
 This will generate all resources required by the application and tests.</p>
 </li>
 </ol>
@@ -406,7 +408,7 @@ Note how the event is propagated through the <strong>EventsCenter</strong> to th
 </div>
 </div>
 <div class="sect2">
-<h3 id="a-href-ui-ui-a-component"><a class="link" href="#a-href-ui-ui-a-component">3.2. <a href="#ui">UI</a> component</a></h3>
+<h3 id="a-href-ui-ui-component-a"><a class="link" href="#a-href-ui-ui-component-a">3.2. <a href="#ui">UI component</a></a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram" width="800">
@@ -425,7 +427,7 @@ Note how the event is propagated through the <strong>EventsCenter</strong> to th
 <p>The <a href="#ui">UI</a> component uses <a href="#javaFX">JavaFx</a> <a href="#ui">UI</a> framework. The layout of these <a href="#ui">UI</a> parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view folder</code>. For example, the layout of the <strong>MainWindow</strong> is specified in <code>MainWindow.java</code>.</p>
 </div>
 <div class="paragraph">
-<p>The <code><a href="#ui">UI</a></code> component,</p>
+<p>The <a href="#ui">UI</a> component,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -481,7 +483,7 @@ Note how the event is propagated through the <strong>EventsCenter</strong> to th
 </ol>
 </div>
 <div class="paragraph">
-<p>Given below is the <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 8)</em> for interactions within the Logic component for the execution of  <code>("delete 1")</code> <a href="#api">API</a> call.</p>
+<p>Given below is the <em><a href="#sequence-diagram">Sequence diagram</a> (Figure 8)</em> for interactions within the Logic component for the execution of  <code>"delete 1"</code> <a href="#api">API</a> call.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -633,7 +635,9 @@ Note how the event is propagated through the <strong>EventsCenter</strong> to th
 <p>Suppose that the user has just launched the application. The <strong>UndoRedoStack</strong> will be empty at the beginning.</p>
 </div>
 <div class="paragraph">
-<p>The user executes a new UndoableCommand, delete 5, to delete all lessons associated with the module in index 5. The current state of ModU is saved before executing the command. The command will then be pushed onto the undoStack (the current state is saved together with the command) (Figure 12).</p>
+<p>The user executes a new UndoableCommand, delete 5, to delete all lessons associated with the module in index 5.
+The current state of ModU is saved before executing the command.
+The command will then be pushed onto the undoStack (the current state is saved together with the command) (Figure 12).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -752,7 +756,7 @@ If the <strong>redoStack</strong> is empty, then there are no other commands lef
 <p><em>Figure 18: RedoStack Diagram 6</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 19)</em> summarizes what happens inside the <strong>UndoRedoStack</strong> when a user executes a new command:</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 19)</em> summarizes what happens inside the <strong>UndoRedoStack</strong> when a user executes a new command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -879,7 +883,7 @@ The default listing unit is <strong>MODULE</strong>. When listing by attribute, 
 <p><em>Figure 20: Sequence Diagram for ListCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 21)</em> summarizes what happens when a user executes list command.</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 21)</em> summarizes what happens when a user executes list command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -887,7 +891,7 @@ The default listing unit is <strong>MODULE</strong>. When listing by attribute, 
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 10: Activity Diagram for ListCommand</em></p>
+<p><em>Figure 21: Activity Diagram for ListCommand</em></p>
 </div>
 <div class="paragraph">
 <p><strong>FixedCodePredicate</strong> and <strong>FixedLocationPredicate</strong> are used to facilitate the implementation of <strong>ViewCommand</strong>. According to the current listing type, which we can obtain from <strong>ListingUnit</strong>, we can create either a <strong>FixedCodePredicate</strong> or a <strong>FixedLocationPredicate</strong> to filter the lesson list and set <strong>currentListingUnit</strong> to be <strong>LESSON</strong>.</p>
@@ -904,7 +908,7 @@ The default listing unit is <strong>MODULE</strong>. When listing by attribute, 
 <p><em>Figure 22 Sequence Diagram for ViewCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 23)</em> summarizes what happens when a user executes <strong>ViewCommand</strong>.</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 23)</em> summarizes what happens when a user executes <strong>ViewCommand</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -912,7 +916,7 @@ The default listing unit is <strong>MODULE</strong>. When listing by attribute, 
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 23: Activity Diagram for view</em></p>
+<p><em>Figure 23: Activity Diagram for viewCommand</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.1. Design Considerations</a></h4>
@@ -1022,7 +1026,7 @@ The <strong>LessonContainsKeywordPredicate</strong> will be used when the curren
 <p><em>Figure 25:  Sequence Diagram for FindCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 26)</em> summarizes what happens when a user executes find command.</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 26)</em> summarizes what happens when a user executes find command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1074,7 +1078,7 @@ Only module can be remarked, therefore user can use remark if and only if the cu
 <p><em>Figure 27: Sequence Diagram for RemarkCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 28)</em> summarizes what happens when a user executes remark command.</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 28)</em> summarizes what happens when a user executes remark command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1123,7 +1127,7 @@ If the previous attribute type of list command is module, the list will be sorte
 <p><em>Figure 29: Sequence Diagram for SortCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 30)</em> summarizes what happens when a user executes sort command.</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 30)</em> summarizes what happens when a user executes sort command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1185,7 +1189,7 @@ The default setting for this feature is set as disable.
 <p><em>Figure 31: Sequence Diagram for ColorKeywordCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 32)</em> summarizes what happens when a user executes color keyword command.</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 32)</em> summarizes what happens when a user executes color keyword command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1237,7 +1241,7 @@ The <strong>FontSizeUnit</strong> enumeration is to set a global static variable
 <p><em>Figure 34: Sequence Diagram for CustomiseCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 35)</em> summarizes what happens when a user executes customise command.</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 35)</em> summarizes what happens when a user executes customise command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1289,7 +1293,7 @@ The <strong>ThemeUnit</strong> enumeration is to set a global static variable <s
 <p><em>Figure 36: Sequence Diagram for ThemeCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 37)</em> summarize what happens when a user executes theme command.</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 37)</em> summarize what happens when a user executes theme command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1308,7 +1312,7 @@ The <strong>ThemeUnit</strong> enumeration is to set a global static variable <s
 <strong>Cons</strong>: Hard for new developers to understand the event center mechanism.<br>
 <strong>Alternative 2</strong>:Use a variable in model manager to keep record of <strong>currentThemeUnit</strong><br>
 <strong>Pros</strong>: There is no need for an extra enumeration class and it is also easier for new developers to design.<br>
-<strong>Cons</strong>: In order to get the variable in other components, it must be declared static. However, we cannot define static abstract method in interface. It also does not follow Java’s standard coding style.</p>
+<strong>Cons</strong>: In order to access the variable in other components, it must be declared static. However, we cannot define static abstract method in interface. It also does not follow Java’s standard coding style.</p>
 </div>
 </div>
 </div>
@@ -2522,7 +2526,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 03:50:22 +00:00
+Last updated 2017-11-12 05:10:50 +00:00
 </div>
 </div>
 </body>

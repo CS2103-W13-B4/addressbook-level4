@@ -80,6 +80,11 @@ The attribute must be in lower case.<br>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/list.gif" alt="list" width="790">
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="viewing-specific-lesson-from-the-list-code-view-code"><a class="link" href="#viewing-specific-lesson-from-the-list-code-view-code">Viewing specific lesson from the list: <code>view</code></a></h3>
@@ -96,7 +101,7 @@ The attribute must be in lower case.<br>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-This command allows you to switch to lesson list mode*.<br>
+This command allows you to switch to <strong>lesson list mode</strong>.<br>
 Another command that allows you to switch to lesson list mode is list marked.+
 </td>
 </tr>
@@ -114,6 +119,11 @@ Another command that allows you to switch to lesson list mode is list marked.+
 <p>In <strong>location list mode</strong>, type <code>view 2</code> to view all lessons conducted at this location.<br></p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/view.gif" alt="view" width="790">
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -153,9 +163,14 @@ Next, type <code>edit 2 LT19</code> to relocate all the lessons associated with 
 </li>
 <li>
 <p>In <strong>lesson list mode</strong>, type <code>view 2</code> to view the lesson at index 2.<br>
-Next, type <code>edit 2 v/LT19</code> to relocate the lesson to LT19. Note that for this example, the prefix is compulsory.<br></p>
+Next, type <code>edit 2 v/LT30</code> to relocate the lesson to LT30. Note that for this example, the prefix is compulsory.<br></p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/edit.gif" alt="edit" width="790">
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -181,6 +196,11 @@ Next, type <code>edit 2 v/LT19</code> to relocate the lesson to LT19. Note that 
 <p>In <strong>lesson list mode</strong>, type <code>delete 1</code> to remove the lesson at index 1.<br></p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/delete.gif" alt="delete" width="790">
+</div>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -277,7 +297,7 @@ The default listing unit is <strong>MODULE</strong>. When listing by attribute, 
 <p><em>Figure 20: Sequence Diagram for ListCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 21)</em> summarizes what happens when a user executes list command.</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 21)</em> summarizes what happens when a user executes list command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -285,7 +305,7 @@ The default listing unit is <strong>MODULE</strong>. When listing by attribute, 
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 10: Activity Diagram for ListCommand</em></p>
+<p><em>Figure 21: Activity Diagram for ListCommand</em></p>
 </div>
 <div class="paragraph">
 <p><strong>FixedCodePredicate</strong> and <strong>FixedLocationPredicate</strong> are used to facilitate the implementation of <strong>ViewCommand</strong>. According to the current listing type, which we can obtain from <strong>ListingUnit</strong>, we can create either a <strong>FixedCodePredicate</strong> or a <strong>FixedLocationPredicate</strong> to filter the lesson list and set <strong>currentListingUnit</strong> to be <strong>LESSON</strong>.</p>
@@ -302,7 +322,7 @@ The default listing unit is <strong>MODULE</strong>. When listing by attribute, 
 <p><em>Figure 22 Sequence Diagram for ViewCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 23)</em> summarizes what happens when a user executes <strong>ViewCommand</strong>.</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 23)</em> summarizes what happens when a user executes <strong>ViewCommand</strong>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -310,7 +330,7 @@ The default listing unit is <strong>MODULE</strong>. When listing by attribute, 
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 23: Activity Diagram for view</em></p>
+<p><em>Figure 23: Activity Diagram for viewCommand</em></p>
 </div>
 </div>
 <div class="sect3">
@@ -370,11 +390,18 @@ The specified lesson must not initially be in the marked list.<br>
 Next, type <code>mark 1</code> to add lesson into the marked list.<br></p>
 </li>
 <li>
-<p>In <strong>lesson list mode</strong>, type <code>mark 1</code> to add the lesson into the marked list.
-=== Unmarking a lesson: <code>unmark</code></p>
+<p>In <strong>lesson list mode</strong>, type <code>mark 1</code> to add the lesson into the marked list.</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/mark.gif" alt="mark" width="790">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unmarking-a-lesson-code-unmark-code"><a class="link" href="#unmarking-a-lesson-code-unmark-code">Unmarking a lesson: <code>unmark</code></a></h3>
 <div class="paragraph">
 <p>The <code>unmark</code> command will remove a marked lesson from the marked list. The index must be a positive integer: 1, 2, 3, and so on.<br></p>
 </div>
@@ -403,6 +430,11 @@ The specified lesson must not initially be in the marked list.<br>
 Next, type <code>unmark 1</code> to remove the lesson at index 1 from the marked list.<br></p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/unmark.gif" alt="unmark" width="790">
+</div>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -541,6 +573,11 @@ Delete the remark in current remark panel with index 1.</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/video/remark.gif" alt="remark" width="790">
+</div>
+</div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
 </div>
@@ -589,7 +626,7 @@ Only module can be remarked, therefore user can use remark if and only if the cu
 <p><em>Figure 27: Sequence Diagram for RemarkCommand</em></p>
 </div>
 <div class="paragraph">
-<p>The following <em>Activity Diagram (Figure 28)</em> summarizes what happens when a user executes remark command.</p>
+<p>The following <em><a href="#activity-diagram">Activity Diagram</a> (Figure 28)</em> summarizes what happens when a user executes remark command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -658,7 +695,7 @@ In v2.0, ModU should be able to export the customized timetable out.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 03:50:23 +00:00
+Last updated 2017-11-12 05:10:51 +00:00
 </div>
 </div>
 </body>
