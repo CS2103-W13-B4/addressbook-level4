@@ -36,13 +36,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>[Note] Contributions include some classes like <code>Addcommand</code> and <code>AddCommandTest</code>. This is because our product totally changed the model base from <code>person</code> to <code>lesson</code>. The command and test has been rewritten, although still based on original addCommand and addCommandTest.</p>
+<p>[Note] Contributions include some classes like <code>AddCommand</code> and <code>AddCommandTest</code>. This is because our product totally changed the model base from <code>person</code> to <code>lesson</code>. The command and test has been rewritten, although still based on original addCommand and addCommandTest.</p>
 </li>
 <li>
 <p>[Note] Due to the restriction of the app <code>Visual Paradigm</code>. The notation of sequence diagram is slightly different from the notation taught in CS2103T, for exmaple, the object creation has not been shown. We have asked Professor Damith about this and he agreed we can continue to use this app.</p>
 </li>
 <li>
-<p>[Note] Some pictures in this graph might look strange because they are supposed to be gif in User Guide. [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/docs/UserGuide.adoc">user guide</a>]</p>
+<p>[Note] Some pictures below might look strange because they are supposed to be gif in User Guide. [<a href="https://github.com/CS2103AUG2017-W13-B4/main/blob/master/docs/UserGuide.adoc">user guide</a>]</p>
 </li>
 </ul>
 </div>
@@ -354,8 +354,8 @@ The default listing unit is <strong>MODULE</strong>. When listing by attribute, 
 <strong>Pros</strong>: It would be easy to understand and do not use extra spaces to store different kind of lists (For example, location list).<br>
 <strong>Cons</strong>: This will increase overhead due to implementation of new predicates.<br>
 <strong>Alternative 2 (previous choice)</strong>: Store lesson list, unique module list and unique location list separately and switches to different panel list before calling view command.<br>
-<strong>Pros</strong>: This implementation will make the overall structure more organized.<br>
-<strong>Cons</strong>: It would be much harder to implement and the switching of panel will cause heavier load to the system compared to a single panel.</p>
+<strong>Pros</strong>: This implementation will make the data structure more organized.<br>
+<strong>Cons</strong>: Waste of space due to muptiple list is created and the switching of panel will cause heavier load to the system compared to a single panel.</p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -506,11 +506,11 @@ Each lesson is only allowed to be added into the marked list once, thus any furt
 <div class="paragraph">
 <p><strong>Aspect</strong>: Implementation of mark/unmark<br>
 <strong>Alternative 1 (current choice)</strong>: Create an extra attribute <strong>isMarked</strong> for each lesson to record if the lesson is in the marked list.<br>
-<strong>Pros</strong>: It would be easier to implement list marked since we are using predicates to update the lesson list.<br>
-<strong>Cons</strong>: It is requires to filter out marked lessons every time.<br>
+<strong>Pros</strong>: It would be easy to implement <code>list marked</code> since we are using predicates to update the lesson list.<br>
+<strong>Cons</strong>: It requires to filter out marked lessons every time.<br>
 <strong>Alternative 2 (previous choice)</strong>: Stores additional marked lesson list.<br>
-<strong>Pros</strong>: We do not need to filter out the marked lessons each time.<br>
-<strong>Cons</strong>: Lessons might be stored multiple times.</p>
+<strong>Pros</strong>: No do not need to filter out the marked lessons each time.<br>
+<strong>Cons</strong>: Lessons might be stored two times which could potentially waste space.</p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -706,7 +706,7 @@ In v2.0, ModU should be able to export the customized timetable out.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 14:11:30 +00:00
+Last updated 2017-11-13 01:53:03 +00:00
 </div>
 </div>
 </body>

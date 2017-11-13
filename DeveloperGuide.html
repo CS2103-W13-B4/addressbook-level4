@@ -579,6 +579,19 @@ Note how the event is propagated through the <strong>EventsCenter</strong> to th
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by an <strong>UndoRedoStack</strong>, which resides in <strong>LogicManager</strong>. It supports undoing and redoing of commands that modify the state of ModU (e.g. add, edit). Such commands will inherit from <strong>UndoableCommand</strong>.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>undo</code> command does not work after <code>list</code> or <code>view</code> command.<br>
+The <code>redo</code> command only works if the previous command is <code>undo</code>.<br>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p><strong>UndoRedoStack</strong> only deals with <strong>UndoableCommands</strong>. Commands that cannot be undone will inherit from <strong>Command</strong> instead. The following diagram shows the <em>Inheritance Diagram (Figure 11)</em> for commands.</p>
 </div>
@@ -926,8 +939,8 @@ The default listing unit is <strong>MODULE</strong>. When listing by attribute, 
 <strong>Pros</strong>: It would be easy to understand and do not use extra spaces to store different kind of lists (For example, location list).<br>
 <strong>Cons</strong>: This will increase overhead due to implementation of new predicates.<br>
 <strong>Alternative 2 (previous choice)</strong>: Store lesson list, unique module list and unique location list separately and switches to different panel list before calling view command.<br>
-<strong>Pros</strong>: This implementation will make the overall structure more organized.<br>
-<strong>Cons</strong>: It would be much harder to implement and the switching of panel will cause heavier load to the system compared to a single panel.</p>
+<strong>Pros</strong>: This implementation will make the data structure more organized.<br>
+<strong>Cons</strong>: Waste of space due to muptiple list is created and the switching of panel will cause heavier load to the system compared to a single panel.</p>
 </div>
 </div>
 </div>
@@ -970,11 +983,11 @@ Each lesson is only allowed to be added into the marked list once, thus any furt
 <div class="paragraph">
 <p><strong>Aspect</strong>: Implementation of mark/unmark<br>
 <strong>Alternative 1 (current choice)</strong>: Create an extra attribute <strong>isMarked</strong> for each lesson to record if the lesson is in the marked list.<br>
-<strong>Pros</strong>: It would be easier to implement list marked since we are using predicates to update the lesson list.<br>
-<strong>Cons</strong>: It is requires to filter out marked lessons every time.<br>
+<strong>Pros</strong>: It would be easy to implement <code>list marked</code> since we are using predicates to update the lesson list.<br>
+<strong>Cons</strong>: It requires to filter out marked lessons every time.<br>
 <strong>Alternative 2 (previous choice)</strong>: Stores additional marked lesson list.<br>
-<strong>Pros</strong>: We do not need to filter out the marked lessons each time.<br>
-<strong>Cons</strong>: Lessons might be stored multiple times.</p>
+<strong>Pros</strong>: No do not need to filter out the marked lessons each time.<br>
+<strong>Cons</strong>: Lessons might be stored two times which could potentially waste space.</p>
 </div>
 </div>
 </div>
@@ -2526,7 +2539,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 14:11:30 +00:00
+Last updated 2017-11-13 01:53:03 +00:00
 </div>
 </div>
 </body>
